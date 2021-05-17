@@ -21,12 +21,24 @@
     color: white;
     font-size: 475%;
     font-family: 'Newsreader', serif;
- 
-    top: 50%;
+    left: 50%;
+    top: 25%;
     position: absolute;
-    transform: translate(18%, -50%);
-    
- 
+    transform: translate(-50%, -50%);
+    width: 75%;
+    font-weight: bold;
+ }
+
+ #subtitle{
+    color: white;
+    font-size: 200%;
+    font-family: 'Newsreader', serif;
+    left: 50%;
+    top: 60%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 75%;
+
  }
  
  
