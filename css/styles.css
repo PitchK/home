@@ -1,0 +1,38 @@
+#text{
+    color: white;
+    font-size: 30px; 
+ }
+ 
+ #container{
+    position: relative;
+    text-align: center;
+ 
+ 
+ }
+ 
+ #topimage{
+    width: 100%;
+    height: auto;
+    position: relative;
+  
+ }
+ 
+ #title{
+    color: white;
+    font-size: 475%;
+    font-family: 'Newsreader', serif;
+ 
+    top: 50%;
+    position: absolute;
+    transform: translate(18%, -50%);
+    
+ 
+ }
+ 
+ 
+ 
+ #text{
+    color: black;
+ }
+ 
+ 
