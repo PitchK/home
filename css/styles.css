@@ -1,20 +1,19 @@
 #text{
     color: white;
-    font-size: 30px; 
+    font-size: 100px; 
  }
  
  #container{
     position: relative;
     text-align: center;
- 
- 
+    z-index: 0;
  }
  
  #topimage{
     width: 100%;
-    height: auto;
     position: relative;
-  
+    padding: 0;
+    margin: 0;
  }
  
  #title{
@@ -34,12 +33,63 @@
     font-size: 200%;
     font-family: 'Newsreader', serif;
     left: 50%;
-    top: 60%;
+    top: 55%;
     position: absolute;
     transform: translate(-50%, -50%);
     width: 75%;
 
  }
+
+ #header{
+    display: flex;
+    background-color: #42c2f5;
+    position: absolute;
+    width: 100%;
+    top: -100%;
+    z-index: 1;
+
+    /*border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
+
+ }
+
+ #headertext{
+    margin-left: 5%;
+    font-size: 163%;
+    color: white;
+ }
+
+ #call{
+    color: white;
+    text-decoration: underline;
+    transition: 1.5s;
+    
+ }
+
+ #call:hover{
+    transition: 1.5s;
+    color: grey;
+    
+ }
+
+ #x{
+ 
+    margin-left: 26%;
+    font-size: 163%;
+    color: white;
+    -webkit-user-select: none;
+    transition: 1s;
+    cursor: pointer;
+
+
+ }
+
+ #x:hover{
+   transform: rotate(-90deg);
+   transition: 1s;
+   color: black;
+ }
+ 
  
  
  
