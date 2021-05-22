@@ -1,8 +1,23 @@
-var head = document.getElementById('header');
-var newTitle = document.getElementById('title');
+//variable declaration
 var button = document.getElementById('x');
 var temp = document.getElementById('popup');
+var open = false;
 
+
+//general webpage setup
+var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 21, 2021'];
+var x = new Date();
+var add = 'Date accessed: ' + (x.getMonth()+1) + "/" + x.getDate() + "/" + x.getFullYear();
+listOfCitations.push(add);
+
+for(var i = 0; i<listOfCitations.length; i++){
+    var newCitation = document.createElement('p');
+    newCitation.className = 'indivCitation';
+    newCitation.innerHTML = listOfCitations[i];
+    document.getElementById('citeInfo').appendChild(newCitation);
+}
+
+//methods
 /*function dropHeader(){
     head.style.position = 'absolute';
     head.style.display = 'block';
@@ -40,6 +55,7 @@ function showPopUp(){
 
         temp.style.top = ((screen.height/2) + scrollPos - (screen.height/10)) + "px";
         temp.style.display = 'sticky';
+        open = true;
     }
 }
 function remove(){
@@ -48,16 +64,25 @@ function remove(){
     temp.style.transition = '1s';
     document.getElementById('main').style.filter = 'blur(0px)';
     document.getElementById('main').style.userSelect = 'text';
+    open = false;
 }
 
 function detectScroll(){
     showPopUp();
     window.addEventListener('scroll', showPopUp);
-
-
 }
+
+function showCitations(){
+    if(open === false){
+        document.getElementById('citeInfo').style.display = 'block';
+    }
+    
+}
+
+//Event listeners
 /*window.addEventListener('scroll', updateScrollBar);*/
 button.addEventListener('click', remove);
 document.getElementById('close').addEventListener('click', remove);
+document.getElementById('cite').addEventListener('click', showCitations);
 setTimeout(detectScroll, 3500);
 

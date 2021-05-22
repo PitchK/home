@@ -1,3 +1,7 @@
+html{
+   scroll-behavior: smooth;
+}
+
 #text{
     color: white;
     font-size: 100px; 
@@ -122,8 +126,18 @@
     width: 80%;
     text-align: center;
     font-size: 175%;
-    margin-bottom: 0;
+    margin-bottom: 1%;
     padding-bottom: 0;
+ }
+
+ #phone{
+    color: white;
+    transition: 0.5s;
+ }
+
+ #phone:hover{
+    color: green;
+    transition: 0.5s;
  }
 
  #x{
@@ -149,54 +163,109 @@
     color: white;
     font-size: 150%;
     font-family: 'Newsreader', serif;
-    margin-left: 70%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
  }
 
  #call{
    padding: 3%;
-   color: #1d852d;
+   padding-left: 6%;
+   padding-right: 6%;
+   color: white;
    text-decoration: none;
-   background-color: white;
+   background-color: #1d852d;
    border: 2px solid #1d852d;
    height: 10%;
-   margin-left: 4%;
-   border-radius: 5px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10px;
    -webkit-user-select: none;
    cursor: pointer;
-   transition: 0.7s;
+   transition: 0.5s;
  }
 
  #call:hover{
    border-radius: 10px;
-   color: white;
-   background-color: #1d852d;
-   border: 2px solid white;
-   transition: 0.7s;
+   color: #1d852d;
+   background-color: whitesmoke;
+   border: 2px solid #1d852d;
+   transition: 0.5s;
  }
 
  #close{
    padding: 3%;
-   color: #0000ff;
+   padding-left: 6%;
+   padding-right: 6%;
+   color: white;
    text-decoration: none;
-   background-color: white;
-   border: 2px solid #0000ff;
+   background-color: #ff8800;
+   border: 2px solid #ff8800;
    height: 10%;
-   margin-left: 4%;
-   border-radius: 5px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10px;
    -webkit-user-select: none;
    cursor: pointer;
-   transition: 0.7s;
+   transition: 0.5s;
  }
 
  #close:hover{
    border-radius: 10px;
-   color: white;
-   background-color: #0000ff;
-   border: 2px solid white;
-   transition: 0.7s;
+   color: #ff8800;
+   background-color: whitesmoke;
+   border: 2px solid #ff8800;
+   transition: 0.5s;
  }
 
+#cite{
+   padding: 17px;
+   border-radius: 20px;
+   color: white;
+   font-size: 150%;
+   background-color: #1d852d;
+   margin-left: 40%;
+   margin-right: 40%;
+   width: 20%;
+   -webkit-user-select: none;
+   cursor: pointer;
+   font-family: 'newsreader', serif;
+   text-align: center;
+   transition: 0.5s;
+   border: 3px solid #1d852d;
+   text-decoration: none;
+}
 
+#cite:hover{
+   color: #1d852d;
+   background-color: white;
+   border: 3px solid #1d852d;
+   transition: 0.5s;
+}
+
+#citeInfo{
+   display: none;
+}
+
+.indivCitation{
+   font-size: 150%;
+   padding: 0;
+   margin: 0;
+   font-family: 'newsreader', serif;
+   padding-top: 0.3%;
+   padding-bottom: 0.3%;
+}
+
+#citeInfo{
+   margin-top: 5%;
+   margin-left: 10%;
+   padding-left: 3%;
+   padding-top: 1.5%;
+   padding-bottom: 1.5%;
+   background-color: whitesmoke;
+   border-left: 3px solid #8c8c8c;
+   
+}
  
 
  
