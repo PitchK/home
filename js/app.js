@@ -17,6 +17,37 @@ for(var i = 0; i<listOfCitations.length; i++){
     document.getElementById('citeInfo').appendChild(newCitation);
 }
 
+var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 80, color: 'cornflowerblue'}, {Drug: 'Cannabis', Stat: 65, color: 'lightgreen'}, {Drug: 'Methamphetamine', Stat: 34, color: 'orange'}, {Drug: 'Vapes', Stat: 11, color: 'lightblue'}];
+
+function drawFirstGraph(){
+    for(var i = 0; i<listOfFirstDrugs.length; i++){
+        var newCont = document.createElement('div');
+        newCont.className = 'container';
+  
+        document.getElementById('graph1').appendChild(newCont);
+    }
+
+    for(var i = 0; i<listOfFirstDrugs.length; i++){
+        var drugName = document.createElement('div');
+        drugName.className = 'graphText';
+        drugName.innerHTML = listOfFirstDrugs[i].Drug;
+        document.getElementsByClassName('container')[i].appendChild(drugName);
+    }
+
+    for(var i = 0; i<listOfFirstDrugs.length; i++){
+        var bar = document.createElement('div');
+        bar.className = 'graphBars';
+        document.getElementsByClassName('container')[i].appendChild(bar);
+    }
+
+    for(var i = 0; i<listOfFirstDrugs.length; i++){
+        var drugStat = document.getElementsByClassName('graphBars')[i];
+        drugStat.style.width = ((listOfFirstDrugs[i].Stat/100) * 72.5) + '%';
+        drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
+
+    }
+}
+
 //methods
 /*function dropHeader(){
     head.style.position = 'absolute';
@@ -67,6 +98,8 @@ function remove(){
     open = false;
 }
 
+
+
 function detectScroll(){
     showPopUp();
     window.addEventListener('scroll', showPopUp);
@@ -76,13 +109,14 @@ function showCitations(){
     if(open === false){
         document.getElementById('citeInfo').style.display = 'block';
     }
-    
 }
 
 //Event listeners
 /*window.addEventListener('scroll', updateScrollBar);*/
+drawFirstGraph();
 button.addEventListener('click', remove);
 document.getElementById('close').addEventListener('click', remove);
 document.getElementById('cite').addEventListener('click', showCitations);
 setTimeout(detectScroll, 3500);
+
 

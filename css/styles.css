@@ -49,6 +49,13 @@ html{
     text-decoration: none;
  }
 
+ .section{
+    text: black;
+    font-family: 'newsreader', serif;
+    margin-left: 10%;
+    font-size: 250%;
+ }
+
  /*#header{
     display: flex;
     background-color: #42c2f5;
@@ -265,6 +272,44 @@ html{
    background-color: whitesmoke;
    border-left: 3px solid #8c8c8c;
    
+}
+
+#graph1{
+   width: 80%;
+   font-size:175%;
+   margin-left: 10%;
+   border-left: 4px solid #656966;
+   background-color: whitesmoke;
+   margin-left: 10%;
+   margin-top: 3%;
+}
+
+.container{
+   display: flex;
+   margin-bottom: 0.5%;
+   margin-top: 0.5%;
+   transition: 0.5s;
+}
+
+.container:hover{
+   filter: brightness(85%);
+   transition: 0.5s;
+   cursor: pointer;
+}
+
+.graphText{
+   width: 25%;
+   padding: 1%;
+   /*border-right: 2px solid black;*/
+   text-align: right;
+   color: gray;
+   font-style: italic;
+   -webkit-user-select: none;
+}
+
+.graphBars{
+   margin-left: 1.25%;
+   max-width: 72.5%;
 }
  
 
