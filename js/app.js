@@ -17,13 +17,12 @@ for(var i = 0; i<listOfCitations.length; i++){
     document.getElementById('citeInfo').appendChild(newCitation);
 }
 
-var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 80, color: 'cornflowerblue'}, {Drug: 'Cannabis', Stat: 65, color: 'lightgreen'}, {Drug: 'Methamphetamine', Stat: 34, color: 'orange'}, {Drug: 'Vapes', Stat: 11, color: 'lightblue'}];
+var listOfFirstDrugs = [{Drug: 'Coffin Dance', Stat: 93.4, color: 'cornflowerblue'}, {Drug: 'Noice', Stat: 73.8, color: 'lightgreen'}, {Drug: 'Dance til your dead', Stat: 64.1, color: 'orange'}, {Drug: 'BK foot lettuce', Stat: 57.6, color: 'lightblue'},  {Drug: 'Doge', Stat: 21.3, color: 'red'}];
 
-function drawFirstGraph(){
+function drawFirstGraph(maxStat, increment){
     for(var i = 0; i<listOfFirstDrugs.length; i++){
         var newCont = document.createElement('div');
         newCont.className = 'container';
-  
         document.getElementById('graph1').appendChild(newCont);
     }
 
@@ -42,9 +41,43 @@ function drawFirstGraph(){
 
     for(var i = 0; i<listOfFirstDrugs.length; i++){
         var drugStat = document.getElementsByClassName('graphBars')[i];
-        drugStat.style.width = ((listOfFirstDrugs[i].Stat/100) * 72.5) + '%';
+        drugStat.style.width = ((listOfFirstDrugs[i].Stat/maxStat) * 77.5) + '%';
         drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
+    }
 
+    for (var i = 0; i<listOfFirstDrugs.length; i++){
+        var graphNum = document.createElement('div');
+        graphNum.className = 'graphData';      
+        graphNum.innerHTML = listOfFirstDrugs[i].Stat;  
+        document.getElementsByClassName('graphBars')[i].appendChild(graphNum);
+    }
+
+    /*for(var i = 0; i<(maxStat / 10); i++){
+        var line = document.createElement('hr');
+        line.className = 'lines';
+        document.getElementById('graph1').appendChild(line);
+    }
+
+    for(var i = 0; i<(maxStat / 10); i++){
+        var tempLine = document.getElementsByClassName('lines')[i];
+
+        tempLine.style.marginLeft = 23.3 + ((77.5 / (maxStat / 10) * (maxStat / 77.5))*i) + "%";
+    }*/
+    
+    var line = document.createElement('div');
+    line.id = 'graphScale';
+    document.getElementById('graph1').appendChild(line);
+    
+    for(var i = 0; i< (maxStat/increment); i++){
+        var percentages = document.createElement('div');
+        percentages.className = 'percentDiv';
+        percentages.innerHTML = (i*increment);
+        document.getElementById('graphScale').appendChild(percentages);
+    }
+
+    for(var i = 0; i< (maxStat/increment); i++){
+        document.getElementsByClassName('percentDiv')[i].style.width = (100 / (maxStat/increment)) + '%';
+        document.getElementsByClassName('percentDiv')[i].style.maxWidth = (100 / (maxStat/increment)) + '%';
     }
 }
 
@@ -98,8 +131,6 @@ function remove(){
     open = false;
 }
 
-
-
 function detectScroll(){
     showPopUp();
     window.addEventListener('scroll', showPopUp);
@@ -113,7 +144,7 @@ function showCitations(){
 
 //Event listeners
 /*window.addEventListener('scroll', updateScrollBar);*/
-drawFirstGraph();
+drawFirstGraph(100, 10);
 button.addEventListener('click', remove);
 document.getElementById('close').addEventListener('click', remove);
 document.getElementById('cite').addEventListener('click', showCitations);
