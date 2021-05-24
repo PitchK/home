@@ -16,7 +16,7 @@ for(var i = 0; i<listOfCitations.length; i++){
     document.getElementById('citeInfo').appendChild(newCitation);
 }
 
-var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping', Stat: 34.5, color: 'orange'}];
+var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping (nicotine)*', Stat: 34.5, color: 'orange'}];
 
 function drawFirstGraph(maxStat, increment){
     for(var i = 0; i<listOfFirstDrugs.length; i++){
@@ -102,7 +102,7 @@ function createHover(num){
 
         var otherInfoText1 = document.createElement('p');//title of 'prevalence of use'
         otherInfoText1.className = 'hoverContainerPrevalence';
-        otherInfoText1.innerHTML = '2020 prevalence of use: ';
+        otherInfoText1.innerHTML = '2020 prevalence of use among 12th graders: ';
         document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText1);
 
         var otherInfoText2 = document.createElement('p');//prevalence of use; in percentages
@@ -145,6 +145,7 @@ function createHover(num){
         otherInfoBotLink.className = 'hoverContainerBotLink';
         var innerLink = document.createTextNode('National Institute on Drug Abuse');
         otherInfoBotLink.setAttribute('href', 'https://www.drugabuse.gov/drug-topics/related-topics/trends-statistics/infographics/monitoring-future-2020-survey-results');
+        otherInfoBotLink.setAttribute('target', '_blank');
         otherInfoBotLink.appendChild(innerLink);
         document.getElementsByClassName('hoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
 
@@ -168,25 +169,28 @@ function showHover(event){
     }
     if(this.innerHTML === '55.3%'){//yay, the 'this' keyword! *AP Computer Science flashbacks intensify*
         isHoverOpen = true;
-        document.getElementsByClassName('hoverContainer')[0].style.display = 'block';
-        document.getElementsByClassName('hoverContainer')[0].style.top = this.offsetTop + 75 + 'px';
-        document.getElementsByClassName('hoverContainer')[0].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        document.getElementsByClassName('hoverContainer')[0].style.height = 'auto';
+        var hoverContainer0 = document.getElementsByClassName('hoverContainer')[0];
+        hoverContainer0.style.display = 'block';
+        hoverContainer0.style.top = this.offsetTop + 75 + 'px';
+        hoverContainer0.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        hoverContainer0.style.height = 'auto';
         document.getElementsByClassName('graphBars')[0].scrollIntoView();
         
     }else if (this.innerHTML === '35.2%'){
         isHoverOpen = true;
-        document.getElementsByClassName('hoverContainer')[1].style.display = 'block';
-        document.getElementsByClassName('hoverContainer')[1].style.top = this.offsetTop + 75 + 'px';
-        document.getElementsByClassName('hoverContainer')[1].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        document.getElementsByClassName('hoverContainer')[1].style.height = 'auto';
+        var hoverContainer1 = document.getElementsByClassName('hoverContainer')[1];
+        hoverContainer1.style.display = 'block';
+        hoverContainer1.style.top = this.offsetTop + 75 + 'px';
+        hoverContainer1.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        hoverContainer1.style.height = 'auto';
         document.getElementsByClassName('graphBars')[1].scrollIntoView();
     }else{
         isHoverOpen = true;
-        document.getElementsByClassName('hoverContainer')[2].style.display = 'block';
-        document.getElementsByClassName('hoverContainer')[2].style.top = this.offsetTop + 75 + 'px';
-        document.getElementsByClassName('hoverContainer')[2].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        document.getElementsByClassName('hoverContainer')[2].style.height = 'auto';
+        var hoverContainer2 = document.getElementsByClassName('hoverContainer')[2];
+        hoverContainer2.style.display = 'block';
+        hoverContainer2.style.top = this.offsetTop + 75 + 'px';
+        hoverContainer2.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        hoverContainer2.style.height = 'auto';
         document.getElementsByClassName('graphBars')[2].scrollIntoView();
     }
 }

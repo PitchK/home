@@ -46,8 +46,9 @@ html{
  }
 
  #name{
-    color: white;
-    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    transition: 1s;
  }
 
  .section{
@@ -55,6 +56,8 @@ html{
     font-family: 'newsreader', serif;
     margin-left: 10%;
     font-size: 225%;
+    font-weight: bold;
+    text-decoration: underline;
  }
 
  /*#header{
@@ -114,6 +117,20 @@ html{
     margin-right: 10%;
     max-width: 80%;
     margin-bottom: 5%;
+    font-family: 'newsreader', serif;
+ }
+
+ .content{
+   font-family: 'newsreader', serif;
+   font-size: 150%;
+   margin-left: 10%;
+   margin-right: 10%;
+   background-color: whitesmoke;
+   border-left: 4px solid green;
+   padding-left: 5%;
+   padding-top: 3%;
+   padding-bottom: 3%;
+   padding-right: 3%;
  }
 
  #popup{
@@ -229,6 +246,29 @@ html{
    background-color: whitesmoke;
    border: 2px solid #ff8800;
    transition: 0.5s;
+ }
+
+ #authorInfo{
+    font-size: 200%;
+    font-family: 'newsreader', serif;
+    margin-left: 10%;
+ }
+
+ #datesUpdated{
+   font-family: 'newsreader', serif;
+   font-size: 150%;
+   margin-left: 10%;
+ }
+
+ #name:hover{
+    color: green;
+    transition: 1s;
+ }
+
+ #topline{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 4%;
  }
 
 #cite{
@@ -365,13 +405,15 @@ html{
 }
 
 .percentDiv{
-   border-left: 3px solid #656966;
+   border-left: 3px solid black;
    border-top: 1px solid black;
    font-size: 60%;
    padding-left: 0.5%;
    padding-top: 0.5%;
    margin-bottom: 2%;
    -webkit-user-select: none;
+   font-family: 'newsreader', serif;
+   /*titanic: float;*/
 }
 
 #disclaimer{
@@ -390,7 +432,7 @@ html{
    width: 22.5%;
    height: auto;
    border: 2px solid black;
-   border-radius: 10px;
+   border-radius: 15px;
    font-family: 'newsreader', serif;
    display: none;
    
