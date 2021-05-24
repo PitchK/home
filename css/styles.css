@@ -388,10 +388,12 @@ html{
 /*hover popups*/
 .hoverContainer{
    width: 22.5%;
+   height: auto;
    border: 2px solid black;
    border-radius: 10px;
    font-family: 'newsreader', serif;
    display: none;
+   
 }
 
 .hoverX{
@@ -415,7 +417,7 @@ html{
 
 .hoverContainerTitleText{
    font-weight: bold;
-   font-size: 145%;
+   font-size: 115%;
    text-align: center;
    margin-top: 2%;
 }
@@ -423,7 +425,7 @@ html{
 .hoverContainerPrevalence{
    margin-top: 4%;
    padding-top: 0;
-   font-size: 85%;
+   font-size: 90%;
    text-align: center;
    margin-bottom: 1%;
 }
@@ -441,7 +443,7 @@ html{
 
 .hoverContainerPast{
    text-align: center;
-   font-size: 100%;
+   font-size: 90%;
 }
 
 .hoverContainerYear{
@@ -453,6 +455,34 @@ html{
 .hoverContainerPastPercentage{
    font-weight: bold;
    text-decoration: underline;
+}
+
+.hoverContainerTrend{
+   text-align: center;
+   font-size: 75%;
+   margin-left: 10%;
+   margin-right: 10%;
+}
+
+.hoverContainerBotCaption{
+   font-size: 45%;
+   text-align: center;
+   transition: 0.5s;
+}
+
+.hoverContainerBotLink:hover{
+   color: blue;
+   transition: 0.5s;
+}
+
+.triangle{
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+   margin-left: 32%;
+   position: absolute;
+   top: -7%;
 }
 
 hr{

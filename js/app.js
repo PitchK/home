@@ -26,7 +26,7 @@ function drawFirstGraph(maxStat, increment){
     }
 
     for(var i = 0; i<listOfFirstDrugs.length; i++){
-        var drugName = document.createElement('div');
+        var drugName = document.createElement('section');
         drugName.className = 'graphText';
         drugName.innerHTML = listOfFirstDrugs[i].Drug;
         document.getElementsByClassName('container')[i].appendChild(drugName);
@@ -72,7 +72,8 @@ function drawFirstGraph(maxStat, increment){
 }
 
 //2D array needed for createHover method
-var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7], ['Marijuana', 35.7, 35.9, 37.1], ['Vaping (Nicotine)', 35.3, 29.7, 18.8]];
+var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7, 'Has remained relatively stable'], ['Marijuana', 35.7, 35.9, 37.1, 'Has remained relatively stable'], ['Vaping (Nicotine)', 35.3, 29.7, 18.8, 'Has sharply increased, but leveled off']];
+
 function createHover(num){
     for (i = 0; i<listOfFirstDrugs.length; i++){
         var otherInfo = document.createElement('div');
@@ -81,6 +82,14 @@ function createHover(num){
     }
 
     for (i = 0; i<listOfFirstDrugs.length; i++){
+
+        var triangle = document.createElement('div');
+        triangle.className = 'triangle';
+        triangle.innerHTML = '';
+        document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
+
+        document.getElementsByClassName('triangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
+
         var x = document.createElement('p');//x button
         x.className = 'hoverX';
         x.innerHTML = '✖';
@@ -122,9 +131,31 @@ function createHover(num){
             document.getElementsByClassName('hoverContainer')[i].getElementsByClassName('hoverContainerYear')[j].appendChild(otherInfoPercentages);
         }
 
+        var otherInfoTrend = document.createElement('div');
+        otherInfoTrend.innerHTML = 'Trend: ' + pastDrugUseStats[i][4];
+        otherInfoTrend.className = 'hoverContainerTrend';
+        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoTrend);
+
+        var otherInfoBotCaption = document.createElement('p');//source
+        otherInfoBotCaption.className = 'hoverContainerBotCaption';
+        otherInfoBotCaption.innerHTML = 'Source: ';
+        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoBotCaption);
+
+        var otherInfoBotLink = document.createElement('A');
+        otherInfoBotLink.className = 'hoverContainerBotLink';
+        var innerLink = document.createTextNode('National Institute on Drug Abuse');
+        otherInfoBotLink.setAttribute('href', 'https://www.drugabuse.gov/drug-topics/related-topics/trends-statistics/infographics/monitoring-future-2020-survey-results');
+        otherInfoBotLink.appendChild(innerLink);
+        document.getElementsByClassName('hoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
+
+        //attributes of the container
+        document.getElementsByClassName('hoverContainerBotLink')[i].style.color = listOfFirstDrugs[i].color;
         document.getElementsByClassName('hoverContainer')[i].style.position = 'absolute';
+        document.getElementsByClassName('hoverContainer')[i].style.height = 0;
         document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
         document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
+        console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
+
     }
 }
 
@@ -132,22 +163,32 @@ function createHover(num){
 var isHoverOpen = false;
 function showHover(event){
     console.log(isHoverOpen);
-        if(this.innerHTML === '55.3%'){//yay, the 'this' keyword! *AP Computer Science flashbacks intensify*
-            isHoverOpen = true;
-            document.getElementsByClassName('hoverContainer')[0].style.display = 'block';
-            document.getElementsByClassName('hoverContainer')[0].style.top = event.clientY + window.pageYOffset - 8 + 'px';
-            document.getElementsByClassName('hoverContainer')[0].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        }else if (this.innerHTML === '35.2%'){
-            isHoverOpen = true;
-            document.getElementsByClassName('hoverContainer')[1].style.display = 'block';
-            document.getElementsByClassName('hoverContainer')[1].style.top = event.clientY + window.pageYOffset - 8 + 'px';
-            document.getElementsByClassName('hoverContainer')[1].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        }else{
-            isHoverOpen = true;
-            document.getElementsByClassName('hoverContainer')[2].style.display = 'block';
-            document.getElementsByClassName('hoverContainer')[2].style.top = event.clientY + window.pageYOffset - 8 + 'px';
-            document.getElementsByClassName('hoverContainer')[2].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        }
+    for (var i = 0; i<3; i++){
+        document.getElementsByClassName('hoverContainer')[i].style.display = 'none';
+    }
+    if(this.innerHTML === '55.3%'){//yay, the 'this' keyword! *AP Computer Science flashbacks intensify*
+        isHoverOpen = true;
+        document.getElementsByClassName('hoverContainer')[0].style.display = 'block';
+        document.getElementsByClassName('hoverContainer')[0].style.top = this.offsetTop + 75 + 'px';
+        document.getElementsByClassName('hoverContainer')[0].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        document.getElementsByClassName('hoverContainer')[0].style.height = 'auto';
+        document.getElementsByClassName('graphBars')[0].scrollIntoView();
+        
+    }else if (this.innerHTML === '35.2%'){
+        isHoverOpen = true;
+        document.getElementsByClassName('hoverContainer')[1].style.display = 'block';
+        document.getElementsByClassName('hoverContainer')[1].style.top = this.offsetTop + 75 + 'px';
+        document.getElementsByClassName('hoverContainer')[1].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        document.getElementsByClassName('hoverContainer')[1].style.height = 'auto';
+        document.getElementsByClassName('graphBars')[1].scrollIntoView();
+    }else{
+        isHoverOpen = true;
+        document.getElementsByClassName('hoverContainer')[2].style.display = 'block';
+        document.getElementsByClassName('hoverContainer')[2].style.top = this.offsetTop + 75 + 'px';
+        document.getElementsByClassName('hoverContainer')[2].style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+        document.getElementsByClassName('hoverContainer')[2].style.height = 'auto';
+        document.getElementsByClassName('graphBars')[2].scrollIntoView();
+    }
 }
 
 function removeHover1(){
@@ -260,4 +301,5 @@ document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHov
 document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
 document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
 
-setTimeout(detectScroll, 3500);
+
+setTimeout(detectScroll, 2500);
