@@ -283,6 +283,8 @@ function showCitations(){
     }
 }
 
+document.getElementsByClassName('content')[0].style.marginTop = '0';
+
 //Event listeners
 /*window.addEventListener('scroll', updateScrollBar);*/
 

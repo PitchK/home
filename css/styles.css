@@ -55,9 +55,23 @@ html{
     text: black;
     font-family: 'newsreader', serif;
     margin-left: 10%;
-    font-size: 225%;
+    font-size: 190%;
     font-weight: bold;
     text-decoration: underline;
+    padding-left: 2%;
+    border-left: 4px solid green;
+    padding-top: 1%;
+    padding-bottom: 1%;
+ }
+
+ li{
+   list-style-type: circle;
+   font-family: 'newsreader', serif;
+   font-size: 135%;
+   line-height: 1.4;
+   font-style: italic;
+   margin-right: 10%;
+   margin-left: 15%;
  }
 
  /*#header{
@@ -112,7 +126,7 @@ html{
 
  #text{
     color: black;
-    font-size: 175%;
+    font-size: 150%;
     margin-left: 10%;
     margin-right: 10%;
     max-width: 80%;
@@ -121,16 +135,29 @@ html{
  }
 
  .content{
-   font-family: 'newsreader', serif;
-   font-size: 150%;
+    margin-left: 10%;
+    font-family: 'newsreader', serif;
+   font-size: 135%;
+   line-height: 1.4;
+   margin-right: 10%;
+   
+
+ }
+
+ #story{
+    font-style: italic;
+    font-family: 'newsreader', serif;
+   font-size: 135%;
    margin-left: 10%;
    margin-right: 10%;
    background-color: whitesmoke;
    border-left: 4px solid green;
-   padding-left: 5%;
+   padding-left: 4%;
    padding-top: 3%;
    padding-bottom: 3%;
-   padding-right: 3%;
+   padding-right: 8%;
+   line-height: 1.4;
+   margin-bottom: 3%;
  }
 
  #popup{
@@ -249,14 +276,14 @@ html{
  }
 
  #authorInfo{
-    font-size: 200%;
+    font-size: 150%;
     font-family: 'newsreader', serif;
     margin-left: 10%;
  }
 
  #datesUpdated{
    font-family: 'newsreader', serif;
-   font-size: 150%;
+   font-size: 125%;
    margin-left: 10%;
  }
 
@@ -268,7 +295,7 @@ html{
  #topline{
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 4%;
+    margin-top: 2.5%;
  }
 
 #cite{
@@ -287,6 +314,7 @@ html{
    transition: 0.5s;
    border: 3px solid #1d852d;
    text-decoration: none;
+   
   
 }
 
@@ -315,6 +343,7 @@ html{
    background-color: whitesmoke;
    border-left: 3px solid #8c8c8c;
    display: none;
+   margin-right: 10%;
 }
 
 #source{
