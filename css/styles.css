@@ -1,3 +1,7 @@
+body{
+   font-family: 'newsreader', serif;
+}
+
 html{
    scroll-behavior: smooth;
    word-wrap: break-word;
@@ -24,7 +28,8 @@ html{
  #title{
     color: white;
     font-size: 475%;
-    font-family: 'Newsreader', serif;
+    /*font-family: 'Newsreader', serif;*/
+   
     left: 50%;
     top: 20%;
     position: absolute;
@@ -36,7 +41,8 @@ html{
  #subtitle{
     color: white;
     font-size: 200%;
-    font-family: 'Newsreader', serif;
+    /*font-family: 'Newsreader', serif;*/
+    
     left: 50%;
     top: 55%;
     position: absolute;
@@ -53,7 +59,7 @@ html{
 
  .section{
     text: black;
-    font-family: 'newsreader', serif;
+    /*font-family: 'newsreader', serif;*/
     margin-left: 10%;
     font-size: 190%;
     font-weight: bold;
@@ -66,7 +72,7 @@ html{
 
  li{
    list-style-type: circle;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    line-height: 1.4;
    font-style: italic;
@@ -131,12 +137,12 @@ html{
     margin-right: 10%;
     max-width: 80%;
     margin-bottom: 5%;
-    font-family: 'newsreader', serif;
+    /*font-family: 'newsreader', serif;*/
  }
 
  .content{
     margin-left: 10%;
-    font-family: 'newsreader', serif;
+    /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    line-height: 1.4;
    margin-right: 10%;
@@ -146,7 +152,7 @@ html{
 
  #story{
     font-style: italic;
-    font-family: 'newsreader', serif;
+    /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    margin-left: 10%;
    margin-right: 10%;
@@ -277,12 +283,12 @@ html{
 
  #authorInfo{
     font-size: 150%;
-    font-family: 'newsreader', serif;
+    /*font-family: 'newsreader', serif;*/
     margin-left: 10%;
  }
 
  #datesUpdated{
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    font-size: 125%;
    margin-left: 10%;
  }
@@ -309,7 +315,7 @@ html{
    width: 20%;
    -webkit-user-select: none;
    cursor: pointer;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    text-align: center;
    transition: 0.5s;
    border: 3px solid #1d852d;
@@ -329,7 +335,7 @@ html{
    font-size: 150%;
    padding: 0;
    margin: 0;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    padding-top: 0.3%;
    padding-bottom: 0.3%;
 }
@@ -352,13 +358,13 @@ html{
    padding-top: 0;
    margin-left: 10%;
    color: black;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
 }
 
 .links{
    color: #1d852d;
    transition: 0.5s;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
 }
 
 .links:hover{
@@ -381,7 +387,7 @@ html{
    margin-left: 5%;
    padding-top: 4%;
    margin-bottom: 4%;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    margin-right: 5%;
 }
 
@@ -400,7 +406,7 @@ html{
    font-style: italic;
    -webkit-user-select: none;
    font-size: 80%;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
 }
 
 .graphBars{
@@ -412,7 +418,7 @@ html{
    transition: 0.25s;
    text-align: right;
    color: white;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    padding-top: 1.05%;
    padding-right: 1.5%;
    -webkit-user-select: none;
@@ -441,14 +447,14 @@ html{
    padding-top: 0.5%;
    margin-bottom: 2%;
    -webkit-user-select: none;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    /*titanic: float;*/
 }
 
 #disclaimer{
    margin-left: 10%;
    font-size: 75%;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    color: black;
    /*font-style: italic;*/
    margin-top: 3%;
@@ -462,7 +468,7 @@ html{
    height: auto;
    border: 2px solid black;
    border-radius: 15px;
-   font-family: 'newsreader', serif;
+   /*font-family: 'newsreader', serif;*/
    display: none;
    
 }

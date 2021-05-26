@@ -4,7 +4,7 @@ var temp = document.getElementById('popup');
 var open = false;
 
 //general webpage setup
-var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 21, 2021'];
+var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
 var add = 'Date accessed: ' + (x.getMonth()+1) + "/" + x.getDate() + "/" + x.getFullYear();
 listOfCitations.push(add);
