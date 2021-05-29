@@ -41,9 +41,15 @@ function changeFontSize(){
         document.getElementsByClassName('content')[i].style.fontSize = fontSize;
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
     }
-    this.style.color = 'white';
-    this.style.backgroundColor = 'green';
-    document.getElementsByTagName('li')[0] = fontSize;
+
+    /*for(var i = 0; i<8; i++){
+        document.getElementsByClassName('navLink')[i].style.fontSize = (120 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
+        document.getElementById('navigation').style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
+    }*/
+
+    for(var i = 0; i<6; i++){//CHANGE THIS AS HTML UPDATES!!
+        document.getElementsByClassName('list')[i].style.fontSize = fontSize;
+    }
     document.getElementsByClassName('section')[0].scrollIntoView();
     
 }
@@ -54,14 +60,26 @@ function createNavigationBar(){
     for (var i = 0; i<navBarNames.length; i++){
         var newNavLink = document.createElement('p');
         newNavLink.className = 'navLink';
-        newNavLink.innerHTML = navBarNames[i];
-        document.getElementById('navMenu').appendChild(newNavLink);
+        document.getElementById('innerNav').appendChild(newNavLink);
+    }
+
+    for (var i = 0; i<navBarNames.length; i++){
+        var newLinkName = document.createElement('p');
+        newLinkName.className = 'newNavLink';
+        newLinkName.innerHTML = navBarNames[i];
+        document.getElementsByClassName('navLink')[i].appendChild(newLinkName);
+
+        var arrow = document.createElement('p');
+        arrow.className = 'arrow';
+        arrow.innerHTML = '▶';
+        document.getElementsByClassName('navLink')[i].appendChild(arrow);
     }
 }
 
 function scrollToSection(){
+    console.log('kay')
     for (var i = 0; i < navBarNames.length; i++){
-        if(this.innerHTML === navBarNames[i]){
+        if(this.getElementsByClassName('newNavLink')[0].innerHTML === navBarNames[i]){
             document.getElementsByClassName('section')[i].scrollIntoView();
             break;
         }else{
@@ -71,16 +89,47 @@ function scrollToSection(){
 }
 
 function removeNav(){
-    document.getElementById('navMenu').style.display = 'none';
-    document.getElementById('main').style.width = '100%';
-    for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-        document.getElementsByClassName('section')[i].style.marginLeft = '10%';
-        document.getElementsByClassName('content')[i].style.marginLeft = '10%';
-        document.getElementsByClassName('content')[i].style.marginRight = '10%';
-        document.getElementsByClassName('content')[i].style.width = '80%';
+    if(navOpen === true){
+        navOpen = false;
+        document.getElementById('innerNav').style.display = 'none';
+        document.getElementById('navigation').style.display = 'none';
+        document.getElementById('sideCaption').style.display = 'none';
+        document.getElementById('closemenu').innerHTML = '»';
+        document.getElementById('closemenu').style.marginLeft = '35%';
+        document.getElementById('navMenu').style.width = '4%';
+        document.getElementById('main').style.width = '96%';
+        for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+            document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
+            document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
+            document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
+            document.getElementsByClassName('content')[i].style.width = '80%';
+            if (i<6){
+                document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+            }
+        }
+        document.getElementById('story').style.width = '75%';
+        document.getElementById('graph1').style.width = '80%';
+    }else{
+        navOpen = true;
+        document.getElementById('navMenu').style.display = 'block';
+        document.getElementById('navMenu').style.width = '22.5%';
+        document.getElementById('main').style.width = '77.5%';
+        document.getElementById('innerNav').style.display = 'block';
+        document.getElementById('navigation').style.display = 'block';
+        document.getElementById('sideCaption').style.display = 'block';
+        document.getElementById('closemenu').style.marginLeft = '90%';
+;
     }
-    document.getElementById('story').style.width = '67.75%';
-    document.getElementById('graph1').style.width = '80%';
+    
+}
+
+function hoverNavLink(){
+    console.log('hi ther');
+    document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'block';
+}
+
+function removeNavArrow(){
+    document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'none';
 }
 
 //Graphs and chart setup
@@ -358,7 +407,12 @@ createNavigationBar();
 
 for (var i = 0; i < navBarNames.length; i++){
     document.getElementsByClassName('navLink')[i].addEventListener('click', scrollToSection);
+    document.getElementsByClassName('navLink')[i].addEventListener('mouseover', hoverNavLink);
+    document.getElementsByClassName('navLink')[i].addEventListener('mouseout', removeNavArrow);
+    
 }
+
+
 
 drawFirstGraph(60, 10);
 createHover(1);
