@@ -2,6 +2,7 @@
 var button = document.getElementById('x');
 var temp = document.getElementById('popup');
 var open = false;
+var navOpen = true;
 
 //general webpage setup
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
@@ -15,6 +16,74 @@ for(var i = 0; i<listOfCitations.length; i++){
     newCitation.innerHTML = listOfCitations[i];
     document.getElementById('citeInfo').appendChild(newCitation);
 }
+
+var fontSizes = [0.6, 0.8, 1, 1.2, 1.4] //135% is default
+
+for (var i = 0; i<5; i++){
+    var newText = document.createElement('p');
+    newText.className = 'textSizeOptions'
+    newText.innerHTML = 'A';
+    newText.style.fontSize = (135 * fontSizes[i]) + '%';
+    document.getElementById('textStuff').appendChild(newText);
+}
+
+//change font size
+function changeFontSize(){
+    //number of 'content' is 7. CHANGE THIS AS HTML UPDATES!!
+    for (var i = 0; i<5; i++){
+        document.getElementsByClassName('textSizeOptions')[i].color = 'black';
+        document.getElementsByClassName('textSizeOptions')[i].backgroundColor = 'white';
+    }
+
+    var fontSize = this.style.fontSize;
+    for(var i = 0; i<7; i++){
+        var fontSize = this.style.fontSize;
+        document.getElementsByClassName('content')[i].style.fontSize = fontSize;
+        document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
+    }
+    this.style.color = 'white';
+    this.style.backgroundColor = 'green';
+    document.getElementsByTagName('li')[0] = fontSize;
+    document.getElementsByClassName('section')[0].scrollIntoView();
+    
+}
+
+//create side navigation bar
+var navBarNames = ['A brief introduction', 'What is substance use?', 'Why is substance use harmful?', 'How does one fall into substance use?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
+function createNavigationBar(){
+    for (var i = 0; i<navBarNames.length; i++){
+        var newNavLink = document.createElement('p');
+        newNavLink.className = 'navLink';
+        newNavLink.innerHTML = navBarNames[i];
+        document.getElementById('navMenu').appendChild(newNavLink);
+    }
+}
+
+function scrollToSection(){
+    for (var i = 0; i < navBarNames.length; i++){
+        if(this.innerHTML === navBarNames[i]){
+            document.getElementsByClassName('section')[i].scrollIntoView();
+            break;
+        }else{
+            continue;
+        }
+    }
+}
+
+function removeNav(){
+    document.getElementById('navMenu').style.display = 'none';
+    document.getElementById('main').style.width = '100%';
+    for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+        document.getElementsByClassName('section')[i].style.marginLeft = '10%';
+        document.getElementsByClassName('content')[i].style.marginLeft = '10%';
+        document.getElementsByClassName('content')[i].style.marginRight = '10%';
+        document.getElementsByClassName('content')[i].style.width = '80%';
+    }
+    document.getElementById('story').style.width = '67.75%';
+    document.getElementById('graph1').style.width = '80%';
+}
+
+//Graphs and chart setup
 
 var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping (nicotine)*', Stat: 34.5, color: 'orange'}];
 
@@ -156,10 +225,8 @@ function createHover(num){
         document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
         document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
         console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
-
     }
 }
-
 
 var isHoverOpen = false;
 function showHover(event){
@@ -257,7 +324,6 @@ function showPopUp(){
         /*document.body.style.margin = '0';
         document.body.style.height = '100%';
         document.body.style.overflow = 'hidden';*/
-
         temp.style.top = ((screen.height/2) + scrollPos - (screen.height/10)) + "px";
         temp.style.display = 'sticky';
         open = true;
@@ -288,6 +354,11 @@ document.getElementsByClassName('content')[0].style.marginTop = '0';
 //Event listeners
 /*window.addEventListener('scroll', updateScrollBar);*/
 
+createNavigationBar();
+
+for (var i = 0; i < navBarNames.length; i++){
+    document.getElementsByClassName('navLink')[i].addEventListener('click', scrollToSection);
+}
 
 drawFirstGraph(60, 10);
 createHover(1);
@@ -302,10 +373,13 @@ function createEventListeners(){
     }
 }
 
+for (var i = 0; i < 5; i++){
+    document.getElementsByClassName('textSizeOptions')[i].addEventListener('click', changeFontSize);
+}
+
 createEventListeners();
+document.getElementById('closemenu').addEventListener('click', removeNav);
 document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHover1);
 document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
 document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
-
-
 setTimeout(detectScroll, 2500);

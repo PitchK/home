@@ -7,6 +7,14 @@ html{
    word-wrap: break-word;
 }
 
+#main{
+   width: 77.5%;
+}
+
+#entirePage{
+   display: flex;
+}
+
 #text{
     color: white;
     font-size: 100px; 
@@ -57,10 +65,131 @@ html{
     transition: 1s;
  }
 
- .section{
-    text: black;
-    /*font-family: 'newsreader', serif;*/
+ #searchbox{
+    display: flex;
+    margin-bottom: 3%;
+    
+ }
+
+ #textStuff{
+    margin-left: 1.2%;
+ }
+
+ #textChanger{
     margin-left: 10%;
+    font-size: 135%;
+    margin-bottom: 0;
+ }
+
+ .textSizeOptions{
+    border: 1px solid black;
+    width: 3%;
+    height: 5%;
+    margin-bottom: 0;
+    display: inline;
+    text-decoration: underline;
+    margin-right: 1%;
+    transition: 0.7s;
+    -webkit-user-select: none;
+ }
+
+ .textSizeOptions:hover{
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    transition: 0.7s;
+ }
+
+ #input{
+    width: 65%;
+ }
+
+ #closemenu{
+    color: white;
+    font-size: 135%;
+    margin-left: 90%;
+    -webkit-user-select: none;
+    transition: 0.5s;
+ }
+
+ #closemenu:hover{
+   cursor: pointer;
+   color: black;
+   transition: 0.5s;
+ }
+
+ #go{
+    font-size: 120%;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 55%;
+    
+    color: green;
+    background-color: whitesmoke;
+
+ }
+
+ #navMenu{
+   width: 22.5%;
+   margin-left: 0;
+  
+   background-color: green;
+   margin-top: 0;
+   position: sticky;
+   align-self: flex-start;
+   top: 0;
+   
+ }
+
+ #navigation{
+    color: white;
+    font-size: 195%;
+    padding-left: 10%;
+    padding-top: 2%;
+    margin-bottom: 5%;
+    margin-top: 0;
+ }
+
+ .navLink{ /*accomodate for screen height!*/
+    color: white;
+    -webkit-user-select: none;
+    background-color: seagreen;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 4.2%;
+    padding-top: 4.2%;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 125%;
+    border-top: 1px solid darkgreen;
+    transition: 0.4s;
+ }
+
+ #sideCaption{
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+ }
+
+ #input{
+    margin-left: 10%;
+    margin-bottom: 0;
+    font-size: 120%;
+ }
+
+ .navLink:hover{
+    background-color: darkseagreen;
+    cursor: pointer;
+    transition: 0.4s;
+ }
+ 
+
+ .section{
+   color : black;
+    /*font-family: 'newsreader', serif;*/
+    margin-left: 5%;
     font-size: 190%;
     font-weight: bold;
     text-decoration: underline;
@@ -141,11 +270,11 @@ html{
  }
 
  .content{
-    margin-left: 10%;
+    margin-left: 5%;
     /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    line-height: 1.4;
-   margin-right: 10%;
+   margin-right: 5%;
    
 
  }
@@ -154,8 +283,8 @@ html{
     font-style: italic;
     /*font-family: 'newsreader', serif;*/
    font-size: 135%;
-   margin-left: 10%;
-   margin-right: 10%;
+   margin-left: 7.5%;
+   margin-right: 5%;
    background-color: whitesmoke;
    border-left: 4px solid green;
    padding-left: 4%;
