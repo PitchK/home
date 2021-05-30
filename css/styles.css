@@ -116,6 +116,7 @@ b{
     color: white;
     font-size: 200%;
     margin-left: 90%;
+
     -webkit-user-select: none;
     transition: 0.3s;
  }
@@ -136,7 +137,16 @@ b{
    top: 0;
  }
 
- @media only screen and (max-width: 481px){
+ @media only screen and (orientation: portrait){
+    #title{
+       top: 4vw;
+       font-size: 7.5vw;
+    }
+
+    #subtitle{
+       font-size: 4vw;
+       top: 19vw;
+    }
     #innerNav{
        display: none;
     }
@@ -149,12 +159,14 @@ b{
        display: none;
     }
 
-    #closemenu{
-       margin-left: 30%;
-    }
-
     #navMenu{
        width: 10%;
+       text-align: center;
+    }
+
+    #closemenu{
+      margin-left: 0.1vw;
+      font-size: 7vw;
     }
 
     #main{

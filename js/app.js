@@ -30,6 +30,7 @@ for (var i = 0; i<5; i++){
 //change font size
 function changeFontSize(){
     //number of 'content' is 7. CHANGE THIS AS HTML UPDATES!!
+    //console.log(document.getElementById('closemenu').style.width);
     for (var i = 0; i<5; i++){
         document.getElementsByClassName('textSizeOptions')[i].color = 'black';
         document.getElementsByClassName('textSizeOptions')[i].backgroundColor = 'white';
