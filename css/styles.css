@@ -11,6 +11,10 @@ html{
    width: 77.5%;
 }
 
+b{
+   color: darkgreen;
+}
+
 #entirePage{
    display: flex;
 }
@@ -113,13 +117,13 @@ html{
     font-size: 200%;
     margin-left: 90%;
     -webkit-user-select: none;
-    transition: 0.5s;
+    transition: 0.3s;
  }
 
  #closemenu:hover{
    cursor: pointer;
    color: black;
-   transition: 0.5s;
+   transition: 0.3s;
  }
 
  
@@ -127,7 +131,7 @@ html{
  #navMenu{
    width: 22.5%;
    margin-left: 0;
-   background-color: green;
+   background-color: darkgreen;
    margin-top: 0;
    position: sticky;
    align-self: flex-start;
@@ -148,16 +152,17 @@ html{
    display: flex;
     color: darkgreen;
     -webkit-user-select: none;
-    background-color: whitesmoke;
+    background-color: white;
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 3.9%;
     padding-top: 3.9%;
     padding-left: 8%;
-    padding-right: 0%;
+    padding-right: 0;
+    margin-right: 0;
     font-size: 125%;
-    border-top: 3px solid darkgreen;
-    border-left: 3px solid green;
+    
+    
     transition: 0.4s;
     margin-right: 0;
     
@@ -175,7 +180,8 @@ html{
     padding: 0;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 0%;
+    margin-right: 0;
+    padding-right: 0;
     margin-left: 5%;
     font-size: 85%;
     display: none;

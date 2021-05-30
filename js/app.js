@@ -47,7 +47,7 @@ function changeFontSize(){
         document.getElementById('navigation').style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
     }*/
 
-    for(var i = 0; i<6; i++){//CHANGE THIS AS HTML UPDATES!!
+    for(var i = 0; i<10; i++){//CHANGE THIS AS HTML UPDATES!!
         document.getElementsByClassName('list')[i].style.fontSize = fontSize;
     }
     document.getElementsByClassName('section')[0].scrollIntoView();
@@ -89,43 +89,59 @@ function scrollToSection(){
 }
 
 function removeNav(){
-    if(navOpen === true){
-        navOpen = false;
-        document.getElementById('innerNav').style.display = 'none';
-        document.getElementById('navigation').style.display = 'none';
-        document.getElementById('sideCaption').style.display = 'none';
-        document.getElementById('closemenu').innerHTML = '»';
-        document.getElementById('closemenu').style.marginLeft = '35%';
-        document.getElementById('navMenu').style.width = '4%';
-        document.getElementById('main').style.width = '96%';
-        for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-            document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
-            document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
-            document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
-            document.getElementsByClassName('content')[i].style.width = '80%';
-            if (i<6){
+    if (open === false){
+        if(navOpen === true){
+            navOpen = false;
+            document.getElementById('innerNav').style.display = 'none';
+            document.getElementById('navigation').style.display = 'none';
+            document.getElementById('sideCaption').style.display = 'none';
+            document.getElementById('closemenu').innerHTML = '»';
+            document.getElementById('closemenu').style.marginLeft = '35%';
+            document.getElementById('navMenu').style.width = '4%';
+            document.getElementById('main').style.width = '96%';
+            for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
+                document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
+                document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
+                document.getElementsByClassName('content')[i].style.width = '80%';
+            }
+            for (var i = 0; i < 10; i++){
+                document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+            }
+            document.getElementById('story').style.width = '75%';
+            document.getElementById('story').style.marginLeft = '10.4%';
+            document.getElementById('graph1').style.width = '80%';
+        }else{
+            navOpen = true;
+            document.getElementById('closemenu').innerHTML = '«';
+            document.getElementById('navMenu').style.display = 'block';
+            document.getElementById('navMenu').style.width = '22.5%';
+            document.getElementById('main').style.width = '77.5%';
+            document.getElementById('innerNav').style.display = 'block';
+            document.getElementById('navigation').style.display = 'block';
+            document.getElementById('sideCaption').style.display = 'block';
+            document.getElementById('closemenu').style.marginLeft = '90%';
+            document.getElementById('story').style.marginLeft = '7.5%';
+            
+    
+            for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                document.getElementsByClassName('section')[i].style.marginLeft = '5%';
+                document.getElementsByClassName('content')[i].style.marginLeft = '5%';
+                document.getElementsByClassName('content')[i].style.width = '90%';
+                document.getElementsByClassName('content')[i].style.marginRight = '5%';
+            }
+
+            for (var i = 0; i < 10; i++){
                 document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
             }
         }
-        document.getElementById('story').style.width = '75%';
-        document.getElementById('graph1').style.width = '80%';
-    }else{
-        navOpen = true;
-        document.getElementById('navMenu').style.display = 'block';
-        document.getElementById('navMenu').style.width = '22.5%';
-        document.getElementById('main').style.width = '77.5%';
-        document.getElementById('innerNav').style.display = 'block';
-        document.getElementById('navigation').style.display = 'block';
-        document.getElementById('sideCaption').style.display = 'block';
-        document.getElementById('closemenu').style.marginLeft = '90%';
-;
     }
-    
 }
 
 function hoverNavLink(){
     console.log('hi ther');
     document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'block';
+    this.borderRadius = '10px';
 }
 
 function removeNavArrow(){
@@ -368,7 +384,7 @@ function showPopUp(){
     var scrollPos = window.pageYOffset;
     if(temp.style.top != '-100%'){
         temp.style.display = 'block';
-        document.getElementById('main').style.filter = 'blur(5px)';
+        document.getElementById('entirePage').style.filter = 'blur(5px)';
         document.getElementById('main').style.userSelect = 'none';
         /*document.body.style.margin = '0';
         document.body.style.height = '100%';
@@ -382,7 +398,7 @@ function remove(){
     temp.style.position = 'absolute';
     temp.style.top = '-100%';
     temp.style.transition = '1s';
-    document.getElementById('main').style.filter = 'blur(0px)';
+    document.getElementById('entirePage').style.filter = 'blur(0px)';
     document.getElementById('main').style.userSelect = 'text';
     open = false;
 }
