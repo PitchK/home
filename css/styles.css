@@ -126,8 +126,6 @@ b{
    transition: 0.3s;
  }
 
- 
-
  #navMenu{
    width: 22.5%;
    margin-left: 0;
@@ -136,7 +134,40 @@ b{
    position: sticky;
    align-self: flex-start;
    top: 0;
-   
+ }
+
+ @media only screen and (max-width: 481px){
+    #innerNav{
+       display: none;
+    }
+
+    #navigation{
+       display: none;
+    }
+
+    #sideCaption{
+       display: none;
+    }
+
+    #closemenu{
+       margin-left: 30%;
+    }
+
+    #navMenu{
+       width: 10%;
+    }
+
+    #main{
+       width: 90%;
+    }
+
+    .section{
+       border-left: 1px solid green;
+    }
+
+    #story{
+       border-left: 1px solid green;
+    }
  }
 
  #navigation{
