@@ -144,7 +144,7 @@ function removeNav(){
                 for (var i = 0; i < 10; i++){
                     document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
                 }
-                document.getElementById('story').style.width = '75%';
+                document.getElementById('story').style.width = '72.5%';
                 document.getElementById('story').style.marginLeft = '10.4%';
                 document.getElementById('graph1').style.width = '80%';
 
@@ -175,7 +175,8 @@ function removeNav(){
                 document.getElementById('navigation').style.display = 'block';
                 document.getElementById('sideCaption').style.display = 'block';
                 document.getElementById('closemenu').style.marginLeft = '90%';
-                document.getElementById('story').style.marginLeft = '7.5%';   
+                document.getElementById('story').style.marginLeft = '7.5%';
+                document.getElementById('story').style.width = '50%';   
     
                 for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
                     document.getElementsByClassName('section')[i].style.marginLeft = '5%';

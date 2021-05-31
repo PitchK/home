@@ -12,7 +12,16 @@ html{
 }
 
 b{
+   color: black;
+}
+
+sup{
    color: darkgreen;
+}
+
+sup:hover{
+   cursor: pointer;
+   text-decoration: underline;
 }
 
 #entirePage{
@@ -237,7 +246,7 @@ b{
     }
 
     #story{
-       border-left: 1px solid green;
+       border-left: 1px dotted green;
     }
  }
 
@@ -263,7 +272,7 @@ b{
     padding-right: 0;
     margin-right: 0;
     font-size: 125%;
-    
+    border-right: 1px dotted green;
     
     transition: 0.4s;
     margin-right: 0;
@@ -407,11 +416,11 @@ b{
    margin-left: 8.5%;
    margin-right: 5%;
    background-color: whitesmoke;
-   border-left: 2px dashed green;
+   border-left: 2px dotted green;
    padding-left: 4%;
    padding-top: 3%;
    padding-bottom: 3%;
-   padding-right: 8%;
+   padding-right: 3%;
    line-height: 1.4;
    margin-bottom: 3%;
  }
@@ -419,7 +428,7 @@ b{
  #popup{
     position: absolute;
     padding: 1%;
-    background-color: #42c2f5;
+    background-color: orange;
     border-radius: 20px;
     width: 60%;
     height: auto;
@@ -555,13 +564,12 @@ b{
  }
 
 #cite{
-   padding: 17px;
+   padding: 1%;
    border-radius: 20px;
    color: white;
    font-size: 150%;
    background-color: #1d852d;
-   margin-left: 40%;
-   margin-right: 40%;
+   
    width: 20%;
    -webkit-user-select: none;
    cursor: pointer;
@@ -570,6 +578,7 @@ b{
    transition: 0.5s;
    border: 3px solid #1d852d;
    text-decoration: none;
+   margin-left: 10%;
    
   
 }
