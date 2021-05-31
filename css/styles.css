@@ -134,10 +134,37 @@ b{
    margin-top: 0;
    position: sticky;
    align-self: flex-start;
-   top: 0;
+   top: 2%;
+   border-top-right-radius: 15px;
  }
 
  @media only screen and (orientation: portrait){
+    #authorInfo{
+       /*text-align: center;*/
+       margin-left: -10%;
+       font-size: 1vw;
+    }
+
+    #datesUpdated{
+       /*text-align: center;*/
+       margin-left: -10%;
+       font-size: 2vw;
+    }
+
+    #textChanger{
+       /*text-align: center;*/
+      
+       font-size: 5vw;
+    }
+
+    .content{
+       margin: 0;
+       padding: 0;
+    }
+
+    #entirePage{
+       flex-direction: column;
+    }
     #title{
        top: 4vw;
        font-size: 7.5vw;
@@ -146,6 +173,10 @@ b{
     #subtitle{
        font-size: 4vw;
        top: 19vw;
+    }
+
+    .content{
+       font-size: 4vw;
     }
     #innerNav{
        display: none;
@@ -162,15 +193,38 @@ b{
     #navMenu{
        width: 10%;
        text-align: center;
+       border-bottom-right-radius: 15px;
+       border-top-right-radius: 15px;
     }
-
+    
     #closemenu{
       margin-left: 0.1vw;
       font-size: 7vw;
     }
 
+    #information{
+      font-size: 5vw;
+    }
+
+    #call{
+       margin-top: 7%;
+       margin-bottom: 0;
+       font-size: 5vw;
+    }
+
+    #close{
+      margin-top: 7%;
+      margin-bottom: 7%;
+       font-size: 5vw;
+    }
+
+    #twobtn{
+      flex-direction: column;
+      width: 100%;
+   }
+
     #main{
-       width: 90%;
+       width: 100%;
     }
 
     .section{
@@ -216,7 +270,7 @@ b{
     padding: 0;
     margin-top: auto;
     margin-bottom: auto;
-    width: 75%;
+    width: 80%;
  }
 
  .arrow{
@@ -225,7 +279,7 @@ b{
     margin-bottom: auto;
     margin-right: 0;
     padding-right: 0;
-    margin-left: 5%;
+    margin-left: 4%;
     font-size: 85%;
     display: none;
  }

@@ -26,6 +26,21 @@ for (var i = 0; i<5; i++){
     newText.style.fontSize = (135 * fontSizes[i]) + '%';
     document.getElementById('textStuff').appendChild(newText);
 }
+ var devOrientation = '';
+//decide whether navigation bar will show right or left arrow; make mobile compatible
+function decideLorR(x){
+    if(x.matches){
+        document.getElementById('closemenu').innerHTML = '»'
+        devOrientation = 'portrait';
+    }else{
+        document.getElementById('closemenu').innerHTML = '«'
+        devOrientation = 'landscape';
+    }
+}
+
+var x = window.matchMedia("(orientation: portrait)");
+decideLorR(x);
+x.addListener(decideLorR);
 
 //change font size
 function changeFontSize(){
@@ -58,6 +73,7 @@ function changeFontSize(){
 //create side navigation bar
 var navBarNames = ['A brief introduction', 'What is substance use?', 'Why is substance use harmful?', 'How does one fall into substance use?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
+    console.log(devOrientation);
     for (var i = 0; i<navBarNames.length; i++){
         var newNavLink = document.createElement('p');
         newNavLink.className = 'navLink';
@@ -69,16 +85,32 @@ function createNavigationBar(){
         newLinkName.className = 'newNavLink';
         newLinkName.innerHTML = navBarNames[i];
         document.getElementsByClassName('navLink')[i].appendChild(newLinkName);
+        
+        if(devOrientation === 'landscape'){
+            var arrow = document.createElement('p');
+            arrow.className = 'arrow';
+            arrow.innerHTML = '▶';
+            document.getElementsByClassName('navLink')[i].appendChild(arrow);
+        }else{
+            document.getElementsByClassName('newNavLink')[i].style.textAlign = 'left';
+            document.getElementsByClassName('navLink')[i].style.textAlign = 'left';
+            document.getElementsByClassName('newNavLink')[i].style.width = '90%';
+        }
+    }
 
-        var arrow = document.createElement('p');
-        arrow.className = 'arrow';
-        arrow.innerHTML = '▶';
-        document.getElementsByClassName('navLink')[i].appendChild(arrow);
+    if(devOrientation === 'portrait'){
+        document.getElementById('navigation').style.margin = '0';
+        document.getElementById('navigation').style.padding = '0';
+        document.getElementById('navigation').style.textAlign = 'center';
+        
     }
 }
 
 function scrollToSection(){
     console.log('kay')
+    if(devOrientation === 'portrait'){
+        removeNav();
+    }
     for (var i = 0; i < navBarNames.length; i++){
         if(this.getElementsByClassName('newNavLink')[0].innerHTML === navBarNames[i]){
             document.getElementsByClassName('section')[i].scrollIntoView();
@@ -92,61 +124,99 @@ function scrollToSection(){
 function removeNav(){
     if (open === false){
         if(navOpen === true){
-            navOpen = false;
-            document.getElementById('innerNav').style.display = 'none';
-            document.getElementById('navigation').style.display = 'none';
-            document.getElementById('sideCaption').style.display = 'none';
-            document.getElementById('closemenu').innerHTML = '»';
-            document.getElementById('closemenu').style.marginLeft = '35%';
-            document.getElementById('navMenu').style.width = '4%';
-            document.getElementById('main').style.width = '96%';
-            for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
-                document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
-                document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
-                document.getElementsByClassName('content')[i].style.width = '80%';
-            }
-            for (var i = 0; i < 10; i++){
-                document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
-            }
-            document.getElementById('story').style.width = '75%';
-            document.getElementById('story').style.marginLeft = '10.4%';
-            document.getElementById('graph1').style.width = '80%';
-        }else{
-            navOpen = true;
-            document.getElementById('closemenu').innerHTML = '«';
-            document.getElementById('navMenu').style.display = 'block';
-            document.getElementById('navMenu').style.width = '22.5%';
-            document.getElementById('main').style.width = '77.5%';
-            document.getElementById('innerNav').style.display = 'block';
-            document.getElementById('navigation').style.display = 'block';
-            document.getElementById('sideCaption').style.display = 'block';
-            document.getElementById('closemenu').style.marginLeft = '90%';
-            document.getElementById('story').style.marginLeft = '7.5%';
-            
-    
-            for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                document.getElementsByClassName('section')[i].style.marginLeft = '5%';
-                document.getElementsByClassName('content')[i].style.marginLeft = '5%';
-                document.getElementsByClassName('content')[i].style.width = '90%';
-                document.getElementsByClassName('content')[i].style.marginRight = '5%';
-            }
+            if(devOrientation === 'landscape'){
+                navOpen = false;
+                document.getElementById('innerNav').style.display = 'none';
+                document.getElementById('navigation').style.display = 'none';
+                document.getElementById('sideCaption').style.display = 'none';
+                document.getElementById('closemenu').innerHTML = '»';
+                document.getElementById('closemenu').style.marginLeft = '35%';
+                document.getElementById('navMenu').style.width = '4%';
+                document.getElementById('main').style.width = '96%';
+                document.getElementById('navMenu').style.borderTopRightRadius = '15px';
+                document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
+                for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                    document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
+                    document.getElementsByClassName('content')[i].style.width = '80%';
+                }
+                for (var i = 0; i < 10; i++){
+                    document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+                }
+                document.getElementById('story').style.width = '75%';
+                document.getElementById('story').style.marginLeft = '10.4%';
+                document.getElementById('graph1').style.width = '80%';
 
-            for (var i = 0; i < 10; i++){
-                document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+            }else{
+                navOpen = false;
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('navMenu').style.width = '100%';
+                document.getElementById('innerNav').style.display = 'block';
+                document.getElementById('navigation').style.display = 'block';
+                document.getElementById('sideCaption').style.display = 'block';
+                document.getElementById('navMenu').style.borderBottomRightRadius = '0';
+                document.getElementById('navMenu').style.borderTopRightRadius = '0';
+                document.getElementById('closemenu').style.marginLeft = '90%';
+                document.getElementById('closemenu').innerHTML = '«';
+                document.getElementById('container').style.display = 'none';
+                document.getElementById('navMenu').scrollIntoView();
+            }
+            
+        }else{
+            if (devOrientation === 'landscape'){
+                navOpen = true;
+                document.getElementById('closemenu').innerHTML = '«';
+                document.getElementById('navMenu').style.display = 'block';
+                document.getElementById('navMenu').style.width = '22.5%';
+                document.getElementById('main').style.width = '77.5%';
+                document.getElementById('innerNav').style.display = 'block';
+                document.getElementById('navigation').style.display = 'block';
+                document.getElementById('sideCaption').style.display = 'block';
+                document.getElementById('closemenu').style.marginLeft = '90%';
+                document.getElementById('story').style.marginLeft = '7.5%';   
+    
+                for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                    document.getElementsByClassName('section')[i].style.marginLeft = '5%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '5%';
+                    document.getElementsByClassName('content')[i].style.width = '90%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '5%';
+                }
+
+                for (var i = 0; i < 10; i++){
+                    document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+                }
+            }else{
+                navOpen = true;
+                document.getElementById('main').style.width = '100%';
+                document.getElementById('main').style.display = 'block';
+                document.getElementById('innerNav').style.display = 'none';
+                document.getElementById('navigation').style.display = 'none';
+                document.getElementById('sideCaption').style.display = 'none';
+                document.getElementById('container').style.display = 'block';
+                document.getElementById('navMenu').style.width = '10%';
+                document.getElementById('navMenu').style.borderTopRightRadius = '15px';
+                document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
+                document.getElementById('closemenu').innerHTML = '»';
+                document.getElementById('closemenu').style.marginLeft = '0.1vw';
+                document.getElementById('closemenu').style.fontSize = '7vw';
+
             }
         }
     }
 }
 
 function hoverNavLink(){
-    console.log('hi ther');
-    document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'block';
-    this.borderRadius = '10px';
+    if(devOrientation === 'landscape'){
+        console.log('hi ther');
+        document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'block';
+    }
 }
 
 function removeNavArrow(){
-    document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'none';
+    if(devOrientation === 'landscape'){
+        document.getElementsByClassName('arrow')[navBarNames.indexOf(this.getElementsByClassName('newNavLink')[0].innerHTML)].style.display = 'none';
+    }
 }
 
 //Graphs and chart setup
