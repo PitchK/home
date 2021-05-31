@@ -116,7 +116,7 @@ b{
     color: white;
     font-size: 200%;
     margin-left: 90%;
-
+    
     -webkit-user-select: none;
     transition: 0.3s;
  }
@@ -124,6 +124,7 @@ b{
  #closemenu:hover{
    cursor: pointer;
    color: black;
+
    transition: 0.3s;
  }
 
@@ -191,7 +192,7 @@ b{
     }
 
     #navMenu{
-       width: 35%;
+       width: 25%;
        text-align: center;
        border-bottom-right-radius: 15px;
        border-top-right-radius: 15px;
@@ -403,10 +404,10 @@ b{
     font-style: italic;
     /*font-family: 'newsreader', serif;*/
    font-size: 135%;
-   margin-left: 7.5%;
+   margin-left: 8.5%;
    margin-right: 5%;
    background-color: whitesmoke;
-   border-left: 4px solid green;
+   border-left: 2px dashed green;
    padding-left: 4%;
    padding-top: 3%;
    padding-bottom: 3%;
