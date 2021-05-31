@@ -30,7 +30,7 @@ for (var i = 0; i<5; i++){
 //decide whether navigation bar will show right or left arrow; make mobile compatible
 function decideLorR(x){
     if(x.matches){
-        document.getElementById('closemenu').innerHTML = '»'
+        document.getElementById('closemenu').innerHTML = 'Navigation »'
         devOrientation = 'portrait';
     }else{
         document.getElementById('closemenu').innerHTML = '«'
@@ -158,6 +158,7 @@ function removeNav(){
                 document.getElementById('navMenu').style.borderBottomRightRadius = '0';
                 document.getElementById('navMenu').style.borderTopRightRadius = '0';
                 document.getElementById('closemenu').style.marginLeft = '90%';
+                document.getElementById('closemenu').style.padding = '0';
                 document.getElementById('closemenu').innerHTML = '«';
                 document.getElementById('container').style.display = 'none';
                 document.getElementById('navMenu').scrollIntoView();
@@ -200,6 +201,7 @@ function removeNav(){
                 document.getElementById('closemenu').innerHTML = '»';
                 document.getElementById('closemenu').style.marginLeft = '0.1vw';
                 document.getElementById('closemenu').style.fontSize = '7vw';
+                document.getElementById('closemenu').style.padding = '0';
 
             }
         }

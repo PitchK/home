@@ -191,15 +191,19 @@ b{
     }
 
     #navMenu{
-       width: 10%;
+       width: 35%;
        text-align: center;
        border-bottom-right-radius: 15px;
        border-top-right-radius: 15px;
+       padding-top: 1%;
+       padding-bottom: 1%;
+       
     }
     
     #closemenu{
       margin-left: 0.1vw;
-      font-size: 7vw;
+      font-size: 5vw;
+      font-weight: normal;
     }
 
     #information{
