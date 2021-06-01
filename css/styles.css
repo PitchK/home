@@ -643,12 +643,13 @@ sup:hover{
 }
 
 #graphTitle{
-   font-size: 125%;
+   font-size: 90%;
    margin-left: 5%;
   padding-top: 3%;
 }
 #caption{
    margin-left: 5%;
+   font-size: 75%;
 
    margin-bottom: 4%;
    /*font-family: 'newsreader', serif;*/

@@ -71,7 +71,7 @@ function changeFontSize(){
 }
 
 //create side navigation bar
-var navBarNames = ['A brief introduction', 'What is substance use?', 'Why is substance use harmful?', 'How does one fall into substance use?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
+var navBarNames = ['A brief introduction', 'What is substance use?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
     console.log(devOrientation);
     for (var i = 0; i<navBarNames.length; i++){
