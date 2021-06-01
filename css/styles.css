@@ -148,7 +148,7 @@ sup:hover{
    border-top-right-radius: 15px;
  }
 
- @media only screen and (orientation: portrait){
+ @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
     #authorInfo{
        /*text-align: center;*/
        margin-left: -10%;
@@ -229,7 +229,7 @@ sup:hover{
     #close{
       margin-top: 7%;
       margin-bottom: 7%;
-       font-size: 5vw;
+      font-size: 5vw;
     }
 
     #twobtn{
@@ -248,6 +248,75 @@ sup:hover{
     #story{
        border-left: 1px dotted green;
     }
+
+    #pContainer{
+       height: 55vh;
+       width: 85%;
+       
+       border-left: none;
+       display: flex;
+       margin-left: 5%;
+    }
+
+    #lContainer{
+      height: 55vh;
+      width: 10%;
+      
+    }
+
+    #rContainer{
+       height: 55vh;
+       width: 90%;
+       border: 1px solid black;
+       display: flex;
+       
+    }
+
+    .hPercentDiv{
+       font-size: 4vw;
+       border-top: 0.1px solid black;
+       text-align: center;
+       padding-top: 0.4vh;
+       margin-bottom: 0;
+       padding-bottom: 0;
+    }
+
+    .vGraphBarsCont{
+       width: 33%;
+       
+       height: 55vh;
+    }
+
+    .vGraphBars{
+       color: white;
+       font-size: 5vw;
+       writing-mode: vertical-rl;
+       text-orientation:sideways;
+       padding-top: 1vh;
+       padding-left: auto;
+       padding-right: auto;
+       border-top-right-radius: 10px;
+       border-top-left-radius: 10px;
+    }
+
+    #graphTitle{
+       font-size: 10%;
+    }
+
+    #graphBars{
+       margin-right: 5%;
+    }
+
+    #graph1{
+       width: 90%;
+       margin-right: 5%;
+       margin-left: 5%;
+    }
+
+    .graphBars{
+       font-size: 30px;
+    }
+    
  }
 
  #navigation{
@@ -699,7 +768,7 @@ sup:hover{
 #graphScale{
    border-top: 6px solid black;
    margin-top: 1%;
-   margin-left: 23.2%;
+   margin-left: 5%;
    display: flex;
    
 }

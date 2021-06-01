@@ -73,6 +73,7 @@ function changeFontSize(){
 //create side navigation bar
 var navBarNames = ['A brief introduction', 'What is substance use?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
+    decideLorR(x);
     console.log(devOrientation);
     for (var i = 0; i<navBarNames.length; i++){
         var newNavLink = document.createElement('p');
@@ -226,52 +227,104 @@ function removeNavArrow(){
 var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping (nicotine)*', Stat: 34.5, color: 'orange'}];
 
 function drawFirstGraph(maxStat, increment){
-    for(var i = 0; i<listOfFirstDrugs.length; i++){
-        var newCont = document.createElement('div');
-        newCont.className = 'container';
-        document.getElementById('graph1').appendChild(newCont);
-    }
-
-    for(var i = 0; i<listOfFirstDrugs.length; i++){
-        var drugName = document.createElement('section');
-        drugName.className = 'graphText';
-        drugName.innerHTML = listOfFirstDrugs[i].Drug;
-        document.getElementsByClassName('container')[i].appendChild(drugName);
-    }
-
-    for(var i = 0; i<listOfFirstDrugs.length; i++){
-        var bar = document.createElement('div');
-        bar.className = 'graphBars';
-        document.getElementsByClassName('container')[i].appendChild(bar);
-    }
-
-    for(var i = 0; i<listOfFirstDrugs.length; i++){
-        var drugStat = document.getElementsByClassName('graphBars')[i];
-        drugStat.innerHTML = listOfFirstDrugs[i].Stat + '%';
-        drugStat.style.width = (((listOfFirstDrugs[i].Stat/maxStat) * 77.5) - 1.5) + '%';
-        drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
-    }
-    
-    var line = document.createElement('div');
-    line.id = 'graphScale';
-    document.getElementById('graph1').appendChild(line);
-    
-    for(var i = 0; i< (maxStat/increment); i++){
-        var percentages = document.createElement('div');
-        percentages.className = 'percentDiv';
-        if(i === (maxStat/increment)-1){
-            percentages.innerHTML = (i*increment) + " (%)";
-        }else{
-            percentages.innerHTML = (i*increment);
+    if (devOrientation === 'landscape'){
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var newCont = document.createElement('div');
+            newCont.className = 'container';
+            document.getElementById('graph1').appendChild(newCont);
         }
-        document.getElementById('graphScale').appendChild(percentages);
-    }
+    
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var drugName = document.createElement('section');
+            drugName.className = 'graphText';
+            drugName.innerHTML = listOfFirstDrugs[i].Drug;
+            document.getElementsByClassName('container')[i].appendChild(drugName);
+        }
+    
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var bar = document.createElement('div');
+            bar.className = 'graphBars';
+            document.getElementsByClassName('container')[i].appendChild(bar);
+        }
+    
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var drugStat = document.getElementsByClassName('graphBars')[i];
+            drugStat.innerHTML = listOfFirstDrugs[i].Stat + '%';
+            drugStat.style.width = (((listOfFirstDrugs[i].Stat/maxStat) * 77.5) - 1.5) + '%';
+            drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
+        }
+        
+        var line = document.createElement('div');
+        line.id = 'graphScale';
+        document.getElementById('graph1').appendChild(line);
+        
+        for(var i = 0; i< (maxStat/increment); i++){
+            var percentages = document.createElement('div');
+            percentages.className = 'percentDiv';
+            if(i === (maxStat/increment)-1){
+                percentages.innerHTML = (i*increment) + " (%)";
+            }else{
+                percentages.innerHTML = (i*increment);
+            }
+            document.getElementById('graphScale').appendChild(percentages);
+        }
+    
+        for(var i = 0; i< (maxStat/increment); i++){
+            document.getElementsByClassName('percentDiv')[i].style.width = (100 / (maxStat/increment)) + '%';
+            document.getElementsByClassName('percentDiv')[i].style.maxWidth = (100 / (maxStat/increment)) + '%';
+        }
+    }else{//mobile compatible version. vertical bar graph
+        var newCont = document.createElement('div');
+        newCont.id = 'pContainer';
+        //newCont.innerHTML = 'stuff is here';
+        document.getElementById('graph1').appendChild(newCont);
 
-    for(var i = 0; i< (maxStat/increment); i++){
-        document.getElementsByClassName('percentDiv')[i].style.width = (100 / (maxStat/increment)) + '%';
-        document.getElementsByClassName('percentDiv')[i].style.maxWidth = (100 / (maxStat/increment)) + '%';
-    }
+        var leftCont = document.createElement('div');
+        leftCont.id = 'lContainer';
+        document.getElementById('pContainer').appendChild(leftCont);
 
+        var rightCont = document.createElement('div');
+        rightCont.id = 'rContainer';
+        document.getElementById('pContainer').appendChild(rightCont);
+
+        console.log(70 / (maxStat/increment))
+        for(var i = Math.trunc(maxStat/increment); i > 0; i--){
+            var percentages = document.createElement('div');
+            percentages.className = 'hPercentDiv';
+            if(i === 1){
+                percentages.innerHTML = (i*increment) + " (%)";
+            }else{
+                percentages.innerHTML = (i*increment);
+            }
+            document.getElementById('lContainer').appendChild(percentages);
+
+            document.getElementsByClassName('hPercentDiv')[Math.trunc(maxStat/increment) - i].style.height = (55 / (maxStat/increment)) + 'vh';
+        }
+
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var bar = document.createElement('div');
+            bar.className = 'vGraphBarsCont';
+            document.getElementById('rContainer').appendChild(bar);
+        }
+
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var barContent = document.createElement('div');
+            barContent.className = 'vGraphBars';
+            barContent.innerHTML = listOfFirstDrugs[i].Stat + '%';
+            document.getElementsByClassName('vGraphBarsCont')[i].appendChild(barContent);
+        }
+
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var vGraphBars = document.getElementsByClassName('vGraphBars')[i];
+            vGraphBars.style.marginLeft = '25%';
+            vGraphBars.style.marginRight = '25%';
+            vGraphBars.style.width = '50%';
+            vGraphBars.style.backgroundColor = listOfFirstDrugs[i].color;
+            vGraphBars.style.height = (55 * (listOfFirstDrugs[i].Stat/60)) - 1 + 'vh';
+            vGraphBars.style.marginTop = (55 - (55 * (listOfFirstDrugs[i].Stat/60))) + 'vh';
+        }
+    }
+    
     var disclaimer = document.createElement('div');
     disclaimer.id = 'disclaimer';
     disclaimer.innerHTML = '*Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
@@ -511,8 +564,10 @@ document.getElementById('cite').addEventListener('click', showCitations);
 /*document.getElementById('title').addEventListener('click', showHover);*///just for testing
 
 function createEventListeners(){
-    for (var i = 0; i < 3; i++){
-        document.getElementsByClassName('graphBars')[i].addEventListener('click', showHover);
+    if(devOrientation === 'landscape'){
+        for (var i = 0; i < 3; i++){
+            document.getElementsByClassName('graphBars')[i].addEventListener('click', showHover);
+        }
     }
 }
 
