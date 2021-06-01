@@ -224,7 +224,7 @@ function removeNavArrow(){
 
 //Graphs and chart setup
 
-var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping (nicotine)*', Stat: 34.5, color: 'orange'}];
+var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping*', Stat: 34.5, color: 'orange'}];
 
 function drawFirstGraph(maxStat, increment){
     if (devOrientation === 'landscape'){
@@ -298,41 +298,66 @@ function drawFirstGraph(maxStat, increment){
             }
             document.getElementById('lContainer').appendChild(percentages);
 
-            document.getElementsByClassName('hPercentDiv')[Math.trunc(maxStat/increment) - i].style.height = (55 / (maxStat/increment)) + 'vh';
+            document.getElementsByClassName('hPercentDiv')[Math.trunc(maxStat/increment) - i].style.height = (48 / (maxStat/increment)) + 'vh';
         }
 
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var bar = document.createElement('div');
             bar.className = 'vGraphBarsCont';
             document.getElementById('rContainer').appendChild(bar);
+            
         }
 
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var barContent = document.createElement('div');
             barContent.className = 'vGraphBars';
-            barContent.innerHTML = listOfFirstDrugs[i].Stat + '%';
+            
             document.getElementsByClassName('vGraphBarsCont')[i].appendChild(barContent);
         }
 
         for(var i = 0; i<listOfFirstDrugs.length; i++){
+            document.getElementsByClassName('vGraphBarsCont')[i].style.width = (100 / listOfFirstDrugs.length) + '%';
             var vGraphBars = document.getElementsByClassName('vGraphBars')[i];
-            vGraphBars.style.marginLeft = '25%';
-            vGraphBars.style.marginRight = '25%';
-            vGraphBars.style.width = '50%';
+            vGraphBars.style.marginLeft = '15%';
+            vGraphBars.style.marginRight = '15%';
+            vGraphBars.style.width = '70%';
             vGraphBars.style.backgroundColor = listOfFirstDrugs[i].color;
-            vGraphBars.style.height = (55 * (listOfFirstDrugs[i].Stat/60)) - 1 + 'vh';
-            vGraphBars.style.marginTop = (55 - (55 * (listOfFirstDrugs[i].Stat/60))) + 'vh';
+            vGraphBars.style.height = (50 * (listOfFirstDrugs[i].Stat/60)) - 0.5 + 'vh';
+            vGraphBars.style.marginTop = (50 - (50 * (listOfFirstDrugs[i].Stat/60) -0.5)) + 'vh';
+        }
+
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var a = document.createElement('div');
+            a.className = 'vGraphBarsStats';
+            a.innerHTML = listOfFirstDrugs[i].Stat + '%';
+            document.getElementsByClassName('vGraphBars')[i].appendChild(a);
+        }
+
+
+        var hGraphScale = document.createElement('div');
+        hGraphScale.id = 'hGraphScale';
+        document.getElementById('graph1').appendChild(hGraphScale);
+
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            var drugNames = document.createElement('p');
+            drugNames.className = 'hDrugNames';
+            drugNames.innerHTML = listOfFirstDrugs[i].Drug;
+            document.getElementById('hGraphScale').appendChild(drugNames);
+            document.getElementsByClassName('hDrugNames')[i].style.width = (100 / listOfFirstDrugs.length) + '%';
         }
     }
     
-    var disclaimer = document.createElement('div');
-    disclaimer.id = 'disclaimer';
-    disclaimer.innerHTML = '*Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
-    document.getElementById('graph1').appendChild(disclaimer);
+    if(devOrientation === 'landscape'){
+        var disclaimer = document.createElement('div');
+        disclaimer.id = 'disclaimer';
+        disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
+        document.getElementById('graph1').appendChild(disclaimer);
+    }
+    
 }
 
 //2D array needed for createHover method
-var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7, 'Has remained relatively stable'], ['Marijuana', 35.7, 35.9, 37.1, 'Has remained relatively stable'], ['Vaping (Nicotine)', 35.3, 29.7, 18.8, 'Has sharply increased, but leveled off']];
+var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7, 'Has remained relatively stable'], ['Marijuana', 35.7, 35.9, 37.1, 'Has remained relatively stable'], ['Vaping (Nicotine)', 35.3, 29.7, 18.8, 'Has sharply increased, but leveled off'], ['hey there'], ['hi there']];
 
 function createHover(num){
     for (i = 0; i<listOfFirstDrugs.length; i++){
@@ -416,42 +441,78 @@ function createHover(num){
         document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
         document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
         console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
+
     }
 }
+
+
 
 var isHoverOpen = false;
 function showHover(event){
     console.log(isHoverOpen);
+
     for (var i = 0; i<3; i++){
         document.getElementsByClassName('hoverContainer')[i].style.display = 'none';
     }
-    if(this.innerHTML === '55.3%'){//yay, the 'this' keyword! *AP Computer Science flashbacks intensify*
-        isHoverOpen = true;
-        var hoverContainer0 = document.getElementsByClassName('hoverContainer')[0];
-        hoverContainer0.style.display = 'block';
-        hoverContainer0.style.top = this.offsetTop + 75 + 'px';
-        hoverContainer0.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        hoverContainer0.style.height = 'auto';
-        document.getElementsByClassName('graphBars')[0].scrollIntoView();
-        
-    }else if (this.innerHTML === '35.2%'){
-        isHoverOpen = true;
-        var hoverContainer1 = document.getElementsByClassName('hoverContainer')[1];
-        hoverContainer1.style.display = 'block';
-        hoverContainer1.style.top = this.offsetTop + 75 + 'px';
-        hoverContainer1.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        hoverContainer1.style.height = 'auto';
-        document.getElementsByClassName('graphBars')[1].scrollIntoView();
+
+    if(devOrientation === 'landscape'){
+        if(this.innerHTML === '55.3%'){//yay, the 'this' keyword! *AP Computer Science flashbacks intensify*
+            isHoverOpen = true;
+            var hoverContainer0 = document.getElementsByClassName('hoverContainer')[0];
+            hoverContainer0.style.display = 'block';
+            hoverContainer0.style.top = this.offsetTop + 75 + 'px';
+            hoverContainer0.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+            hoverContainer0.style.height = 'auto';
+            document.getElementsByClassName('graphBars')[0].scrollIntoView();
+            
+        }else if (this.innerHTML === '35.2%'){
+            isHoverOpen = true;
+            var hoverContainer1 = document.getElementsByClassName('hoverContainer')[1];
+            hoverContainer1.style.display = 'block';
+            hoverContainer1.style.top = this.offsetTop + 75 + 'px';
+            hoverContainer1.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+            hoverContainer1.style.height = 'auto';
+            document.getElementsByClassName('graphBars')[1].scrollIntoView();
+        }else{
+            isHoverOpen = true;
+            var hoverContainer2 = document.getElementsByClassName('hoverContainer')[2];
+            hoverContainer2.style.display = 'block';
+            hoverContainer2.style.top = this.offsetTop + 75 + 'px';
+            hoverContainer2.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
+            hoverContainer2.style.height = 'auto';
+            document.getElementsByClassName('graphBars')[2].scrollIntoView();
+        }
     }else{
-        isHoverOpen = true;
-        var hoverContainer2 = document.getElementsByClassName('hoverContainer')[2];
-        hoverContainer2.style.display = 'block';
-        hoverContainer2.style.top = this.offsetTop + 75 + 'px';
-        hoverContainer2.style.left = ((event.clientX / screen.width)*100) - 11.25 + '%';
-        hoverContainer2.style.height = 'auto';
-        document.getElementsByClassName('graphBars')[2].scrollIntoView();
+        var counter;
+        for(var i = 0; i < listOfFirstDrugs.length; i++){
+            if(this.getElementsByClassName('vGraphBarsStats')[0].innerHTML === listOfFirstDrugs[i].Stat + '%'){
+                counter = i;
+                break;
+            }
+        }
+
+        var h = document.getElementsByClassName('hoverContainer')[counter];
+        h.style.position = 'absolute';
+        h.style.display = 'block';
+        h.style.top = this.offSetTop - window.pageYOffset + 'px';
+        console.log(this.offsetTop);
+        console.log(this.offsetTop - 400);
+        h.style.width = '67.5%';
+        h.style.left = '17.5%';
+        h.style.height = 'auto';
+        
+        var t = document.getElementsByClassName('triangle')[counter];
+        if(counter === 0){
+            t.style.marginLeft = '0%';
+        }else if (counter === 1){
+            t.style.marginLeft = '33%';
+        }else{
+            t.style.marginLeft = '65.5%';
+        }
     }
 }
+
+
 
 function removeHover1(){
     document.getElementsByClassName('hoverContainer')[0].style.display = 'none';
@@ -551,10 +612,7 @@ for (var i = 0; i < navBarNames.length; i++){
     document.getElementsByClassName('navLink')[i].addEventListener('click', scrollToSection);
     document.getElementsByClassName('navLink')[i].addEventListener('mouseover', hoverNavLink);
     document.getElementsByClassName('navLink')[i].addEventListener('mouseout', removeNavArrow);
-    
 }
-
-
 
 drawFirstGraph(60, 10);
 createHover(1);
@@ -567,6 +625,10 @@ function createEventListeners(){
     if(devOrientation === 'landscape'){
         for (var i = 0; i < 3; i++){
             document.getElementsByClassName('graphBars')[i].addEventListener('click', showHover);
+        }
+    }else{
+        for (var i = 0; i < 3; i++){
+            document.getElementsByClassName('vGraphBars')[i].addEventListener('click', showHover);
         }
     }
 }
@@ -581,3 +643,10 @@ document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHov
 document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
 document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
 setTimeout(detectScroll, 2500);
+
+if(devOrientation === 'portrait'){
+    var disclaimer = document.createElement('div');
+    disclaimer.id = 'disclaimer';
+    disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
+    document.getElementById('graph1').appendChild(disclaimer);
+}

@@ -250,7 +250,7 @@ sup:hover{
     }
 
     #pContainer{
-       height: 55vh;
+       height: 50vh;
        width: 85%;
        
        border-left: none;
@@ -259,17 +259,18 @@ sup:hover{
     }
 
     #lContainer{
-      height: 55vh;
+      height: 50vh;
       width: 10%;
       
     }
 
     #rContainer{
-       height: 55vh;
+       height: 50vh;
        width: 90%;
        border: 1px solid black;
        display: flex;
-       
+       border-right: none;
+ 
     }
 
     .hPercentDiv{
@@ -282,31 +283,34 @@ sup:hover{
     }
 
     .vGraphBarsCont{
-       width: 33%;
+       width: 33.3%;
+       height: 50vh;
+    }
+
+    .vGraphBarsStats{
+       color: white;
+       font-size: 4vw;
+       padding-bottom: 0;
+       margin-bottom: 0;
+       padding-top: 1vh;
+       text-align: center;
        
-       height: 55vh;
     }
 
     .vGraphBars{
-       color: white;
-       font-size: 5vw;
-       writing-mode: vertical-rl;
-       text-orientation:sideways;
-       padding-top: 1vh;
-       padding-left: auto;
-       padding-right: auto;
-       border-top-right-radius: 10px;
-       border-top-left-radius: 10px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      transition: 0.5s;
+      -webkit-user-select: none;
     }
 
     #graphTitle{
        font-size: 10%;
     }
 
-    #graphBars{
-       margin-right: 5%;
-    }
-
+    
     #graph1{
        width: 90%;
        margin-right: 5%;
@@ -315,6 +319,30 @@ sup:hover{
 
     .graphBars{
        font-size: 30px;
+    }
+
+    #hGraphScale{
+       
+       margin-left: 13.5%;
+       margin-right: 10%;
+       display: flex;
+    }
+
+    .hDrugNames{
+       font-size: 3.5vw;
+       text-align: center;  
+       margin-top: 5vh;
+       padding-top: 0;
+       transform: rotate(-45deg);
+    }
+
+    .vGraphBars:hover{
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      filter: brightness(0.75);
+      transition: 0.5s;
+      cursor: pointer;
+      
     }
     
  }
@@ -701,24 +729,24 @@ sup:hover{
 }
 
 #graph1{
-   width: 80%;
+   width: 90%;
    font-size:175%;
-   margin-left: 10%;
+   margin-left: 5%;
    border-left: 4px solid #656966;
    background-color: whitesmoke;
-   margin-left: 10%;
+   
    margin-top: 3%;
    height: auto;
 }
 
 #graphTitle{
-   font-size: 90%;
+   font-size: 87.5%;
    margin-left: 5%;
   padding-top: 3%;
 }
 #caption{
    margin-left: 5%;
-   font-size: 75%;
+   font-size: 60%;
 
    margin-bottom: 4%;
    /*font-family: 'newsreader', serif;*/
@@ -768,7 +796,7 @@ sup:hover{
 #graphScale{
    border-top: 6px solid black;
    margin-top: 1%;
-   margin-left: 5%;
+   margin-left: 23.2%;
    display: flex;
    
 }
@@ -804,6 +832,7 @@ sup:hover{
    border-radius: 15px;
    /*font-family: 'newsreader', serif;*/
    display: none;
+   position: absolute;
    
 }
 
@@ -889,8 +918,8 @@ sup:hover{
 .triangle{
    width: 0;
    height: 0;
-   border-left: 50px solid transparent;
-   border-right: 50px solid transparent;
+   border-left: 45px solid transparent;
+   border-right: 45px solid transparent;
    margin-left: 32%;
    position: absolute;
    top: -7%;
