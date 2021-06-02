@@ -44,7 +44,7 @@ x.addListener(decideLorR);
 
 //change font size
 function changeFontSize(){
-    //number of 'content' is 7. CHANGE THIS AS HTML UPDATES!!
+    //number of 'content' is 10. CHANGE THIS AS HTML UPDATES!!
     //console.log(document.getElementById('closemenu').style.width);
     for (var i = 0; i<5; i++){
         document.getElementsByClassName('textSizeOptions')[i].color = 'black';
@@ -52,9 +52,14 @@ function changeFontSize(){
     }
 
     var fontSize = this.style.fontSize;
-    for(var i = 0; i<7; i++){
+    for(var i = 0; i<document.getElementsByClassName('content').length; i++){
         var fontSize = this.style.fontSize;
         document.getElementsByClassName('content')[i].style.fontSize = fontSize;
+       
+    }
+
+    for (var i = 0; i<document.getElementsByClassName('section').length; i++){
+        var fontSize = this.style.fontSize;
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
     }
 
@@ -63,7 +68,7 @@ function changeFontSize(){
         document.getElementById('navigation').style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
     }*/
 
-    for(var i = 0; i<10; i++){//CHANGE THIS AS HTML UPDATES!!
+    for(var i = 0; i<document.getElementsByClassName('list').length; i++){//CHANGE THIS AS HTML UPDATES!!
         document.getElementsByClassName('list')[i].style.fontSize = fontSize;
     }
     document.getElementsByClassName('section')[0].scrollIntoView();
@@ -136,13 +141,15 @@ function removeNav(){
                 document.getElementById('main').style.width = '96%';
                 document.getElementById('navMenu').style.borderTopRightRadius = '15px';
                 document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
-                for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
                     document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
+                }
+                for (var i = 0; i < document.getElementsByClassName('content').length; i++){
                     document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
                     document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
                     document.getElementsByClassName('content')[i].style.width = '80%';
                 }
-                for (var i = 0; i < 10; i++){
+                for (var i = 0; i < document.getElementsByClassName('content').length; i++){
                     document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
                 }
                 document.getElementById('story').style.width = '72.5%';
@@ -179,14 +186,17 @@ function removeNav(){
                 document.getElementById('story').style.marginLeft = '7.5%';
                 document.getElementById('story').style.width = '50%';   
     
-                for (var i = 0; i < 7; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
+                for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
                     document.getElementsByClassName('section')[i].style.marginLeft = '5%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('content').length; i++){
                     document.getElementsByClassName('content')[i].style.marginLeft = '5%';
                     document.getElementsByClassName('content')[i].style.width = '90%';
                     document.getElementsByClassName('content')[i].style.marginRight = '5%';
                 }
 
-                for (var i = 0; i < 10; i++){
+                for (var i = 0; i < document.getElementsByClassName('list').length; i++){
                     document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
                 }
             }else{
@@ -357,7 +367,7 @@ function drawFirstGraph(maxStat, increment){
 }
 
 //2D array needed for createHover method
-var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7, 'Has remained relatively stable'], ['Marijuana', 35.7, 35.9, 37.1, 'Has remained relatively stable'], ['Vaping (Nicotine)', 35.3, 29.7, 18.8, 'Has sharply increased, but leveled off'], ['hey there'], ['hi there']];
+var pastDrugUseStats = [['Alcohol', 52.1, 53.3, 55.7, 'Has remained relatively stable'], ['Marijuana', 35.7, 35.9, 37.1, 'Has remained relatively stable'], ['Vaping*', 35.3, 29.7, 18.8, 'Has sharply increased, but leveled off'], ['hey there'], ['hi there']];
 
 function createHover(num){
     for (i = 0; i<listOfFirstDrugs.length; i++){
@@ -367,82 +377,167 @@ function createHover(num){
     }
 
     for (i = 0; i<listOfFirstDrugs.length; i++){
-
-        var triangle = document.createElement('div');
-        triangle.className = 'triangle';
-        triangle.innerHTML = '';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
-
-        document.getElementsByClassName('triangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
-
-        var x = document.createElement('p');//x button
-        x.className = 'hoverX';
-        x.innerHTML = '✖';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(x);
-
-        var otherInfoText = document.createElement('div');//title of drug
-        otherInfoText.className = 'hoverContainerTitleText';
-        otherInfoText.innerHTML = pastDrugUseStats[i][0];
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText);
-
-        var otherInfoText1 = document.createElement('p');//title of 'prevalence of use'
-        otherInfoText1.className = 'hoverContainerPrevalence';
-        otherInfoText1.innerHTML = '2020 prevalence of use among 12th graders: ';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText1);
-
-        var otherInfoText2 = document.createElement('p');//prevalence of use; in percentages
-        otherInfoText2.className = 'hoverContainerPercentage';
-        otherInfoText2.innerHTML = listOfFirstDrugs[i].Stat + "%";
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText2);
-
-        document.getElementsByClassName('hoverContainer')[i].appendChild(document.createElement('hr'));//line
+        if(devOrientation === 'portrait'){
+            var lt = document.createElement('div');
+            lt.className = 'topC';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(lt);
+        }
         
-        var otherInfoHeader = document.createElement('div');//title of 'past prevalence of use'
-        otherInfoHeader.className = 'hoverContainerPast';
-        otherInfoHeader.innerHTML = 'Past prevalence of use';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoHeader);
+        if(devOrientation === 'portrait'){
 
+        }
+        
+        
+        if (devOrientation === 'landscape'){
+            var x = document.createElement('p');//x button
+            x.innerHTML = '✖';
+            x.className = 'hoverX';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(x);
+            var otherInfoText = document.createElement('div');//title of drug
+            otherInfoText.className = 'hoverContainerTitleText';
+            otherInfoText.innerHTML = pastDrugUseStats[i][0];
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText);
+        }else{
+            var otherInfoText = document.createElement('div');//title of dr
+            otherInfoText.className = 'pHoverContainerTitleText';
+            otherInfoText.innerHTML = pastDrugUseStats[i][0];
+            document.getElementsByClassName('topC')[i].appendChild(otherInfoText);
+            var x = document.createElement('p');//x button
+            x.innerHTML = '✖';
+            x.className = 'pHoverX';
+            document.getElementsByClassName('topC')[i].appendChild(x);
+        }
+        
+
+        if(devOrientation === 'portrait'){
+            var p = document.createElement('div');
+            p.className = 'pHoverContainer';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(p);
+        }
+        if(devOrientation === 'portrait'){
+            /*var l = document.createElement('div');
+            l.className = 'lHoverContainer';
+            document.getElementsByClassName('pHoverContainer')[i].appendChild(l);*/
+
+            var r = document.createElement('div');
+            r.className = 'rHoverContainer';
+            document.getElementsByClassName('pHoverContainer')[i].appendChild(r);
+        }
+
+        if(devOrientation === 'landscape'){
+            var triangle = document.createElement('div');
+            triangle.className = 'triangle';
+            triangle.innerHTML = '';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
+            document.getElementsByClassName('triangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
+        }
+            
+        var otherInfoText1 = document.createElement('p');//title of 'prevalence of use'
+        otherInfoText1.innerHTML = '2020 prevalence of use among 12th graders: ';
+        if (devOrientation === 'landscape'){
+            otherInfoText1.className = 'hoverContainerPrevalence';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText1);
+        }
+        
+        var otherInfoText2 = document.createElement('p');//prevalence of use; in percentages
+        otherInfoText2.innerHTML = listOfFirstDrugs[i].Stat + "%";
+        if(devOrientation === 'landscape'){
+            otherInfoText2.className = 'hoverContainerPercentage';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoText2);
+            document.getElementsByClassName('hoverContainer')[i].appendChild(document.createElement('hr'));//line
+        }
+        if(devOrientation === 'portrait'){
+            var li = document.createElement('hr');
+            li.classname = 'pLine'
+            document.getElementsByClassName('rHoverContainer')[i].appendChild(li);
+        }
+        
+            
+        var otherInfoHeader = document.createElement('div');//title of 'past prevalence of use'
+        otherInfoHeader.innerHTML = 'Past prevalence of use:';
+        if(devOrientation === 'landscape'){
+            otherInfoHeader.className = 'hoverContainerPast';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoHeader);
+        }else{
+            otherInfoHeader.className = 'pHoverContainerPast';
+            document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoHeader);
+        }
+
+        
         for(var year = 2019; year > 2016; year--){
             var otherInfoYears = document.createElement('p');//title of year
-            otherInfoYears.className = 'hoverContainerYear';
             otherInfoYears.innerHTML = year + ": "
-            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoYears);
+            if(devOrientation === 'landscape'){
+                otherInfoYears.className = 'hoverContainerYear';
+                document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoYears);
+            }else{
+                otherInfoYears.className = 'pHoverContainerYear';
+                document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoYears);
+            }
+            
         }
 
         for(var j = 0; j < 3; j++){
             var otherInfoPercentages = document.createElement('span');//percentages in past years
-            otherInfoPercentages.className = 'hoverContainerPastPercentage';
             otherInfoPercentages.innerHTML = pastDrugUseStats[i][j+1] + '%';
-            document.getElementsByClassName('hoverContainer')[i].getElementsByClassName('hoverContainerYear')[j].appendChild(otherInfoPercentages);
+            if(devOrientation === 'landscape'){
+                otherInfoPercentages.className = 'hoverContainerPastPercentage';
+                document.getElementsByClassName('hoverContainer')[i].getElementsByClassName('hoverContainerYear')[j].appendChild(otherInfoPercentages);
+            }else{
+                otherInfoPercentages.className = 'pHoverContainerPastPercentage';
+                document.getElementsByClassName('rHoverContainer')[i].getElementsByClassName('pHoverContainerYear')[j].appendChild(otherInfoPercentages);
+            }
+            
         }
 
         var otherInfoTrend = document.createElement('div');
         otherInfoTrend.innerHTML = 'Trend: ' + pastDrugUseStats[i][4];
-        otherInfoTrend.className = 'hoverContainerTrend';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoTrend);
-
+        if(devOrientation === 'landscape'){
+            otherInfoTrend.className = 'hoverContainerTrend';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoTrend);
+        }else{
+            otherInfoTrend.className = 'pHoverContainerTrend';
+            document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoTrend);
+        }
+        
         var otherInfoBotCaption = document.createElement('p');//source
-        otherInfoBotCaption.className = 'hoverContainerBotCaption';
         otherInfoBotCaption.innerHTML = 'Source: ';
-        document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoBotCaption);
-
+        if(devOrientation === 'landscape'){
+            otherInfoBotCaption.className = 'hoverContainerBotCaption';
+            document.getElementsByClassName('hoverContainer')[i].appendChild(otherInfoBotCaption);
+        }else{
+            otherInfoBotCaption.className = 'pHoverContainerBotCaption';
+            document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoBotCaption);
+        }
+        
         var otherInfoBotLink = document.createElement('A');
-        otherInfoBotLink.className = 'hoverContainerBotLink';
         var innerLink = document.createTextNode('National Institute on Drug Abuse');
         otherInfoBotLink.setAttribute('href', 'https://www.drugabuse.gov/drug-topics/related-topics/trends-statistics/infographics/monitoring-future-2020-survey-results');
         otherInfoBotLink.setAttribute('target', '_blank');
         otherInfoBotLink.appendChild(innerLink);
-        document.getElementsByClassName('hoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
+        if(devOrientation === 'landscape'){
+            otherInfoBotLink.className = 'hoverContainerBotLink';
+            document.getElementsByClassName('hoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
+        }else{
+            otherInfoBotLink.className = 'pHoverContainerBotLink';
+            document.getElementsByClassName('pHoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
+        }
+        
 
-        //attributes of the container
-        document.getElementsByClassName('hoverContainerBotLink')[i].style.color = listOfFirstDrugs[i].color;
-        document.getElementsByClassName('hoverContainer')[i].style.position = 'absolute';
-        document.getElementsByClassName('hoverContainer')[i].style.height = 0;
-        document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
-        document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
-        console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
-
-    }
+            //attributes of the container
+            if(devOrientation === 'landscape'){
+                document.getElementsByClassName('hoverContainerBotLink')[i].style.color = listOfFirstDrugs[i].color;
+            }else{
+                document.getElementsByClassName('pHoverContainerBotLink')[i].style.color = listOfFirstDrugs[i].color;
+            }
+            
+            document.getElementsByClassName('hoverContainer')[i].style.position = 'absolute';
+            document.getElementsByClassName('hoverContainer')[i].style.height = 0;
+            document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
+            document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
+            console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
+        
+        }
 }
 
 
@@ -507,8 +602,10 @@ function showHover(event){
         }else if (counter === 1){
             t.style.marginLeft = '33%';
         }else{
-            t.style.marginLeft = '65.5%';
+            t.style.marginLeft = '64.5%';
         }
+
+        this.scrollIntoView();
     }
 }
 
@@ -639,9 +736,12 @@ for (var i = 0; i < 5; i++){
 
 createEventListeners();
 document.getElementById('closemenu').addEventListener('click', removeNav);
-document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHover1);
-document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
-document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
+if(devOrientation === 'landscape'){
+    document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHover1);
+    document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
+    document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
+}
+
 setTimeout(detectScroll, 2500);
 
 if(devOrientation === 'portrait'){

@@ -339,12 +339,112 @@ sup:hover{
     .vGraphBars:hover{
       border-top-right-radius: 12px;
       border-top-left-radius: 12px;
-      filter: brightness(0.75);
+      filter: brightness(0.80);
       transition: 0.5s;
       cursor: pointer;
-      
+    }
+
+    .pHoverContainer{
+       display: flex;
+       height: 22.5%;
+       background-color: whitesmoke;
+    }
+
+    .lHoverContainer{
+       height: 25vh;
+       border-right: 2px dotted orange;
+       width: 50%;
+    }
+
+    .rHoverContainer{
+       height: 22.5%;
+       
+       width: 100%;
+    }
+
+    .hoverContainer{
+       background-color: whitesmoke;
     }
     
+    .pHoverContainerPrevalence{
+       font-size: 4vw;
+       padding-left: 1vw;
+       padding-right: 1vw;
+       padding-top: 0;
+       margin-top: 0;
+       text-align: center;
+    }
+
+    .pHoverContainerPercentage{
+       font-weight: bold;
+       text-align: center;
+       text-decoration: underline;
+    }
+
+    .topC{
+       display: flex;
+       height: 3%;
+    }
+
+    .pHoverX{
+       height: 3%;
+       width: 10%;
+       padding-top: 0.5vh;
+       margin-top: 0;
+       padding-right: 3%;
+       font-size: 5vw;
+       padding-bottom: 0;
+       margin-bottom: 0;
+    }
+
+    .pHoverContainerTitleText{
+       height: 3%;
+       width: 90%;
+       padding-top: 2.5vh;
+       padding-left: 12.5%;
+       font-size: 6.5vw;
+   
+
+    }
+
+    .pHoverContainerPast{
+      font-size: 5vw;
+      
+      padding-top: 0;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .pHoverContainerYear{
+       font-size: 5vw;
+      
+       text-align: center;
+    }
+
+    .pHoverContainerPastPercentage{
+       font-size: 5vw;
+       font-weight: bold;
+       text-decoration: underline;
+       text-align: center;
+    }
+
+    .pHoverContainerTrend{
+       display: none;
+    }
+
+    .pHoverContainerBotCaption{
+       font-size: 3vw;
+       text-align: center;
+    }
+
+    .pLine{
+       margin-top: 0;
+       margin-bottom: 0;
+       padding-left: 25%;
+       padding-right: 25%;
+       padding-top: none;
+       padding-bottom: none;
+    }
  }
 
  #navigation{
@@ -666,7 +766,6 @@ sup:hover{
    color: white;
    font-size: 150%;
    background-color: #1d852d;
-   
    width: 20%;
    -webkit-user-select: none;
    cursor: pointer;
@@ -676,8 +775,6 @@ sup:hover{
    border: 3px solid #1d852d;
    text-decoration: none;
    margin-left: 10%;
-   
-  
 }
 
 #cite:hover{
