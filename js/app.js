@@ -4,6 +4,8 @@ var temp = document.getElementById('popup');
 var open = false;
 var navOpen = true;
 
+
+
 //general webpage setup
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -62,6 +64,8 @@ function changeFontSize(){
         var fontSize = this.style.fontSize;
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
     }
+
+    document.getElementById('story').style.fontSize = fontSize;
 
     /*for(var i = 0; i<8; i++){
         document.getElementsByClassName('navLink')[i].style.fontSize = (120 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
@@ -138,23 +142,29 @@ function removeNav(){
                 document.getElementById('closemenu').innerHTML = '»';
                 document.getElementById('closemenu').style.marginLeft = '35%';
                 document.getElementById('navMenu').style.width = '4%';
-                document.getElementById('main').style.width = '96%';
+                document.getElementById('entirePage').style.flexDirection = 'column';
+                document.getElementById('main').style.width = '100%';
                 document.getElementById('navMenu').style.borderTopRightRadius = '15px';
                 document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                    document.getElementsByClassName('section')[i].style.marginLeft = '6.24%';
+                    document.getElementsByClassName('section')[i].style.marginLeft = '12.5%';
                 }
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
-                    document.getElementsByClassName('content')[i].style.marginLeft = '6.24%';
-                    document.getElementsByClassName('content')[i].style.marginRight = '10.4%';
-                    document.getElementsByClassName('content')[i].style.width = '80%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '12.5%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '12.5%';
+                    document.getElementsByClassName('content')[i].style.width = '75%';
                 }
-                for (var i = 0; i < document.getElementsByClassName('content').length; i++){
-                    document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+                for (var i = 0; i < document.getElementsByClassName('list').length; i++){
+                    document.getElementsByClassName('list')[i].style.marginLeft = '15%';
+                    document.getElementsByClassName('list')[i].style.marginRight = '12.5%';
                 }
-                document.getElementById('story').style.width = '72.5%';
-                document.getElementById('story').style.marginLeft = '10.4%';
-                document.getElementById('graph1').style.width = '80%';
+                document.getElementById('story').style.marginRight = '12.5%';
+                document.getElementById('story').style.marginLeft = '12.5%';
+                document.getElementById('graph1').style.marginRight = '12.5%';
+                document.getElementById('graph1').style.marginLeft = '12.5%';
+                document.getElementById('citesources').style.marginRight = '12.5%';
+                document.getElementById('citesources').style.marginLeft = '12.5%';
+                document.getElementById('source').style.marginLeft = '12.5%';
 
             }else{
                 navOpen = false;
@@ -176,6 +186,7 @@ function removeNav(){
             if (devOrientation === 'landscape'){
                 navOpen = true;
                 document.getElementById('closemenu').innerHTML = '«';
+                document.getElementById('entirePage').style.flexDirection = 'row';
                 document.getElementById('navMenu').style.display = 'block';
                 document.getElementById('navMenu').style.width = '22.5%';
                 document.getElementById('main').style.width = '77.5%';
@@ -183,22 +194,27 @@ function removeNav(){
                 document.getElementById('navigation').style.display = 'block';
                 document.getElementById('sideCaption').style.display = 'block';
                 document.getElementById('closemenu').style.marginLeft = '90%';
-                document.getElementById('story').style.marginLeft = '7.5%';
-                document.getElementById('story').style.width = '50%';   
     
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                    document.getElementsByClassName('section')[i].style.marginLeft = '5%';
+                    document.getElementsByClassName('section')[i].style.marginLeft = '8%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
-                    document.getElementsByClassName('content')[i].style.marginLeft = '5%';
-                    document.getElementsByClassName('content')[i].style.width = '90%';
-                    document.getElementsByClassName('content')[i].style.marginRight = '5%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '8%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '8%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('list').length; i++){
-                    document.getElementsByClassName('list')[i].style.marginLeft = '11.44%';
+                    document.getElementsByClassName('list')[i].style.marginLeft = '10.5%';
                 }
+
+                document.getElementById('graph1').style.marginRight = '8%';
+                document.getElementById('graph1').style.marginLeft = '8%';
+                document.getElementById('story').style.marginLeft = '8%';
+                document.getElementById('story').style.marginRight = '8%';
+                document.getElementById('citesources').style.marginRight = '8%';
+                document.getElementById('citesources').style.marginLeft = '8%';
+                document.getElementById('source').style.marginLeft = '8%';
             }else{
                 navOpen = true;
                 document.getElementById('main').style.width = '100%';
@@ -260,7 +276,7 @@ function drawFirstGraph(maxStat, increment){
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var drugStat = document.getElementsByClassName('graphBars')[i];
             drugStat.innerHTML = listOfFirstDrugs[i].Stat + '%';
-            drugStat.style.width = (((listOfFirstDrugs[i].Stat/maxStat) * 77.5) - 1.5) + '%';
+            drugStat.style.width = (((listOfFirstDrugs[i].Stat/maxStat) * 72.5) - 1.5) + '%';
             drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
         }
         

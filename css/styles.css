@@ -38,10 +38,6 @@ sup:hover{
     text-align: center;
     z-index: 0;
  }
-
- .list{
-    margin-left: 10%;
- }
  
  #topimage{
     width: 100%;
@@ -93,7 +89,7 @@ sup:hover{
  }
 
  #textChanger{
-    margin-left: 10%;
+    margin-left: 8%;
     font-size: 135%;
     margin-bottom: 0;
  }
@@ -163,9 +159,16 @@ sup:hover{
    font-size: 135%;
    margin-left: 20%;
    margin-right: 20%;
+   font-family: 'Source Sans Pro', sans-serif;
+   margin-bottom: 2.5%;
 }
 
  @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
+
+   .content{
+      margin-left: 4%;
+      margin-right: 4%;
+   }
     #authorInfo{
        /*text-align: center;*/
        margin-left: -10%;
@@ -187,6 +190,7 @@ sup:hover{
     .content{
        margin: 0;
        padding: 0;
+       font-size: 4vw;
     }
 
     #entirePage{
@@ -202,9 +206,7 @@ sup:hover{
        top: 19vw;
     }
 
-    .content{
-       font-size: 4vw;
-    }
+
     #innerNav{
        display: none;
     }
@@ -375,7 +377,6 @@ sup:hover{
 
     .rHoverContainer{
        height: 22.5%;
-       
        width: 100%;
     }
 
@@ -496,8 +497,8 @@ sup:hover{
       text-align: center;
       opacity: 0.8;
       font-size: 120%;
-      margin-left: 20%;
-      margin-right: 20%;
+      margin-left: 10%;
+      margin-right: 10%;
    }
  }
 
@@ -567,7 +568,7 @@ sup:hover{
  .section{
    color : black;
     /*font-family: 'newsreader', serif;*/
-    margin-left: 5%;
+    margin-left: 8%;
     font-size: 190%;
     font-weight: bold;
     text-decoration: underline;
@@ -583,8 +584,10 @@ sup:hover{
    font-size: 135%;
    line-height: 1.4;
    font-style: italic;
-   margin-right: 10%;
-   margin-left: 15%;
+   margin-right: 8%;
+   margin-left: 10.5%;
+   opacity: 0.9;
+   
  }
 
  /*#header{
@@ -648,11 +651,12 @@ sup:hover{
  }
 
  .content{
-    margin-left: 5%;
+    margin-left: 8%;
     /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    line-height: 1.4;
-   margin-right: 5%;
+   margin-right: 8%;
+   opacity: 1.2;
    
 
  }
@@ -661,8 +665,8 @@ sup:hover{
     font-style: italic;
     /*font-family: 'newsreader', serif;*/
    font-size: 135%;
-   margin-left: 8.5%;
-   margin-right: 5%;
+   margin-left: 8%;
+   margin-right: 8%;
    background-color: whitesmoke;
    border-left: 2px dotted green;
    padding-left: 4%;
@@ -671,6 +675,8 @@ sup:hover{
    padding-right: 3%;
    line-height: 1.4;
    margin-bottom: 3%;
+   font-family: 'Source Sans Pro', sans-serif;
+   
  }
 
  #popup{
@@ -698,11 +704,13 @@ sup:hover{
     font-size: 175%;
     margin-bottom: 1%;
     padding-bottom: 0;
+    font-family: 'Source Sans Pro', sans-serif;
  }
 
  #phone{
     color: white;
     transition: 0.5s;
+    font-family: 'Source Sans Pro', sans-serif;
  }
 
  #phone:hover{
@@ -736,6 +744,7 @@ sup:hover{
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
+    font-family: 'Source Sans Pro', sans-serif;
  }
 
  #call{
@@ -753,6 +762,7 @@ sup:hover{
    -webkit-user-select: none;
    cursor: pointer;
    transition: 0.5s;
+   font-family: 'Source Sans Pro', sans-serif;
  }
 
  #call:hover{
@@ -778,6 +788,7 @@ sup:hover{
    -webkit-user-select: none;
    cursor: pointer;
    transition: 0.5s;
+   font-family: 'Source Sans Pro', sans-serif;
  }
 
  #close:hover{
@@ -791,13 +802,13 @@ sup:hover{
  #authorInfo{
     font-size: 150%;
     /*font-family: 'newsreader', serif;*/
-    margin-left: 10%;
+    margin-left: 8%;
  }
 
  #datesUpdated{
    /*font-family: 'newsreader', serif;*/
    font-size: 125%;
-   margin-left: 10%;
+   margin-left: 8%;
  }
 
  #name:hover{
@@ -819,13 +830,15 @@ sup:hover{
    background-color: #1d852d;
    width: 20%;
    -webkit-user-select: none;
+   margin-left: 40%;
    cursor: pointer;
    /*font-family: 'newsreader', serif;*/
    text-align: center;
    transition: 0.5s;
    border: 3px solid #1d852d;
    text-decoration: none;
-   margin-left: 10%;
+   
+   
 }
 
 #cite:hover{
@@ -860,7 +873,7 @@ sup:hover{
    font-size: 135%;
    margin-top: 0;
    padding-top: 0;
-   margin-left: 10%;
+   margin-left: 8%;
    color: black;
    /*font-family: 'newsreader', serif;*/
 }
@@ -877,9 +890,10 @@ sup:hover{
 }
 
 #graph1{
-   width: 90%;
+   
    font-size:175%;
-   margin-left: 5%;
+   margin-left: 8%;
+   margin-right: 8%;
    border-left: 4px solid #656966;
    background-color: whitesmoke;
    
@@ -908,7 +922,7 @@ sup:hover{
 }
 
 .graphText{
-   width: 20%;
+   width: 15%;
    padding: 1%;
    /*border-right: 1px solid black;*/
    text-align: right;
@@ -921,7 +935,7 @@ sup:hover{
 
 .graphBars{
    margin-left: 1.25%;
-   max-width: 77.5%;
+   max-width: 72.5%;
    border-top-right-radius: 7.5px;
    border-bottom-right-radius: 7.5px;
    font-size: 100%;
@@ -944,7 +958,8 @@ sup:hover{
 #graphScale{
    border-top: 6px solid black;
    margin-top: 1%;
-   margin-left: 23.2%;
+   margin-left: 18.25%;
+   width: 72.5%;
    display: flex;
    
 }
@@ -1076,4 +1091,15 @@ sup:hover{
 hr{
    margin-left: 15%;
    margin-right: 15%;
+}
+
+.important{
+   color: #08450b
+}
+
+#citesources{
+   margin-left: 8%;
+   margin-right: 8%;
+   font-size: 125%;
+   margin-bottom: 5%;
 }
