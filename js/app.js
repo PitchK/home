@@ -424,13 +424,22 @@ function createHover(num){
             document.getElementsByClassName('pHoverContainer')[i].appendChild(r);
         }
 
-        if(devOrientation === 'landscape'){
+        
             var triangle = document.createElement('div');
-            triangle.className = 'triangle';
             triangle.innerHTML = '';
-            document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
+            
+            if(devOrientation === 'landscape'){
+                triangle.className = 'triangle';
+                document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
             document.getElementsByClassName('triangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
-        }
+                
+            }else{
+                triangle.className = 'pTriangle';
+                document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
+            document.getElementsByClassName('pTriangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
+            }
+            
+        
             
         var otherInfoText1 = document.createElement('p');//title of 'prevalence of use'
         otherInfoText1.innerHTML = '2020 prevalence of use among 12th graders: ';
@@ -596,14 +605,26 @@ function showHover(event){
         h.style.left = '17.5%';
         h.style.height = 'auto';
         
-        var t = document.getElementsByClassName('triangle')[counter];
-        if(counter === 0){
-            t.style.marginLeft = '0%';
-        }else if (counter === 1){
-            t.style.marginLeft = '33%';
+        if(devOrientation === 'landscape'){
+            var t = document.getElementsByClassName('triangle')[counter];
+            if(counter === 0){
+                t.style.marginLeft = '0%';
+            }else if (counter === 1){
+                t.style.marginLeft = '33%';
+            }else{
+                t.style.marginLeft = '64.5%';
+            }
         }else{
-            t.style.marginLeft = '64.5%';
+            var t = document.getElementsByClassName('pTriangle')[counter];
+            if(counter === 0){
+                t.style.marginLeft = '0%';
+            }else if (counter === 1){
+                t.style.marginLeft = '33%';
+            }else{
+                t.style.marginLeft = '64.5%';
+            }
         }
+        
 
         this.scrollIntoView();
     }
@@ -736,11 +757,18 @@ for (var i = 0; i < 5; i++){
 
 createEventListeners();
 document.getElementById('closemenu').addEventListener('click', removeNav);
+
 if(devOrientation === 'landscape'){
     document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHover1);
     document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
     document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
+}else{
+    document.getElementsByClassName('pHoverX')[0].addEventListener('click', removeHover1);
+    document.getElementsByClassName('pHoverX')[1].addEventListener('click', removeHover2);
+    document.getElementsByClassName('pHoverX')[2].addEventListener('click', removeHover3);
 }
+    
+
 
 setTimeout(detectScroll, 2500);
 

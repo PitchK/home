@@ -395,6 +395,13 @@ sup:hover{
        font-size: 5vw;
        padding-bottom: 0;
        margin-bottom: 0;
+       transition: 0.5s;
+    }
+
+    .pHoverX:hover{
+       color: green;
+       cursor: pointer;
+       transition: 0.5s;
     }
 
     .pHoverContainerTitleText{
@@ -444,6 +451,18 @@ sup:hover{
        padding-right: 25%;
        padding-top: none;
        padding-bottom: none;
+    }
+
+    .pTriangle{
+       top: -13%;
+       width: 0;
+   height: 0;
+   border-left: 45px solid transparent;
+   border-right: 45px solid transparent;
+   margin-left: 32%;
+   position: absolute;
+   display: none;
+   
     }
  }
 
