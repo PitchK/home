@@ -148,6 +148,23 @@ sup:hover{
    border-top-right-radius: 15px;
  }
 
+.contentImages{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5%;
+   max-width: 50%;
+}
+
+.imgCaption{
+   font-style: italic;
+   text-align: center;
+   opacity: 0.8;
+   font-size: 135%;
+   margin-left: 20%;
+   margin-right: 20%;
+}
+
  @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
     #authorInfo{
        /*text-align: center;*/
@@ -456,14 +473,32 @@ sup:hover{
     .pTriangle{
        top: -13%;
        width: 0;
-   height: 0;
-   border-left: 45px solid transparent;
-   border-right: 45px solid transparent;
-   margin-left: 32%;
-   position: absolute;
-   display: none;
-   
+      height: 0;
+      border-left: 45px solid transparent;
+      border-right: 45px solid transparent;
+      margin-left: 32%;
+      position: absolute;
+      display: none;
     }
+
+   .contentImages{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3%;
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+   }
+
+   .imgCaption{
+      font-style: italic;
+      text-align: center;
+      opacity: 0.8;
+      font-size: 120%;
+      margin-left: 20%;
+      margin-right: 20%;
+   }
  }
 
  #navigation{
@@ -488,12 +523,9 @@ sup:hover{
     padding-right: 0;
     margin-right: 0;
     font-size: 125%;
-    border-right: 1px dotted green;
-    
+    border-right: 1px dotted green;   
     transition: 0.4s;
     margin-right: 0;
-    
-    
  }
 
  .newNavLink{

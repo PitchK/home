@@ -297,7 +297,7 @@ function drawFirstGraph(maxStat, increment){
         rightCont.id = 'rContainer';
         document.getElementById('pContainer').appendChild(rightCont);
 
-        console.log(70 / (maxStat/increment))
+        
         for(var i = Math.trunc(maxStat/increment); i > 0; i--){
             var percentages = document.createElement('div');
             percentages.className = 'hPercentDiv';
