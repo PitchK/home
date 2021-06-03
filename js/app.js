@@ -4,9 +4,10 @@ var temp = document.getElementById('popup');
 var open = false;
 var navOpen = true;
 
-
-
 //general webpage setup
+
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047']
+
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
 var add = 'Date accessed: ' + (x.getMonth()+1) + "/" + x.getDate() + "/" + x.getFullYear();
@@ -14,9 +15,9 @@ listOfCitations.push(add);
 
 for(var i = 0; i<listOfCitations.length; i++){
     var newCitation = document.createElement('p');
-    newCitation.className = 'indivCitation';
+    newCitation.className = 'ref';
     newCitation.innerHTML = listOfCitations[i];
-    document.getElementById('citeInfo').appendChild(newCitation);
+    document.getElementsByClassName('i')[1].appendChild(newCitation);
 }
 
 var fontSizes = [0.6, 0.8, 1, 1.2, 1.4] //135% is default
@@ -44,6 +45,13 @@ var x = window.matchMedia("(orientation: portrait)");
 decideLorR(x);
 x.addListener(decideLorR);
 
+for(var i = 0; i < listOfReferences.length; i++){
+    var reference = document.createElement('p');
+    reference.className = 'ref';
+    reference.innerHTML = listOfReferences[i];
+    document.getElementsByClassName('i')[0].appendChild(reference);
+}
+
 //change font size
 function changeFontSize(){
     //number of 'content' is 10. CHANGE THIS AS HTML UPDATES!!
@@ -65,7 +73,7 @@ function changeFontSize(){
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
     }
 
-    document.getElementById('story').style.fontSize = fontSize;
+    document.getElementById('story').style.fontSize = (125 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
 
     /*for(var i = 0; i<8; i++){
         document.getElementsByClassName('navLink')[i].style.fontSize = (120 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
@@ -158,6 +166,10 @@ function removeNav(){
                     document.getElementsByClassName('list')[i].style.marginLeft = '15%';
                     document.getElementsByClassName('list')[i].style.marginRight = '12.5%';
                 }
+
+                for (var i = 0; i < document.getElementsByClassName('i').length; i++){
+                    document.getElementsByClassName('i')[i].style.marginLeft = '15%';
+                }
                 document.getElementById('story').style.marginRight = '12.5%';
                 document.getElementById('story').style.marginLeft = '12.5%';
                 document.getElementById('graph1').style.marginRight = '12.5%';
@@ -165,6 +177,11 @@ function removeNav(){
                 document.getElementById('citesources').style.marginRight = '12.5%';
                 document.getElementById('citesources').style.marginLeft = '12.5%';
                 document.getElementById('source').style.marginLeft = '12.5%';
+                document.getElementById('authorInfo').style.marginLeft = '12.5%';
+                document.getElementById('datesUpdated').style.marginLeft = '12.5%';
+                document.getElementById('textChanger').style.marginLeft = '12.5%';
+                document.getElementsByClassName('extra')[0].style.marginLeft = '12.5%';
+                document.getElementsByClassName('extra')[1].style.marginLeft = '12.5%';
 
             }else{
                 navOpen = false;
@@ -215,6 +232,12 @@ function removeNav(){
                 document.getElementById('citesources').style.marginRight = '8%';
                 document.getElementById('citesources').style.marginLeft = '8%';
                 document.getElementById('source').style.marginLeft = '8%';
+                document.getElementById('authorInfo').style.marginLeft = '8%';
+                document.getElementById('datesUpdated').style.marginLeft = '8%';
+                document.getElementById('textChanger').style.marginLeft = '8%';
+                document.getElementsByClassName('extra')[0].style.marginLeft = '8%';
+                document.getElementsByClassName('extra')[1].style.marginLeft = '8%';
+                
             }else{
                 navOpen = true;
                 document.getElementById('main').style.width = '100%';
@@ -379,7 +402,6 @@ function drawFirstGraph(maxStat, increment){
         disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
         document.getElementById('graph1').appendChild(disclaimer);
     }
-    
 }
 
 //2D array needed for createHover method
@@ -562,10 +584,9 @@ function createHover(num){
             document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
             console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
         
-        }
+    `  `
+    }    
 }
-
-
 
 var isHoverOpen = false;
 function showHover(event){
@@ -735,6 +756,48 @@ function showCitations(){
     }
 }
 
+function showExtraStuff1(){
+    var plus = document.getElementsByClassName('plus')[0];
+    if(this.innerHTML === '+'){
+        var i = document.getElementsByClassName('i')[0];
+        
+        i.style.display = 'block';
+        this.innerHTML = '-';
+        plus.style.transition = '0s';
+        plus.style.paddingLeft = '1.6%';
+        plus.style.paddingRight = '1.6%';
+        plus.style.transition = '0.5s';
+    }else{
+        document.getElementsByClassName('i')[0].style.display = 'none';
+        this.innerHTML = '+';
+        plus.style.transition = '0s';
+        plus.style.paddingLeft = '1.325%';
+        plus.style.paddingRight = '1.325%';
+        plus.style.transition = '0.5s';
+    }
+}
+
+function showExtraStuff2(){
+
+    if(this.innerHTML === '+'){
+        var i = document.getElementsByClassName('i')[1];
+        
+        i.style.display = 'block';
+        this.innerHTML = '-';
+        /*this.style.transition = '0s';
+        this.style.paddingLeft = '1.6%';
+        this.style.paddingRight = '1.6%';
+        this.style.transition = '0.5s';*/
+    }else{
+        document.getElementsByClassName('i')[1].style.display = 'none';
+        this.innerHTML = '+';
+        /*this.style.transition = '0s';
+        this.style.paddingLeft = '1.325%';
+        this.style.paddingRight = '1.325%';
+        this.style.transition = '0.5s';*/
+    }
+}
+
 document.getElementsByClassName('content')[0].style.marginTop = '0';
 
 //Event listeners
@@ -752,7 +815,7 @@ drawFirstGraph(60, 10);
 createHover(1);
 button.addEventListener('click', remove);
 document.getElementById('close').addEventListener('click', remove);
-document.getElementById('cite').addEventListener('click', showCitations);
+
 /*document.getElementById('title').addEventListener('click', showHover);*///just for testing
 
 function createEventListeners(){
@@ -784,6 +847,8 @@ if(devOrientation === 'landscape'){
     document.getElementsByClassName('pHoverX')[2].addEventListener('click', removeHover3);
 }
     
+document.getElementsByClassName('plus')[0].addEventListener('click', showExtraStuff1);
+document.getElementsByClassName('plus')[1].addEventListener('click', showExtraStuff2);
 
 
 setTimeout(detectScroll, 2500);

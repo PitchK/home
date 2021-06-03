@@ -63,13 +63,11 @@ sup:hover{
     color: white;
     font-size: 200%;
     /*font-family: 'Newsreader', serif;*/
-    
     left: 50%;
     top: 55%;
     position: absolute;
     transform: translate(-50%, -50%);
     width: 75%;
-
  }
 
  #name{
@@ -664,7 +662,7 @@ sup:hover{
  #story{
     font-style: italic;
     /*font-family: 'newsreader', serif;*/
-   font-size: 135%;
+   font-size: 125%;
    margin-left: 8%;
    margin-right: 8%;
    background-color: whitesmoke;
@@ -1102,4 +1100,59 @@ hr{
    margin-right: 8%;
    font-size: 125%;
    margin-bottom: 5%;
+}
+
+.extra{
+   display: flex;
+   margin-left: 8%;
+}
+
+.plus{
+   background-color: white;
+ 
+   border-radius: 100%;
+   padding: 1%;
+   font-size: 190%;
+   -webkit-user-select: none;
+   transition: 0.5s;
+}
+
+.plus:hover{
+   transform: rotate(-180deg);
+   cursor: pointer;
+   color: green;
+   transition: 0.5s;
+   margin-right: 2.5%;
+   
+}
+
+.extraName{
+   font-size: 175%;
+   padding-top: 1.6%;
+   margin-left: 2.5%;
+}
+
+.ref{
+   margin-top: 0%;
+   margin-left: 2%;
+   font-size: 110%;
+   margin-right: 2%;
+}
+
+.i{
+   margin-left: 10%;
+   border-left: 2px dotted green;
+   margin-right: 8.5%;
+   display: none;
+}
+
+.extra{
+   margin-top: 0;
+}
+
+#bottom{
+   width: 100%;
+   padding-top: 30%;
+   padding-bottom: 30%;
+   background-color: green;
 }
