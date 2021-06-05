@@ -161,6 +161,31 @@ sup:hover{
    margin-bottom: 2.5%;
 }
 
+#information{
+   color: white;
+   margin-top: 0;
+   padding-top: 0;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80%;
+   text-align: center;
+   font-size: 175%;
+   margin-bottom: 1%;
+   padding-bottom: 0;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+#x{
+   text-align: right;
+   font-size: 175%;
+   padding: 0;
+   margin: 0;
+   transition: 1s;
+   cursor: pointer;
+   color: white;
+
+}
+
  @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
 
    .content{
@@ -204,6 +229,10 @@ sup:hover{
        top: 19vw;
     }
 
+   #x{
+      font-size: 5vw;
+      margin-right: 5%;
+   }
 
     #innerNav{
        display: none;
@@ -691,20 +720,6 @@ sup:hover{
     
  }
 
- #information{
-    color: white;
-    margin-top: 0;
-    padding-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    text-align: center;
-    font-size: 175%;
-    margin-bottom: 1%;
-    padding-bottom: 0;
-    font-family: 'Source Sans Pro', sans-serif;
- }
-
  #phone{
     color: white;
     transition: 0.5s;
@@ -714,17 +729,6 @@ sup:hover{
  #phone:hover{
     color: green;
     transition: 0.5s;
- }
-
- #x{
-    text-align: right;
-    font-size: 175%;
-    padding: 0;
-    margin: 0;
-    transition: 1s;
-    cursor: pointer;
-    color: white;
-
  }
 
  #x:hover{
@@ -902,7 +906,7 @@ sup:hover{
 #graphTitle{
    font-size: 87.5%;
    margin-left: 5%;
-  padding-top: 3%;
+  
 }
 #caption{
    margin-left: 5%;
@@ -1155,4 +1159,62 @@ hr{
    padding-top: 30%;
    padding-bottom: 30%;
    background-color: green;
+}
+
+#graph1Selection{
+   display: flex;
+   
+   margin-left: 5%;
+}
+
+#graph1Left{
+   display: flex;
+   width: 45%;
+   
+}
+
+#graph1Right{
+   display: flex;
+   width: 50%;
+  
+}
+
+#selectGrade, #selectPrevalence{
+   font-size: 1.9vw;
+   margin-top: 8%;
+   width: auto;
+}
+
+#gradeSelection, #prevalenceSelection{
+   width: 50%;
+   margin-top: 6%;
+}
+
+.grade, .prevalenceOfUse{
+   font-size: 1.75vw;
+   background-color: white;
+   border: 1px solid black;
+   width: 75%;
+   text-align: center;
+   margin-left: 5%;
+   -webkit-user-select: none;
+   transition: 0.25s;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-top: 2%;
+   padding-bottom: 2%;
+}
+
+.grade:hover{
+   background-color: orange;
+   color: white;
+   cursor: pointer;
+   transition: 0.25s;
+}
+
+.prevalenceOfUse:hover{
+   background-color: skyblue;
+   color: white;
+   transition: 0.25s;
+   cursor: pointer;
 }

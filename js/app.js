@@ -6,7 +6,7 @@ var navOpen = true;
 
 //general webpage setup
 
-var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047']
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html']
 
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -155,33 +155,33 @@ function removeNav(){
                 document.getElementById('navMenu').style.borderTopRightRadius = '15px';
                 document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                    document.getElementsByClassName('section')[i].style.marginLeft = '12.5%';
+                    document.getElementsByClassName('section')[i].style.marginLeft = '13.5%';
                 }
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
-                    document.getElementsByClassName('content')[i].style.marginLeft = '12.5%';
-                    document.getElementsByClassName('content')[i].style.marginRight = '12.5%';
-                    document.getElementsByClassName('content')[i].style.width = '75%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '13.5%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '13.5%';
+                    document.getElementsByClassName('content')[i].style.width = '73%';
                 }
                 for (var i = 0; i < document.getElementsByClassName('list').length; i++){
-                    document.getElementsByClassName('list')[i].style.marginLeft = '15%';
-                    document.getElementsByClassName('list')[i].style.marginRight = '12.5%';
+                    document.getElementsByClassName('list')[i].style.marginLeft = '16%';
+                    document.getElementsByClassName('list')[i].style.marginRight = '13.5%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('i').length; i++){
-                    document.getElementsByClassName('i')[i].style.marginLeft = '15%';
+                    document.getElementsByClassName('i')[i].style.marginLeft = '16%';
                 }
-                document.getElementById('story').style.marginRight = '12.5%';
-                document.getElementById('story').style.marginLeft = '12.5%';
-                document.getElementById('graph1').style.marginRight = '12.5%';
-                document.getElementById('graph1').style.marginLeft = '12.5%';
-                document.getElementById('citesources').style.marginRight = '12.5%';
-                document.getElementById('citesources').style.marginLeft = '12.5%';
-                document.getElementById('source').style.marginLeft = '12.5%';
-                document.getElementById('authorInfo').style.marginLeft = '12.5%';
-                document.getElementById('datesUpdated').style.marginLeft = '12.5%';
-                document.getElementById('textChanger').style.marginLeft = '12.5%';
-                document.getElementsByClassName('extra')[0].style.marginLeft = '12.5%';
-                document.getElementsByClassName('extra')[1].style.marginLeft = '12.5%';
+                document.getElementById('story').style.marginRight = '13.5%';
+                document.getElementById('story').style.marginLeft = '13.5%';
+                document.getElementById('graph1').style.marginRight = '13.5%';
+                document.getElementById('graph1').style.marginLeft = '13.5%';
+                document.getElementById('citesources').style.marginRight = '13.5%';
+                document.getElementById('citesources').style.marginLeft = '13.5%';
+                document.getElementById('source').style.marginLeft = '13.5%';
+                document.getElementById('authorInfo').style.marginLeft = '13.5%';
+                document.getElementById('datesUpdated').style.marginLeft = '13.5%';
+                document.getElementById('textChanger').style.marginLeft = '13.5%';
+                document.getElementsByClassName('extra')[0].style.marginLeft = '13.5%';
+                document.getElementsByClassName('extra')[1].style.marginLeft = '13.5%';
 
             }else{
                 navOpen = false;
@@ -218,7 +218,7 @@ function removeNav(){
 
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
                     document.getElementsByClassName('content')[i].style.marginLeft = '8%';
-                    document.getElementsByClassName('content')[i].style.marginRight = '8%';
+                    document.getElementsByClassName('content')[i].style.width = '84%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('list').length; i++){
@@ -274,6 +274,80 @@ function removeNavArrow(){
 //Graphs and chart setup
 
 var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping*', Stat: 34.5, color: 'orange'}];
+
+var lengthOfPrevalence = ['1 day', '1 month', '1 year', 'Lifetime']
+
+function createDropDowns(){
+    for (var i = 0; i < 3; i++){
+        var g = document.createElement('p');
+        g.className = 'grade';
+        g.innerHTML = 8 + (i)*2 + 'th grade';
+        document.getElementById('gradeSelection').appendChild(g);
+    }
+
+    for (var i = 0; i < 4; i++){
+        var p = document.createElement('p');
+        p.className = 'prevalenceOfUse';
+        p.innerHTML = lengthOfPrevalence[i];
+        document.getElementById('prevalenceSelection').appendChild(p);
+    }
+
+    for (var i = 0; i < 2; i++){
+        var x = document.getElementsByClassName('grade')[i+1];
+        x.style.borderTop = 'none';
+        x.style.borderBottom = 'none';
+        x.style.paddingTop = '2%';
+        x.style.paddingBottom = '2%';
+    }
+    document.getElementsByClassName('grade')[3].style.borderTop = 'none';
+
+    for (var i = 0; i < 3; i++){
+        var x = document.getElementsByClassName('prevalenceOfUse')[i+1];
+        x.style.borderTop = 'none';
+        x.style.borderBottom = 'none';
+        x.style.paddingTop = '2%';
+        x.style.paddingBottom = '2%';
+    }
+    document.getElementsByClassName('prevalenceOfUse')[4].style.borderTop = 'none';
+
+    for (var i = 0; i < 3; i++){
+        document.getElementsByClassName('grade')[i+1].style.display = 'none';
+    }
+
+    for (var i = 0; i < 4; i++){
+        document.getElementsByClassName('prevalenceOfUse')[i+1].style.display = 'none';
+    }
+}
+
+var gradeShown = false;
+var prevalenceShown = false;
+function showDropDownGrade(){
+    if(gradeShown === false){
+        gradeShown = true;
+        for (var i = 0; i < 3; i++){
+            document.getElementsByClassName('grade')[i+1].style.display = 'block';
+        }
+    }else{
+        gradeShown = false;
+        for (var i = 0; i < 3; i++){
+            document.getElementsByClassName('grade')[i+1].style.display = 'none';
+        }
+    }
+}
+
+function showDropDownPrevalence(){
+    if(prevalenceShown === false){
+        prevalenceShown = true;
+        for (var i = 0; i < 4; i++){
+            document.getElementsByClassName('prevalenceOfUse')[i+1].style.display = 'block';
+        }
+    }else{
+        prevalenceShown = false;
+        for (var i = 0; i < 4; i++){
+            document.getElementsByClassName('prevalenceOfUse')[i+1].style.display = 'none';
+        }
+    }
+}
 
 function drawFirstGraph(maxStat, increment){
     if (devOrientation === 'landscape'){
@@ -661,13 +735,9 @@ function showHover(event){
                 t.style.marginLeft = '64.5%';
             }
         }
-        
-
         this.scrollIntoView();
     }
 }
-
-
 
 function removeHover1(){
     document.getElementsByClassName('hoverContainer')[0].style.display = 'none';
@@ -694,6 +764,16 @@ function removeHover3(){
         document.getElementsByClassName('graphBars')[i].removeEventListener('mouseover', showHover);
     }
     setTimeout(createEventListeners, 100);
+}
+
+function changeGradeGraph(){
+    document.getElementsByClassName('grade')[0].innerHTML = this.innerHTML + '▼';
+    showDropDownGrade();
+}
+
+function changePrevalenceGraph(){
+    document.getElementsByClassName('prevalenceOfUse')[0].innerHTML = this.innerHTML + '▼';
+    showDropDownPrevalence();
 }
 
 //methods
@@ -805,6 +885,17 @@ document.getElementsByClassName('content')[0].style.marginTop = '0';
 
 createNavigationBar();
 
+document.getElementsByClassName('grade')[0].addEventListener('click', showDropDownGrade);
+document.getElementsByClassName('prevalenceOfUse')[0].addEventListener('click', showDropDownPrevalence);
+
+for(var i = 0; i < 3; i++){
+    document.getElementsByClassName('grade')[i+1].addEventListener('click', changeGradeGraph);
+}
+
+for(var i = 0; i < 4; i++){
+    document.getElementsByClassName('prevalenceOfUse')[i+1].addEventListener('click', changePrevalenceGraph);
+}
+
 for (var i = 0; i < navBarNames.length; i++){
     document.getElementsByClassName('navLink')[i].addEventListener('click', scrollToSection);
     document.getElementsByClassName('navLink')[i].addEventListener('mouseover', hoverNavLink);
@@ -834,6 +925,7 @@ for (var i = 0; i < 5; i++){
     document.getElementsByClassName('textSizeOptions')[i].addEventListener('click', changeFontSize);
 }
 
+createDropDowns();
 createEventListeners();
 document.getElementById('closemenu').addEventListener('click', removeNav);
 
@@ -859,3 +951,4 @@ if(devOrientation === 'portrait'){
     disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
     document.getElementById('graph1').appendChild(disclaimer);
 }
+
