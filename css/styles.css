@@ -7,6 +7,50 @@ html{
    word-wrap: break-word;
 }
 
+#graph1Selection{
+   display: flex;
+   flex-direction: row;
+   margin-left: 5%;
+}
+
+#graph1Left{
+   display: flex;
+   width: 45%;
+   
+}
+
+#graph1Right{
+   display: flex;
+   width: 50%;
+  
+}
+
+#selectGrade, #selectPrevalence{
+   font-size: 1.9vw;
+   margin-top: 8%;
+   width: auto;
+}
+
+#gradeSelection, #prevalenceSelection{
+   width: 50%;
+   margin-top: 6%;
+}
+
+.grade, .prevalenceOfUse{
+   font-size: 1.75vw;
+   background-color: white;
+   border: 1px solid black;
+   width: 75%;
+   text-align: center;
+   margin-left: 5%;
+   -webkit-user-select: none;
+   transition: 0.25s;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-top: 2%;
+   padding-bottom: 2%;
+}
+
 #main{
    width: 77.5%;
 }
@@ -187,7 +231,35 @@ sup:hover{
 }
 
  @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
+   #graph1Right, #graph1Left{
+      width: 100%;
+   }
 
+   #selectGrade, #selectPrevalence{
+      font-size: 3.8vw;
+      margin-top: 8%;
+      width: auto;
+   }
+   
+   #gradeSelection, #prevalenceSelection{
+      width: 100%;
+      margin-top: 6%;
+   }
+   
+   .grade, .prevalenceOfUse{
+      font-size: 3.5vw;
+      background-color: white;
+      border: 1px solid black;
+      width: 75%;
+      text-align: center;
+      margin-left: 5%;
+      -webkit-user-select: none;
+      transition: 0.25s;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 2%;
+      padding-bottom: 2%;
+   }
    .content{
       margin-left: 4%;
       margin-right: 4%;
@@ -526,6 +598,11 @@ sup:hover{
       font-size: 120%;
       margin-left: 10%;
       margin-right: 10%;
+   }
+
+   #graph1Selection{
+      display: flex;
+      flex-direction: column;
    }
  }
 
@@ -906,7 +983,7 @@ sup:hover{
 #graphTitle{
    font-size: 87.5%;
    margin-left: 5%;
-  
+   word-wrap: break-word;
 }
 #caption{
    margin-left: 5%;
@@ -1159,50 +1236,6 @@ hr{
    padding-top: 30%;
    padding-bottom: 30%;
    background-color: green;
-}
-
-#graph1Selection{
-   display: flex;
-   
-   margin-left: 5%;
-}
-
-#graph1Left{
-   display: flex;
-   width: 45%;
-   
-}
-
-#graph1Right{
-   display: flex;
-   width: 50%;
-  
-}
-
-#selectGrade, #selectPrevalence{
-   font-size: 1.9vw;
-   margin-top: 8%;
-   width: auto;
-}
-
-#gradeSelection, #prevalenceSelection{
-   width: 50%;
-   margin-top: 6%;
-}
-
-.grade, .prevalenceOfUse{
-   font-size: 1.75vw;
-   background-color: white;
-   border: 1px solid black;
-   width: 75%;
-   text-align: center;
-   margin-left: 5%;
-   -webkit-user-select: none;
-   transition: 0.25s;
-   margin-top: 0;
-   margin-bottom: 0;
-   padding-top: 2%;
-   padding-bottom: 2%;
 }
 
 .grade:hover{

@@ -767,12 +767,26 @@ function removeHover3(){
 }
 
 function changeGradeGraph(){
-    document.getElementsByClassName('grade')[0].innerHTML = this.innerHTML + '▼';
+    document.getElementsByClassName('grade')[0].innerHTML = this.innerHTML + ' ▼';
+    var d = document.getElementById('graphTitle');
+    var g = document.getElementsByClassName('prevalenceOfUse')[0];
+    if(g.innerHTML != 'Lifetime ▼'){
+        d.innerHTML = 'Prevalence of use in the past ' + g.innerHTML.substring(2, g.innerHTML.length-2) + ' of selected substances among ' + this.innerHTML + 'rs, 2020';
+    }else{
+        d.innerHTML = 'Lifetime prevalence of use of selected substances among ' + this.innerHTML + 'rs, 2020';
+    }
     showDropDownGrade();
 }
 
 function changePrevalenceGraph(){
-    document.getElementsByClassName('prevalenceOfUse')[0].innerHTML = this.innerHTML + '▼';
+    document.getElementsByClassName('prevalenceOfUse')[0].innerHTML = this.innerHTML + ' ▼';
+    var d = document.getElementById('graphTitle');
+    var g = document.getElementsByClassName('grade')[0];
+    if(document.getElementsByClassName('prevalenceOfUse')[0].innerHTML != 'Lifetime ▼'){
+        d.innerHTML = 'Prevalence of use in the past ' + this.innerHTML.substring(2, this.innerHTML.length) + ' of selected substances among ' + g.innerHTML.substring(0, g.innerHTML.length - 2) + 'rs, 2020';
+    }else{
+        d.innerHTML = 'Lifetime prevalence of use of selected substances among ' + g.innerHTML.substring(0, g.innerHTML.length - 2) + 'rs, 2020';
+    }
     showDropDownPrevalence();
 }
 
@@ -885,17 +899,6 @@ document.getElementsByClassName('content')[0].style.marginTop = '0';
 
 createNavigationBar();
 
-document.getElementsByClassName('grade')[0].addEventListener('click', showDropDownGrade);
-document.getElementsByClassName('prevalenceOfUse')[0].addEventListener('click', showDropDownPrevalence);
-
-for(var i = 0; i < 3; i++){
-    document.getElementsByClassName('grade')[i+1].addEventListener('click', changeGradeGraph);
-}
-
-for(var i = 0; i < 4; i++){
-    document.getElementsByClassName('prevalenceOfUse')[i+1].addEventListener('click', changePrevalenceGraph);
-}
-
 for (var i = 0; i < navBarNames.length; i++){
     document.getElementsByClassName('navLink')[i].addEventListener('click', scrollToSection);
     document.getElementsByClassName('navLink')[i].addEventListener('mouseover', hoverNavLink);
@@ -951,4 +954,16 @@ if(devOrientation === 'portrait'){
     disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
     document.getElementById('graph1').appendChild(disclaimer);
 }
+
+document.getElementsByClassName('grade')[0].addEventListener('click', showDropDownGrade);
+document.getElementsByClassName('prevalenceOfUse')[0].addEventListener('click', showDropDownPrevalence);
+
+for(var i = 0; i < 3; i++){
+    document.getElementsByClassName('grade')[i+1].addEventListener('click', changeGradeGraph);
+}
+
+for(var i = 0; i < 4; i++){
+    document.getElementsByClassName('prevalenceOfUse')[i+1].addEventListener('click', changePrevalenceGraph);
+}
+
 
