@@ -273,7 +273,7 @@ function removeNavArrow(){
 
 //Graphs and chart setup
 
-var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: 55.3, color: '#715bd4'}, {Drug: 'Marijuana', Stat: 35.2, color: 'green'}, {Drug: 'Vaping*', Stat: 34.5, color: 'orange'}];
+var listOfFirstDrugs = [{Drug: 'Alcohol', Stat: [['12th grade', 61.5, 55.3, 33.6, 2.7], ['10th grade', 46.4, 40.7, 20.3, 1.0], ['8th grade', 25.6, 20.5, 9.9, 0.4]], color: '#715bd4'}, {Drug: 'Marijuana', Stat: [['12th grade', 43.7, 35.2, 21.1, 6.9], ['10th grade', 33.3, 28.0, 16.6, 4.4], ['8th grade', 14.8, 11.4, 6.5, 1.1]], color: 'green'}, {Drug: 'Vaping*', Stat: [['12th grade', 44.3, 34.5, 24.7, 8.6], ['10th grade', 38.7, 30.7, 19.3, 5.6], ['8th grade', 22.7, 16.6, 10.5, 2.0]], color: 'orange'}];
 
 var lengthOfPrevalence = ['1 day', '1 month', '1 year', 'Lifetime']
 
@@ -349,8 +349,10 @@ function showDropDownPrevalence(){
     }
 }
 
-function drawFirstGraph(maxStat, increment){
+function drawFirstGraph(maxStat, increment, row, col){
+    
     if (devOrientation === 'landscape'){
+
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var newCont = document.createElement('div');
             newCont.className = 'container';
@@ -372,8 +374,8 @@ function drawFirstGraph(maxStat, increment){
     
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var drugStat = document.getElementsByClassName('graphBars')[i];
-            drugStat.innerHTML = listOfFirstDrugs[i].Stat + '%';
-            drugStat.style.width = (((listOfFirstDrugs[i].Stat/maxStat) * 72.5) - 1.5) + '%';
+            drugStat.innerHTML = listOfFirstDrugs[i].Stat[row][col+1] + '%';
+            drugStat.style.width = (((listOfFirstDrugs[i].Stat[row][col+1]/maxStat) * 72.5) - 1.5) + '%';
             drugStat.style.backgroundColor = listOfFirstDrugs[i].color;
         }
         
@@ -445,14 +447,14 @@ function drawFirstGraph(maxStat, increment){
             vGraphBars.style.marginRight = '15%';
             vGraphBars.style.width = '70%';
             vGraphBars.style.backgroundColor = listOfFirstDrugs[i].color;
-            vGraphBars.style.height = (50 * (listOfFirstDrugs[i].Stat/60)) - 0.5 + 'vh';
-            vGraphBars.style.marginTop = (50 - (50 * (listOfFirstDrugs[i].Stat/60) -0.5)) + 'vh';
+            vGraphBars.style.height = (50 * (listOfFirstDrugs[i].Stat[row][col+1]/maxStat)) - 0.5 + 'vh';
+            vGraphBars.style.marginTop = (50 - (50 * (listOfFirstDrugs[i].Stat[row][col+1]/maxStat) -0.5)) + 'vh';
         }
 
         for(var i = 0; i<listOfFirstDrugs.length; i++){
             var a = document.createElement('div');
             a.className = 'vGraphBarsStats';
-            a.innerHTML = listOfFirstDrugs[i].Stat + '%';
+            a.innerHTML = listOfFirstDrugs[i].Stat[row][col+1] + '%';
             document.getElementsByClassName('vGraphBars')[i].appendChild(a);
         }
 
@@ -469,13 +471,14 @@ function drawFirstGraph(maxStat, increment){
             document.getElementsByClassName('hDrugNames')[i].style.width = (100 / listOfFirstDrugs.length) + '%';
         }
     }
+}
+
     
-    if(devOrientation === 'landscape'){
-        var disclaimer = document.createElement('div');
-        disclaimer.id = 'disclaimer';
-        disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
-        document.getElementById('graph1').appendChild(disclaimer);
-    }
+if(devOrientation === 'landscape'){
+    var disclaimer = document.createElement('div');
+    disclaimer.id = 'disclaimer';
+    disclaimer.innerHTML = '*Vaping nicotine. Does not include marijuana vaping and vaping for just flavoring. The prevalence of use of these substances among high school seniors in the past year is 22.1%, and 16.6%, respectively. The prevalence of use of all vapes is 39.0%, which suggests some overlap.';
+    document.getElementById('graph1').appendChild(disclaimer);
 }
 
 //2D array needed for createHover method
@@ -572,8 +575,7 @@ function createHover(num){
             li.classname = 'pLine'
             document.getElementsByClassName('rHoverContainer')[i].appendChild(li);
         }
-        
-            
+           
         var otherInfoHeader = document.createElement('div');//title of 'past prevalence of use'
         otherInfoHeader.innerHTML = 'Past prevalence of use:';
         if(devOrientation === 'landscape'){
@@ -584,7 +586,6 @@ function createHover(num){
             document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoHeader);
         }
 
-        
         for(var year = 2019; year > 2016; year--){
             var otherInfoYears = document.createElement('p');//title of year
             otherInfoYears.innerHTML = year + ": "
@@ -595,7 +596,6 @@ function createHover(num){
                 otherInfoYears.className = 'pHoverContainerYear';
                 document.getElementsByClassName('rHoverContainer')[i].appendChild(otherInfoYears);
             }
-            
         }
 
         for(var j = 0; j < 3; j++){
@@ -608,7 +608,6 @@ function createHover(num){
                 otherInfoPercentages.className = 'pHoverContainerPastPercentage';
                 document.getElementsByClassName('rHoverContainer')[i].getElementsByClassName('pHoverContainerYear')[j].appendChild(otherInfoPercentages);
             }
-            
         }
 
         var otherInfoTrend = document.createElement('div');
@@ -643,7 +642,6 @@ function createHover(num){
             otherInfoBotLink.className = 'pHoverContainerBotLink';
             document.getElementsByClassName('pHoverContainerBotCaption')[i].appendChild(otherInfoBotLink);
         }
-        
 
             //attributes of the container
             if(devOrientation === 'landscape'){
@@ -657,8 +655,6 @@ function createHover(num){
             document.getElementsByClassName('hoverContainer')[i].style.backgroundColor = 'whitesmoke';
             document.getElementsByClassName('hoverContainer')[i].style.border = '6px solid ' + listOfFirstDrugs[i].color;
             console.log(document.getElementsByClassName('hoverContainer')[i].style.border);
-        
-    `  `
     }    
 }
 
@@ -700,7 +696,7 @@ function showHover(event){
     }else{
         var counter;
         for(var i = 0; i < listOfFirstDrugs.length; i++){
-            if(this.getElementsByClassName('vGraphBarsStats')[0].innerHTML === listOfFirstDrugs[i].Stat + '%'){
+            if(this.getElementsByClassName('vGraphBarsStats')[0].innerHTML === listOfFirstDrugs[i].Stat[row][col+1] + '%'){
                 counter = i;
                 break;
             }
@@ -766,6 +762,11 @@ function removeHover3(){
     setTimeout(createEventListeners, 100);
 }
 
+var listofgrades = ['12th grade ▼', '10th grade ▼', '8th grade ▼'];
+var listofprevalences = ['Lifetime ▼', '1 year ▼', '1 month ▼', '1 day ▼'];
+var scale = [[[65, 13], [60, 10], [35, 7], [10, 2]], [[50, 10], [42, 6], [24, 4], [6, 1]], [[30, 5], [24, 4], [12, 2], [2.5, 0.5]]];
+            
+
 function changeGradeGraph(){
     document.getElementsByClassName('grade')[0].innerHTML = this.innerHTML + ' ▼';
     var d = document.getElementById('graphTitle');
@@ -776,6 +777,20 @@ function changeGradeGraph(){
         d.innerHTML = 'Lifetime prevalence of use of selected substances among ' + this.innerHTML + 'rs, 2020';
     }
     showDropDownGrade();
+    console.log(listofgrades.indexOf(document.getElementsByClassName('grade')[0].innerHTML));
+    console.log(listofprevalences.indexOf(g.innerHTML));
+    if(devOrientation === 'landscape'){
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            document.getElementsByClassName('container')[0].remove();
+        }
+        document.getElementById('graphScale').remove();
+    }else{
+        document.getElementById('pContainer').remove();
+        document.getElementById('hGraphScale').remove();
+    } 
+    var temp = listofgrades.indexOf(document.getElementsByClassName('grade')[0].innerHTML);
+    var temp1 = listofprevalences.indexOf(g.innerHTML)
+    drawFirstGraph(scale[temp][temp1][0], scale[temp][temp1][1], temp, temp1);
 }
 
 function changePrevalenceGraph(){
@@ -788,6 +803,20 @@ function changePrevalenceGraph(){
         d.innerHTML = 'Lifetime prevalence of use of selected substances among ' + g.innerHTML.substring(0, g.innerHTML.length - 2) + 'rs, 2020';
     }
     showDropDownPrevalence();
+    if(devOrientation === 'landscape'){
+        for(var i = 0; i<listOfFirstDrugs.length; i++){
+            document.getElementsByClassName('container')[0].remove();
+        }
+        document.getElementById('graphScale').remove();
+    }else{
+        
+        document.getElementById('pContainer').remove();
+        document.getElementById('hGraphScale').remove();
+    } 
+
+    var temp = listofgrades.indexOf(g.innerHTML);
+    var temp1 = listofprevalences.indexOf(document.getElementsByClassName('prevalenceOfUse')[0].innerHTML);
+    drawFirstGraph(scale[temp][temp1][0], scale[temp][temp1][1], temp, temp1);
 }
 
 //methods
@@ -905,8 +934,8 @@ for (var i = 0; i < navBarNames.length; i++){
     document.getElementsByClassName('navLink')[i].addEventListener('mouseout', removeNavArrow);
 }
 
-drawFirstGraph(60, 10);
-createHover(1);
+drawFirstGraph(60, 10, 0, 1);
+/*createHover(1);*/
 button.addEventListener('click', remove);
 document.getElementById('close').addEventListener('click', remove);
 
@@ -932,7 +961,7 @@ createDropDowns();
 createEventListeners();
 document.getElementById('closemenu').addEventListener('click', removeNav);
 
-if(devOrientation === 'landscape'){
+/*if(devOrientation === 'landscape'){
     document.getElementsByClassName('hoverX')[0].addEventListener('click', removeHover1);
     document.getElementsByClassName('hoverX')[1].addEventListener('click', removeHover2);
     document.getElementsByClassName('hoverX')[2].addEventListener('click', removeHover3);
@@ -940,7 +969,7 @@ if(devOrientation === 'landscape'){
     document.getElementsByClassName('pHoverX')[0].addEventListener('click', removeHover1);
     document.getElementsByClassName('pHoverX')[1].addEventListener('click', removeHover2);
     document.getElementsByClassName('pHoverX')[2].addEventListener('click', removeHover3);
-}
+}*/
     
 document.getElementsByClassName('plus')[0].addEventListener('click', showExtraStuff1);
 document.getElementsByClassName('plus')[1].addEventListener('click', showExtraStuff2);
