@@ -6,7 +6,7 @@ var navOpen = true;
 
 //general webpage setup
 
-var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html']
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/'];
 
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -68,6 +68,12 @@ function changeFontSize(){
        
     }
 
+    for(var i = 0; i<document.getElementsByClassName('imgCaption').length; i++){
+        var fontSize = this.style.fontSize;
+        document.getElementsByClassName('imgCaption')[i].style.fontSize = fontSize;
+       
+    }
+
     for (var i = 0; i<document.getElementsByClassName('section').length; i++){
         var fontSize = this.style.fontSize;
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
@@ -88,7 +94,7 @@ function changeFontSize(){
 }
 
 //create side navigation bar
-var navBarNames = ['A brief introduction', 'What is substance use?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
+var navBarNames = ['A brief introduction', 'What is substance use and how does it work?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
     decideLorR(x);
     console.log(devOrientation);
@@ -497,12 +503,7 @@ function createHover(num){
             lt.className = 'topC';
             document.getElementsByClassName('hoverContainer')[i].appendChild(lt);
         }
-        
-        if(devOrientation === 'portrait'){
 
-        }
-        
-        
         if (devOrientation === 'landscape'){
             var x = document.createElement('p');//x button
             x.innerHTML = '✖';
@@ -553,8 +554,6 @@ function createHover(num){
                 document.getElementsByClassName('hoverContainer')[i].appendChild(triangle);
             document.getElementsByClassName('pTriangle')[i].style.borderBottom = '30px solid ' + listOfFirstDrugs[i].color;
             }
-            
-        
             
         var otherInfoText1 = document.createElement('p');//title of 'prevalence of use'
         otherInfoText1.innerHTML = '2020 prevalence of use among 12th graders: ';
