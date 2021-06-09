@@ -13,6 +13,34 @@ html{
    margin-left: 5%;
 }
 
+.contentImages{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5%;
+   max-width: 40%;
+}
+
+.imgCaption{
+   font-style: italic;
+   text-align: center;
+   opacity: 0.8;
+   font-size: 135%;
+   margin-left: 20%;
+   margin-right: 20%;
+   font-family: 'Source Sans Pro', sans-serif;
+   margin-bottom: 2.5%;
+}
+
+.content{
+   margin-left: 8%;
+   /*font-family: 'newsreader', serif;*/
+  font-size: 135%;
+  line-height: 1.55;
+  margin-right: 8%;
+  opacity: 1.2;
+}
+
 #graph1Left{
    display: flex;
    width: 45%;
@@ -35,6 +63,14 @@ html{
    width: 50%;
    margin-top: 6%;
 }
+
+hr{
+   margin-left: 30%;
+   margin-right: 30%;
+   margin-top: 4%;
+   margin-bottom: 4%;
+}
+
 
 .grade, .prevalenceOfUse{
    font-size: 1.75vw;
@@ -83,6 +119,13 @@ sup:hover{
     z-index: 0;
  }
  
+
+ #authorInfo{
+   font-size: 150%;
+   /*font-family: 'newsreader', serif;*/
+   margin-left: 8%;
+}
+
  #topimage{
     width: 100%;
     position: relative;
@@ -136,6 +179,19 @@ sup:hover{
     margin-bottom: 0;
  }
 
+ .section{
+   color : black;
+    /*font-family: 'newsreader', serif;*/
+    margin-left: 8%;
+    font-size: 190%;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 2%;
+    border-left: 4px solid green;
+    padding-top: 1%;
+    padding-bottom: 1%;
+ }
+
  .textSizeOptions{
     border: 1px solid black;
     width: 3%;
@@ -175,6 +231,400 @@ sup:hover{
    transition: 0.3s;
  }
 
+ 
+
+@media only screen and (orientation: portrait){/*Making this mobile compatible!*/
+   #graph1Right, #graph1Left{
+      width: 100%;
+   }
+
+   #selectGrade, #selectPrevalence{
+      font-size: 3.8vw;
+      margin-top: 8%;
+      width: auto;
+   }
+   
+   #gradeSelection, #prevalenceSelection{
+      width: 100%;
+      margin-top: 6%;
+   }
+   
+   .grade, .prevalenceOfUse{
+      font-size: 3.5vw;
+      background-color: white;
+      border: 1px solid black;
+      width: 75%;
+      text-align: center;
+      margin-left: 5%;
+      -webkit-user-select: none;
+      transition: 0.25s;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 2%;
+      padding-bottom: 2%;
+   }
+   .content{
+      margin-left: 5%;
+      margin-right: 5%;
+   }
+    #authorInfo{
+       /*text-align: center;*/
+       margin-left: -10%;
+       font-size: 1vw;
+    }
+
+    #datesUpdated{
+       /*text-align: center;*/
+       margin-left: -10%;
+       font-size: 2vw;
+    }
+
+    #textChanger{
+       /*text-align: center;*/
+      
+       font-size: 5vw;
+    }
+
+    #entirePage{
+       flex-direction: column;
+    }
+    #title{
+       top: 4vw;
+       font-size: 7.5vw;
+    }
+
+    #subtitle{
+       font-size: 4vw;
+       top: 19vw;
+    }
+
+   #x{
+      font-size: 5vw;
+      margin-right: 5%;
+   }
+
+    #innerNav{
+       display: none;
+    }
+
+    #navigation{
+       display: none;
+    }
+
+    #sideCaption{
+       display: none;
+    }
+
+    #navMenu{
+       width: 25%;
+       text-align: center;
+       border-bottom-right-radius: 15px;
+       border-top-right-radius: 15px;
+       padding-top: 1%;
+       padding-bottom: 1%;
+       
+    }
+    
+    #closemenu{
+      margin-left: 0.1vw;
+      font-size: 5vw;
+      font-weight: normal;
+    }
+
+    #information{
+      font-size: 5vw;
+    }
+
+    #call{
+       margin-top: 7%;
+       margin-bottom: 0;
+       font-size: 5vw;
+    }
+
+    #close{
+      margin-top: 7%;
+      margin-bottom: 7%;
+      font-size: 5vw;
+    }
+
+    #twobtn{
+      flex-direction: column;
+      width: 100%;
+   }
+
+    #main{
+       width: 100%;
+    }
+
+    .section{
+       border-left: 1px solid green;
+    }
+
+    #story{
+       border-left: 1px dotted green;
+    }
+
+    #pContainer{
+       height: 50vh;
+       width: 85%;
+       
+       border-left: none;
+       display: flex;
+       margin-left: 5%;
+    }
+
+    #lContainer{
+      height: 50vh;
+      width: 10%;
+      
+    }
+
+    #rContainer{
+       height: 50vh;
+       width: 90%;
+       border: 1px solid black;
+       display: flex;
+       border-right: none;
+ 
+    }
+
+    .hPercentDiv{
+       font-size: 4vw;
+       border-top: 0.1px solid black;
+       text-align: center;
+       padding-top: 0.4vh;
+       margin-bottom: 0;
+       padding-bottom: 0;
+    }
+
+    .vGraphBarsCont{
+       width: 33.3%;
+       height: 50vh;
+    }
+
+    .vGraphBarsStats{
+       color: white;
+       font-size: 4vw;
+       padding-bottom: 0;
+       margin-bottom: 0;
+       padding-top: 1vh;
+       text-align: center;
+       
+    }
+
+    .vGraphBars{
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      transition: 0.5s;
+      -webkit-user-select: none;
+    }
+
+    #graphTitle{
+       font-size: 10%;
+    }
+
+    hr{
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 6%;
+      margin-bottom: 6%;
+   }
+   
+
+    
+    #graph1{
+       width: 90%;
+       margin-right: 5%;
+       margin-left: 5%;
+    }
+
+    .graphBars{
+       font-size: 30px;
+    }
+
+    #hGraphScale{
+       
+       margin-left: 13.5%;
+       margin-right: 10%;
+       display: flex;
+    }
+
+    .hDrugNames{
+       font-size: 3.5vw;
+       text-align: center;  
+       margin-top: 5vh;
+       padding-top: 0;
+       transform: rotate(-45deg);
+    }
+
+    .vGraphBars:hover{
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      filter: brightness(0.80);
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .pHoverContainer{
+       display: flex;
+       height: 22.5%;
+       background-color: whitesmoke;
+    }
+
+    .lHoverContainer{
+       height: 25vh;
+       border-right: 2px dotted orange;
+       width: 50%;
+    }
+
+    .rHoverContainer{
+       height: 22.5%;
+       width: 100%;
+    }
+
+    .hoverContainer{
+       background-color: whitesmoke;
+    }
+    
+    .pHoverContainerPrevalence{
+       font-size: 4vw;
+       padding-left: 1vw;
+       padding-right: 1vw;
+       padding-top: 0;
+       margin-top: 0;
+       text-align: center;
+    }
+
+    .pHoverContainerPercentage{
+       font-weight: bold;
+       text-align: center;
+       text-decoration: underline;
+    }
+
+    .topC{
+       display: flex;
+       height: 3%;
+    }
+
+    .pHoverX{
+       height: 3%;
+       width: 10%;
+       padding-top: 0.5vh;
+       margin-top: 0;
+       padding-right: 3%;
+       font-size: 5vw;
+       padding-bottom: 0;
+       margin-bottom: 0;
+       transition: 0.5s;
+    }
+
+    .pHoverX:hover{
+       color: green;
+       cursor: pointer;
+       transition: 0.5s;
+    }
+
+    .pHoverContainerTitleText{
+       height: 3%;
+       width: 90%;
+       padding-top: 2.5vh;
+       padding-left: 12.5%;
+       font-size: 6.5vw;
+   
+
+    }
+
+    .pHoverContainerPast{
+      font-size: 5vw;
+      
+      padding-top: 0;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .pHoverContainerYear{
+       font-size: 5vw;
+      
+       text-align: center;
+    }
+
+    .pHoverContainerPastPercentage{
+       font-size: 5vw;
+       font-weight: bold;
+       text-decoration: underline;
+       text-align: center;
+    }
+
+    .pHoverContainerTrend{
+       display: none;
+    }
+
+    .pHoverContainerBotCaption{
+       font-size: 3vw;
+       text-align: center;
+    }
+
+    .pLine{
+       margin-top: 0;
+       margin-bottom: 0;
+       padding-left: 25%;
+       padding-right: 25%;
+       padding-top: none;
+       padding-bottom: none;
+    }
+
+    .pTriangle{
+       top: -13%;
+       width: 0;
+      height: 0;
+      border-left: 45px solid transparent;
+      border-right: 45px solid transparent;
+      margin-left: 32%;
+      position: absolute;
+      display: none;
+    }
+
+   .contentImages{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3%;
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+   }
+
+   .imgCaption{
+      font-style: italic;
+      text-align: center;
+      opacity: 0.8;
+      font-size: 100%;
+      margin-left: 10%;
+      margin-right: 10%;
+   }
+
+   #graph1Selection{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .section{
+      color : black;
+       /*font-family: 'newsreader', serif;*/
+       margin-left: 5%;
+       margin-right: 5%;
+       font-size: 190%;
+       font-weight: bold;
+       text-decoration: underline;
+       padding-left: 2%;
+       border-left: 4px solid green;
+       padding-top: 1%;
+       padding-bottom: 1%;
+    }
+ }
+
  #navMenu{
    width: 22.5%;
    margin-left: 0;
@@ -185,25 +635,6 @@ sup:hover{
    top: 2%;
    border-top-right-radius: 15px;
  }
-
-.contentImages{
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 5%;
-   max-width: 50%;
-}
-
-.imgCaption{
-   font-style: italic;
-   text-align: center;
-   opacity: 0.8;
-   font-size: 135%;
-   margin-left: 20%;
-   margin-right: 20%;
-   font-family: 'Source Sans Pro', sans-serif;
-   margin-bottom: 2.5%;
-}
 
 #information{
    color: white;
@@ -293,18 +724,7 @@ sup:hover{
  }
  
 
- .section{
-   color : black;
-    /*font-family: 'newsreader', serif;*/
-    margin-left: 8%;
-    font-size: 190%;
-    font-weight: bold;
-    text-decoration: underline;
-    padding-left: 2%;
-    border-left: 4px solid green;
-    padding-top: 1%;
-    padding-bottom: 1%;
- }
+ 
 
  li{
    list-style-type: circle;
@@ -376,17 +796,6 @@ sup:hover{
     max-width: 80%;
     margin-bottom: 5%;
     /*font-family: 'newsreader', serif;*/
- }
-
- .content{
-    margin-left: 8%;
-    /*font-family: 'newsreader', serif;*/
-   font-size: 135%;
-   line-height: 1.55;
-   margin-right: 8%;
-   opacity: 1.2;
-   
-
  }
 
  #story{
@@ -502,11 +911,6 @@ sup:hover{
    transition: 0.5s;
  }
 
- #authorInfo{
-    font-size: 150%;
-    /*font-family: 'newsreader', serif;*/
-    margin-left: 8%;
- }
 
  #datesUpdated{
    /*font-family: 'newsreader', serif;*/
@@ -791,11 +1195,6 @@ sup:hover{
    top: -7%;
 }
 
-hr{
-   margin-left: 15%;
-   margin-right: 15%;
-}
-
 .important{
    color: #08450b
 }
@@ -875,380 +1274,3 @@ hr{
    transition: 0.25s;
    cursor: pointer;
 }
-
-
-@media only screen and (orientation: portrait){/*Making this mobile compatible!*/
-   #graph1Right, #graph1Left{
-      width: 100%;
-   }
-
-   #selectGrade, #selectPrevalence{
-      font-size: 3.8vw;
-      margin-top: 8%;
-      width: auto;
-   }
-   
-   #gradeSelection, #prevalenceSelection{
-      width: 100%;
-      margin-top: 6%;
-   }
-   
-   .grade, .prevalenceOfUse{
-      font-size: 3.5vw;
-      background-color: white;
-      border: 1px solid black;
-      width: 75%;
-      text-align: center;
-      margin-left: 5%;
-      -webkit-user-select: none;
-      transition: 0.25s;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding-top: 2%;
-      padding-bottom: 2%;
-   }
-   .content{
-      margin-left: 4%;
-      margin-right: 4%;
-   }
-    #authorInfo{
-       /*text-align: center;*/
-       margin-left: -10%;
-       font-size: 1vw;
-    }
-
-    #datesUpdated{
-       /*text-align: center;*/
-       margin-left: -10%;
-       font-size: 2vw;
-    }
-
-    #textChanger{
-       /*text-align: center;*/
-      
-       font-size: 5vw;
-    }
-
-    .content{
-       margin: 0;
-       padding: 0;
-       font-size: 4vw;
-    }
-
-    #entirePage{
-       flex-direction: column;
-    }
-    #title{
-       top: 4vw;
-       font-size: 7.5vw;
-    }
-
-    #subtitle{
-       font-size: 4vw;
-       top: 19vw;
-    }
-
-   #x{
-      font-size: 5vw;
-      margin-right: 5%;
-   }
-
-    #innerNav{
-       display: none;
-    }
-
-    #navigation{
-       display: none;
-    }
-
-    #sideCaption{
-       display: none;
-    }
-
-    #navMenu{
-       width: 25%;
-       text-align: center;
-       border-bottom-right-radius: 15px;
-       border-top-right-radius: 15px;
-       padding-top: 1%;
-       padding-bottom: 1%;
-       
-    }
-    
-    #closemenu{
-      margin-left: 0.1vw;
-      font-size: 5vw;
-      font-weight: normal;
-    }
-
-    #information{
-      font-size: 5vw;
-    }
-
-    #call{
-       margin-top: 7%;
-       margin-bottom: 0;
-       font-size: 5vw;
-    }
-
-    #close{
-      margin-top: 7%;
-      margin-bottom: 7%;
-      font-size: 5vw;
-    }
-
-    #twobtn{
-      flex-direction: column;
-      width: 100%;
-   }
-
-    #main{
-       width: 100%;
-    }
-
-    .section{
-       border-left: 1px solid green;
-    }
-
-    #story{
-       border-left: 1px dotted green;
-    }
-
-    #pContainer{
-       height: 50vh;
-       width: 85%;
-       
-       border-left: none;
-       display: flex;
-       margin-left: 5%;
-    }
-
-    #lContainer{
-      height: 50vh;
-      width: 10%;
-      
-    }
-
-    #rContainer{
-       height: 50vh;
-       width: 90%;
-       border: 1px solid black;
-       display: flex;
-       border-right: none;
- 
-    }
-
-    .hPercentDiv{
-       font-size: 4vw;
-       border-top: 0.1px solid black;
-       text-align: center;
-       padding-top: 0.4vh;
-       margin-bottom: 0;
-       padding-bottom: 0;
-    }
-
-    .vGraphBarsCont{
-       width: 33.3%;
-       height: 50vh;
-    }
-
-    .vGraphBarsStats{
-       color: white;
-       font-size: 4vw;
-       padding-bottom: 0;
-       margin-bottom: 0;
-       padding-top: 1vh;
-       text-align: center;
-       
-    }
-
-    .vGraphBars{
-      border-top-right-radius: 5px;
-      border-top-left-radius: 5px;
-      padding-bottom: 0;
-      margin-bottom: 0;
-      transition: 0.5s;
-      -webkit-user-select: none;
-    }
-
-    #graphTitle{
-       font-size: 10%;
-    }
-
-    
-    #graph1{
-       width: 90%;
-       margin-right: 5%;
-       margin-left: 5%;
-    }
-
-    .graphBars{
-       font-size: 30px;
-    }
-
-    #hGraphScale{
-       
-       margin-left: 13.5%;
-       margin-right: 10%;
-       display: flex;
-    }
-
-    .hDrugNames{
-       font-size: 3.5vw;
-       text-align: center;  
-       margin-top: 5vh;
-       padding-top: 0;
-       transform: rotate(-45deg);
-    }
-
-    .vGraphBars:hover{
-      border-top-right-radius: 12px;
-      border-top-left-radius: 12px;
-      filter: brightness(0.80);
-      transition: 0.5s;
-      cursor: pointer;
-    }
-
-    .pHoverContainer{
-       display: flex;
-       height: 22.5%;
-       background-color: whitesmoke;
-    }
-
-    .lHoverContainer{
-       height: 25vh;
-       border-right: 2px dotted orange;
-       width: 50%;
-    }
-
-    .rHoverContainer{
-       height: 22.5%;
-       width: 100%;
-    }
-
-    .hoverContainer{
-       background-color: whitesmoke;
-    }
-    
-    .pHoverContainerPrevalence{
-       font-size: 4vw;
-       padding-left: 1vw;
-       padding-right: 1vw;
-       padding-top: 0;
-       margin-top: 0;
-       text-align: center;
-    }
-
-    .pHoverContainerPercentage{
-       font-weight: bold;
-       text-align: center;
-       text-decoration: underline;
-    }
-
-    .topC{
-       display: flex;
-       height: 3%;
-    }
-
-    .pHoverX{
-       height: 3%;
-       width: 10%;
-       padding-top: 0.5vh;
-       margin-top: 0;
-       padding-right: 3%;
-       font-size: 5vw;
-       padding-bottom: 0;
-       margin-bottom: 0;
-       transition: 0.5s;
-    }
-
-    .pHoverX:hover{
-       color: green;
-       cursor: pointer;
-       transition: 0.5s;
-    }
-
-    .pHoverContainerTitleText{
-       height: 3%;
-       width: 90%;
-       padding-top: 2.5vh;
-       padding-left: 12.5%;
-       font-size: 6.5vw;
-   
-
-    }
-
-    .pHoverContainerPast{
-      font-size: 5vw;
-      
-      padding-top: 0;
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .pHoverContainerYear{
-       font-size: 5vw;
-      
-       text-align: center;
-    }
-
-    .pHoverContainerPastPercentage{
-       font-size: 5vw;
-       font-weight: bold;
-       text-decoration: underline;
-       text-align: center;
-    }
-
-    .pHoverContainerTrend{
-       display: none;
-    }
-
-    .pHoverContainerBotCaption{
-       font-size: 3vw;
-       text-align: center;
-    }
-
-    .pLine{
-       margin-top: 0;
-       margin-bottom: 0;
-       padding-left: 25%;
-       padding-right: 25%;
-       padding-top: none;
-       padding-bottom: none;
-    }
-
-    .pTriangle{
-       top: -13%;
-       width: 0;
-      height: 0;
-      border-left: 45px solid transparent;
-      border-right: 45px solid transparent;
-      margin-left: 32%;
-      position: absolute;
-      display: none;
-    }
-
-   .contentImages{
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 3%;
-      max-width: 80%;
-      margin-left: 10%;
-      margin-right: 10%;
-   }
-
-   .imgCaption{
-      font-style: italic;
-      text-align: center;
-      opacity: 0.8;
-      font-size: 120%;
-      margin-left: 10%;
-      margin-right: 10%;
-   }
-
-   #graph1Selection{
-      display: flex;
-      flex-direction: column;
-   }
- }

@@ -6,7 +6,7 @@ var navOpen = true;
 
 //general webpage setup
 
-var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. https://www.verywellmind.com/what-heroin-effects-feel-like-22047', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/'];
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. burger king foot lettuce. the last thing you want in your burger king burger is someone\'s foot fungus. but as it turns out, that might be what you gAEt. a forchanner uploaded a photo to the site showcasing his feet in a plastic bin of lettuce. the post went live at 11:48pm and whatever crap about mayfield heights, ohio is said. Btwthis link is gone. replaced it with number 21. Mysteries solved. Now we can go eat our lettuce in peace.', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/', '21. https://www.healthline.com/health/what-does-it-feel-like-to-be-high'];
 
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -161,33 +161,33 @@ function removeNav(){
                 document.getElementById('navMenu').style.borderTopRightRadius = '15px';
                 document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
-                    document.getElementsByClassName('section')[i].style.marginLeft = '13.5%';
+                    document.getElementsByClassName('section')[i].style.marginLeft = '17.5%';
                 }
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
-                    document.getElementsByClassName('content')[i].style.marginLeft = '13.5%';
-                    document.getElementsByClassName('content')[i].style.marginRight = '13.5%';
-                    document.getElementsByClassName('content')[i].style.width = '73%';
+                    document.getElementsByClassName('content')[i].style.marginLeft = '17.5%';
+                    document.getElementsByClassName('content')[i].style.marginRight = '17.5%';
+                    document.getElementsByClassName('content')[i].style.width = 'auto';
                 }
                 for (var i = 0; i < document.getElementsByClassName('list').length; i++){
-                    document.getElementsByClassName('list')[i].style.marginLeft = '16%';
-                    document.getElementsByClassName('list')[i].style.marginRight = '13.5%';
+                    document.getElementsByClassName('list')[i].style.marginLeft = '19%';
+                    document.getElementsByClassName('list')[i].style.marginRight = '17.5%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('i').length; i++){
-                    document.getElementsByClassName('i')[i].style.marginLeft = '16%';
+                    document.getElementsByClassName('i')[i].style.marginLeft = '17.5%';
                 }
-                document.getElementById('story').style.marginRight = '13.5%';
-                document.getElementById('story').style.marginLeft = '13.5%';
-                document.getElementById('graph1').style.marginRight = '13.5%';
-                document.getElementById('graph1').style.marginLeft = '13.5%';
-                document.getElementById('citesources').style.marginRight = '13.5%';
-                document.getElementById('citesources').style.marginLeft = '13.5%';
-                document.getElementById('source').style.marginLeft = '13.5%';
-                document.getElementById('authorInfo').style.marginLeft = '13.5%';
-                document.getElementById('datesUpdated').style.marginLeft = '13.5%';
-                document.getElementById('textChanger').style.marginLeft = '13.5%';
-                document.getElementsByClassName('extra')[0].style.marginLeft = '13.5%';
-                document.getElementsByClassName('extra')[1].style.marginLeft = '13.5%';
+                document.getElementById('story').style.marginRight = '17.5%';
+                document.getElementById('story').style.marginLeft = '17.5%';
+                document.getElementById('graph1').style.marginRight = '17.5%';
+                document.getElementById('graph1').style.marginLeft = '17.5%';
+                document.getElementById('citesources').style.marginRight = '17.5%';
+                document.getElementById('citesources').style.marginLeft = '17.5%';
+                document.getElementById('source').style.marginLeft = '17.5%';
+                document.getElementById('authorInfo').style.marginLeft = '17.5%';
+                document.getElementById('datesUpdated').style.marginLeft = '17.5%';
+                document.getElementById('textChanger').style.marginLeft = '17.5%';
+                document.getElementsByClassName('extra')[0].style.marginLeft = '17.5%';
+                document.getElementsByClassName('extra')[1].style.marginLeft = '17.5%';
 
             }else{
                 navOpen = false;
@@ -993,5 +993,7 @@ for(var i = 0; i < 3; i++){
 for(var i = 0; i < 4; i++){
     document.getElementsByClassName('prevalenceOfUse')[i+1].addEventListener('click', changePrevalenceGraph);
 }
+
+
 
 
