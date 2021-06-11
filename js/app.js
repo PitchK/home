@@ -79,7 +79,8 @@ function changeFontSize(){
         document.getElementsByClassName('section')[i].style.fontSize = (190 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%'; //substring is to get rid of the '%' at the end of the fontSize variable
     }
 
-    document.getElementById('story').style.fontSize = (125 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
+    document.getElementsByClassName('story')[0].style.fontSize = (125 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
+    document.getElementsByClassName('story')[1].style.fontSize = (125 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
 
     /*for(var i = 0; i<8; i++){
         document.getElementsByClassName('navLink')[i].style.fontSize = (120 * (fontSize.substring(0, fontSize.length-1) / 135)) + '%';
@@ -94,7 +95,7 @@ function changeFontSize(){
 }
 
 //create side navigation bar
-var navBarNames = ['A brief introduction', 'What is substance use and how does it work?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special type of substance use?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
+var navBarNames = ['A brief introduction', 'What is substance use and how does it work?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special analogy to substance use disorders?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
     decideLorR(x);
     console.log(devOrientation);
@@ -162,6 +163,7 @@ function removeNav(){
                 document.getElementById('navMenu').style.borderBottomRightRadius = '15px';
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
                     document.getElementsByClassName('section')[i].style.marginLeft = '17.5%';
+                    document.getElementsByClassName('section')[i].style.marginRight = '17.5%';
                 }
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
                     document.getElementsByClassName('content')[i].style.marginLeft = '17.5%';
@@ -176,8 +178,10 @@ function removeNav(){
                 for (var i = 0; i < document.getElementsByClassName('i').length; i++){
                     document.getElementsByClassName('i')[i].style.marginLeft = '17.5%';
                 }
-                document.getElementById('story').style.marginRight = '17.5%';
-                document.getElementById('story').style.marginLeft = '17.5%';
+                document.getElementsByClassName('story')[0].style.marginRight = '17.5%';
+                document.getElementsByClassName('story')[0].style.marginLeft = '17.5%';
+                document.getElementsByClassName('story')[1].style.marginRight = '17.5%';
+                document.getElementsByClassName('story')[1].style.marginLeft = '17.5%';
                 document.getElementById('graph1').style.marginRight = '17.5%';
                 document.getElementById('graph1').style.marginLeft = '17.5%';
                 document.getElementById('citesources').style.marginRight = '17.5%';
@@ -220,6 +224,7 @@ function removeNav(){
     
                 for (var i = 0; i < document.getElementsByClassName('section').length; i++){//CHANGE THIS FOR LOOP AS HTML UPDATES!
                     document.getElementsByClassName('section')[i].style.marginLeft = '8%';
+                    document.getElementsByClassName('section')[i].style.marginRight = '8%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('content').length; i++){
@@ -233,8 +238,10 @@ function removeNav(){
 
                 document.getElementById('graph1').style.marginRight = '8%';
                 document.getElementById('graph1').style.marginLeft = '8%';
-                document.getElementById('story').style.marginLeft = '8%';
-                document.getElementById('story').style.marginRight = '8%';
+                document.getElementsByClassName('story')[0].style.marginRight = '8%';
+                document.getElementsByClassName('story')[0].style.marginLeft = '8%';
+                document.getElementsByClassName('story')[1].style.marginRight = '8%';
+                document.getElementsByClassName('story')[1].style.marginLeft = '8%';
                 document.getElementById('citesources').style.marginRight = '8%';
                 document.getElementById('citesources').style.marginLeft = '8%';
                 document.getElementById('source').style.marginLeft = '8%';
