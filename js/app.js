@@ -885,6 +885,32 @@ function showCitations(){
     }
 }
 
+var percentageAndCaptions = [{percentage: 34, caption: 'lorem ipsum', color: 'green'}, {percentage: 89, caption: 'lorem ipsum', color: 'purple'}, {percentage: 13, caption: 'lorem ipsum', color: 'yellow'}, {percentage: 45, caption: 'lorem ipsum', color: 'black'}, {percentage: 64, caption: 'lorem ipsum', color: 'red'}, {percentage: 4, caption: 'lorem ipsum', color: 'orange'}];
+
+function createPieCharts(){
+    for(var i = 0; i < Math.ceil(percentageAndCaptions.length / 2); i++){
+        var d = document.createElement('div');
+        d.className = 'percentageCharts';
+        document.getElementById('graph').appendChild(d);
+    }
+
+    for(var i = 0; i < Math.ceil(percentageAndCaptions.length / 2); i++){
+        for (var j = 0; j < 2; j++){
+            var d = document.createElement('p');
+            d.className = 'pie';
+            document.getElementsByClassName('percentageCharts')[i].appendChild(d);
+        }
+    }
+
+    for(var i = 0; i < document.getElementsByClassName('pie').length; i++){
+        var p = document.getElementsByClassName('pie')[i];
+        p.style.background = 'linear-gradient(to right, ' + percentageAndCaptions[i].color + ' ' + percentageAndCaptions[i].percentage + '%, #ada999 ' + percentageAndCaptions[i].percentage + '%)' 
+    }
+   
+
+    
+}
+
 function showExtraStuff1(){
     var plus = document.getElementsByClassName('plus')[0];
     if(this.innerHTML === '+'){
@@ -1001,6 +1027,7 @@ for(var i = 0; i < 4; i++){
     document.getElementsByClassName('prevalenceOfUse')[i+1].addEventListener('click', changePrevalenceGraph);
 }
 
+createPieCharts();
 
 
 

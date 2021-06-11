@@ -1,5 +1,6 @@
 body{
    font-family: 'newsreader', serif;
+  
 }
 
 html{
@@ -1314,4 +1315,32 @@ sup:hover{
    font-size: 125%;
    margin-top: 0;
    padding-top: 0;
+}
+
+#contactInfo{
+   margin-left: 10%;
+   font-size: 125%;
+   color: white;
+}
+
+.bottomlinks{
+   text-decoration: underline;
+   color: white;
+}
+
+.percentageCharts{
+   width: 84%;
+   margin-left: 8%;
+   display: flex;
+   height: 20px;
+   padding: auto;
+   margin-top: 3%;
+}
+
+.pie{
+   height: 20px;
+   background-color: #ada999;
+   margin-left: 2.5%;
+   margin-right: 2.5%;
+   width: 45%;
 }
