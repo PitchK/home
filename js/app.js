@@ -6,7 +6,7 @@ var navOpen = true;
 
 //general webpage setup
 
-var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. burger king foot lettuce. the last thing you want in your burger king burger is someone\'s foot fungus. but as it turns out, that might be what you gAEt. a forchanner uploaded a photo to the site showcasing his feet in a plastic bin of lettuce. the post went live at 11:48pm and whatever crap about mayfield heights, ohio is said. Btwthis link is gone. replaced it with number 21. Mysteries solved. Now we can go eat our lettuce in peace.', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/', '21. https://www.healthline.com/health/what-does-it-feel-like-to-be-high'];
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. burger king foot lettuce. the last thing you want in your burger king burger is someone\'s foot fungus. but as it turns out, that might be what you gAEt. a forchanner uploaded a photo to the site showcasing his feet in a plastic bin of lettuce. the post went live at 11:48pm and whatever crap about mayfield heights, ohio is said. Btwthis link is gone. replaced it with number 21. Mysteries solved. Now we can go eat our lettuce in peace.', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/', '21. https://www.healthline.com/health/what-does-it-feel-like-to-be-high', '22. https://casapalmera.com/blog/top-5-reasons-teens-use-drugs/', '23. https://www.statista.com/topics/3907/adolescent-drug-use-in-the-us/', '24. https://www.statista.com/statistics/208462/availability-of-marijuana-as-perceived-by-us-12th-graders-since-1975/', '25. https://drugabusestatistics.org/teen-drug-use/', '26. https://www.therecoveryvillage.com/teen-addiction/drug/high-school-drug-use/'];
 
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -178,6 +178,14 @@ function removeNav(){
                 for (var i = 0; i < document.getElementsByClassName('i').length; i++){
                     document.getElementsByClassName('i')[i].style.marginLeft = '17.5%';
                 }
+
+                for (var i = 0; i < document.getElementsByClassName('percentageCharts').length; i++){
+                    document.getElementsByClassName('percentageCharts')[i].style.marginLeft = '17.5%';
+                    document.getElementsByClassName('percentageCharts')[i].style.marginRight = '17.5%';
+                    document.getElementsByClassName('percentageCharts')[i].style.width = '65%';
+
+                }
+
                 document.getElementsByClassName('story')[0].style.marginRight = '17.5%';
                 document.getElementsByClassName('story')[0].style.marginLeft = '17.5%';
                 document.getElementsByClassName('story')[1].style.marginRight = '17.5%';
@@ -234,6 +242,12 @@ function removeNav(){
 
                 for (var i = 0; i < document.getElementsByClassName('list').length; i++){
                     document.getElementsByClassName('list')[i].style.marginLeft = '10.5%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('percentageCharts').length; i++){
+                    document.getElementsByClassName('percentageCharts')[i].style.marginLeft = '8%';
+                    document.getElementsByClassName('percentageCharts')[i].style.marginRight = '8%';
+                    document.getElementsByClassName('percentageCharts')[i].style.width = '84%';
                 }
 
                 document.getElementById('graph1').style.marginRight = '8%';
@@ -885,30 +899,129 @@ function showCitations(){
     }
 }
 
-var percentageAndCaptions = [{percentage: 34, caption: 'lorem ipsum', color: 'green'}, {percentage: 89, caption: 'lorem ipsum', color: 'purple'}, {percentage: 13, caption: 'lorem ipsum', color: 'yellow'}, {percentage: 45, caption: 'lorem ipsum', color: 'black'}, {percentage: 64, caption: 'lorem ipsum', color: 'red'}, {percentage: 4, caption: 'lorem ipsum', color: 'orange'}];
+var percentageAndCaptions = [{percentage: 41, caption: 'The percentage of teenagers who believe that using prescription drugs are safer than using illicit drugs. Unfortunately, that is not the case. (22)', color: 'green'}, {percentage: 65, caption: 'The percentage of teenagers who state that they use drugs to "feel cool."', color: 'purple'}, {percentage: 50, caption: 'Percentage of teenagers who report that marijuana is easy to get. As of 2020, 78.4% of 12th graders said that marijuana is easy to get, but fortunately this is down from a peak of 89% in 1980. (24)', color: 'orange'}, {percentage: 45, caption: '45% of teens report that "movies and TV shows make it look like drugs are an okay thing to do."', color: 'black'}, {percentage: 48, caption: '48% of people in high school who get D\'s and F\'s use marijuana, as opposed to 10% who get A\'s. (26)', color: '#918d11'}, {percentage: 35, caption: 'As of 2019, 35% of adolescents in grades 8, 10, and 12 have used an illicit drug at least once in their lifetime. Fortunately, this number is down from 43.3% in 1997. (23)', color: 'blue'}, {percentage: 86, caption: 'The percentage of teenagers who know someone who smokes, drinks, or uses drugs at school. (25)', color: 'cornflowerblue'}, {percentage: 61, caption: 'Drug use has increased 61% among 8th graders from 2016 to 2020. (25)', color: '#ed077e'}];
 
 function createPieCharts(){
-    for(var i = 0; i < Math.ceil(percentageAndCaptions.length / 2); i++){
-        var d = document.createElement('div');
-        d.className = 'percentageCharts';
-        document.getElementById('graph').appendChild(d);
+    if(devOrientation === 'landscape'){
+        for(var i = 0; i < Math.ceil(percentageAndCaptions.length / 2); i++){
+            var d = document.createElement('div');
+            d.className = 'percentageCharts';
+            document.getElementById('graph').appendChild(d);
+        }
     }
 
     for(var i = 0; i < Math.ceil(percentageAndCaptions.length / 2); i++){
         for (var j = 0; j < 2; j++){
-            var d = document.createElement('p');
-            d.className = 'pie';
-            document.getElementsByClassName('percentageCharts')[i].appendChild(d);
+            var d = document.createElement('div');
+            d.className = 'pieDiv';
+            if (devOrientation === 'landscape'){
+                document.getElementsByClassName('percentageCharts')[i].appendChild(d);
+            }else{
+                document.getElementById('graph').appendChild(d);
+            }
         }
     }
 
-    for(var i = 0; i < document.getElementsByClassName('pie').length; i++){
-        var p = document.getElementsByClassName('pie')[i];
-        p.style.background = 'linear-gradient(to right, ' + percentageAndCaptions[i].color + ' ' + percentageAndCaptions[i].percentage + '%, #ada999 ' + percentageAndCaptions[i].percentage + '%)' 
+    for(var i = 0; i < document.getElementsByClassName('pieDiv').length; i++){
+        var p = document.createElement('p');
+        p.className = 'pie';
+       
+        document.getElementsByClassName('pieDiv')[i].appendChild(p);
     }
-   
 
+    for(var i = 0; i < document.getElementsByClassName('pieDiv').length; i++){
+        var p = document.createElement('p');
+        p.className = 'pieText';
+        p.innerHTML = percentageAndCaptions[i].percentage + '%';
+        document.getElementsByClassName('pie')[i].appendChild(p);
+    }
+
+    for(var i = 0; i < document.getElementsByClassName('pieDiv').length; i++){
+        var p = document.getElementsByClassName('pie')[i];
+        p.style.background = 'linear-gradient(to right, ' + percentageAndCaptions[i].color + ' ' + percentageAndCaptions[i].percentage + '%, #ada999 ' + percentageAndCaptions[i].percentage + '%)';
+        var pt = document.getElementsByClassName('pieText')[i];
+        pt.style.marginRight = (100 - percentageAndCaptions[i].percentage + 3) + '%';
+    }
+
+    for(var i = 0; i < document.getElementsByClassName('pieDiv').length; i++){
+        var x = document.createElement('p');
+        x.className = 'horizontalGraphCaption';
+        x.innerHTML = percentageAndCaptions[i].caption;
+        document.getElementsByClassName('pieDiv')[i].appendChild(x);
+    }
+}
+
+var info = [{question: 'At what age did you start taking drugs?', stats: [23, 41, 17, 19], correspondingStat: ['Under 16', 'Ages 16-18', 'Ages 19-21', 'Above 21' ], color: ['red', 'orange', 'darkblue', 'purple']}, {question: 'What was the first illegal drug that you took?', stats: [82, 6, 2, 2, 2, 2, 1, 1, 2], correspondingStat: ['Marijuana', 'Amphetamines', 'Ecstasy', 'Cocaine', 'LSD', 'Magic mushrooms', 'Ketamine', 'Crack', 'Other'], color: ['darkgreen', 'red', 'pink', 'purple', 'blue', 'black', 'cornflowerblue', 'darkseagreen', 'orange']}, {question: 'Why did you take drugs in the first place?', stats: [69, 14, 10, 3, 2, 1], correspondingStat: ['Curiosity', 'Wanted to fit in', 'Peer pressure', 'Unhappiness', 'Wanted to copy heroes', 'Easy to get access to'], color: ['purple', 'blue', 'pink', 'lightgreen', 'red', 'orange']}];
+function createHoverableSideGraphs(){
+    console.log('lily');
+    for (var i = 0; i < info.length; i++){
+       
+        var p = document.createElement('p');
+        p.className = 'question';
+        p.innerHTML = info[i].question;
+        document.getElementById('statistics').appendChild(p);
+
+        var d = document.createElement('div');
+        d.className = 'hComponentsHolder';
+        document.getElementById('statistics').appendChild(d);
+
+        for (var j = 0; j < info[i].stats.length; j++){
+            var h = document.createElement('p');
+            h.className = 'hComponents';
+            document.getElementsByClassName('hComponentsHolder')[i].appendChild(h);
+            document.getElementsByClassName('hComponentsHolder')[i].getElementsByClassName('hComponents')[j].style.width = info[i].stats[j] + '%';
+            document.getElementsByClassName('hComponentsHolder')[i].getElementsByClassName('hComponents')[j].style.backgroundColor = info[i].color[j];
+        }
+
+        var t = document.createElement('p');
+        t.innerHTML = info[i].correspondingStat[0] + ": " + info[i].stats[0] + '%';
+        t.className = 'hCaption';
+        document.getElementById('statistics').appendChild(t);
+        document.getElementsByClassName('hCaption')[i].style.border = '2px solid purple';
+    }
+}
+
+function hShowHorizontal(event){
     
+    var loc = -1;
+    var innerLoc = -1;
+    for (var l = 0; l < info.length; l++){
+        for (var m = 0; m < info[l].stats.length; m++){
+            if ((info[l].stats[m] + "%" == this.style.width) && (info[l].color[m] == this.style.backgroundColor)){
+                loc = l;
+                innerLoc = m;
+                break;
+            }
+        }
+        if(loc != -1 && innerLoc != -1){
+            break;
+        }
+    }
+    
+    /*hoverContainer0.style.top = this.offsetTop + 75 + 'px';*/
+    
+    document.getElementsByClassName('hCaption')[loc].style.marginLeft = (event.clientX - (screen.width*0.225)) + 'px';
+    document.getElementsByClassName('hCaption')[loc].innerHTML = info[loc].correspondingStat[innerLoc] + ": " + info[loc].stats[innerLoc] + '%';
+    document.getElementsByClassName('hCaption')[loc].style.border = '2px solid ' + info[loc].color[innerLoc];
+    document.getElementsByClassName('hCaption')[loc].style.display = 'block';
+}
+
+function hHideHorizontal(){
+    var loc = -1;
+    var innerLoc = -1;
+    for (var l = 0; l < info.length; l++){
+        for (var m = 0; m < info[l].stats.length; m++){
+            if ((info[l].stats[m] + "%" == this.style.width) && (info[l].color[m] == this.style.backgroundColor)){
+                loc = l;
+                innerLoc = m;
+                break;
+            }
+        }
+        if(loc != -1 && innerLoc != -1){
+            break;
+        }
+    }
+    document.getElementsByClassName('hCaption')[loc].style.display = 'none';
 }
 
 function showExtraStuff1(){
@@ -1019,6 +1132,7 @@ if(devOrientation === 'portrait'){
 document.getElementsByClassName('grade')[0].addEventListener('click', showDropDownGrade);
 document.getElementsByClassName('prevalenceOfUse')[0].addEventListener('click', showDropDownPrevalence);
 
+
 for(var i = 0; i < 3; i++){
     document.getElementsByClassName('grade')[i+1].addEventListener('click', changeGradeGraph);
 }
@@ -1028,6 +1142,10 @@ for(var i = 0; i < 4; i++){
 }
 
 createPieCharts();
-
+createHoverableSideGraphs();
+for(var i = 0; i < document.getElementsByClassName('hComponents').length; i++){
+    document.getElementsByClassName('hComponents')[i].addEventListener('mousemove', hShowHorizontal);
+    document.getElementsByClassName('hComponents')[i].addEventListener('mouseleave', hHideHorizontal);
+}
 
 

@@ -231,9 +231,126 @@ sup:hover{
    transition: 0.3s;
  }
 
- 
+ .percentageCharts{
+   width: 84%;
+   margin-left: 8%;
+   display: flex;
+   margin-top: 3%;
+}
+
+.pieDiv{
+   margin-left: 5%;
+   margin-right: 5%;
+   width: 40%;
+}
+
+.pie{
+   width: 100%;
+   height: auto;
+   background-color: #ada999;
+   color: white;
+   padding-bottom: 0;
+   padding-top: 0;
+   margin-top: 0;
+   margin-bottom: 0;
+   border-radius: 50px;
+}
+
+.pieText{
+   font-size: 200%;
+padding-top: 3%;
+padding-bottom: 0%;
+text-align: right;
+color: white;
+
+}
+
+
+.upArrow{
+   font-size: 200%;
+   margin-top: 0;
+   padding-top: 0;
+   padding-bottom: 0;
+   margin-bottom: 0;
+}
+
+.horizontalGraphCaption{
+   font-size: 135%;
+  padding-top: 0;
+  margin-top: 1%;
+   text-align: center;
+   opacity: 0.8;
+   font-family: 'Source Sans Pro', sans-serif;
+   margin-bottom: 5%;
+}
+
+.hComponentsHolder{
+   margin-left: 10%;
+   margin-right: 10%;
+   width: 80%;
+   height: 40px;
+   background-color: grey;
+   display: flex;
+   border-radius: 25px;
+}
+
+.hComponents{
+   height: 40px;
+   border: 1px solid white;
+   margin-top: 0;
+   padding-top: 0;
+   transition: 0.25s;
+}
+
+.hComponents:hover{
+   padding-top: -3px;
+   margin-top:-3px;
+   height: 46px;
+   transition: 0.25s;
+   cursor: pointer;
+}
+
+.question{
+   margin-top: 5%;
+   margin-left: 8%;
+  
+   font-weight: bold;
+   font-size: 165%;
+}
+
+.hCaption{
+   font-size: 120%;
+   margin-left: 10%;
+   padding:1%;
+   padding-left: 1%;
+   padding-right: 1%;
+   width: auto;
+   max-width: 15%;
+   text-align: center;
+   background-color: whitesmoke;
+   border-radius: 10px;
+   display: none;
+   position: absolute;
+}
 
 @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
+   .percentageCharts{
+      margin-left: 0%;
+      margin-right: 5%;
+      width: 95%;
+      flex-direction: column;
+   }
+
+   .pieDiv{
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+   }
+   
+   .horizontalGraphCaption{
+      margin-bottom: 20%;
+   }
+
    #graph1Right, #graph1Left{
       width: 100%;
    }
@@ -731,7 +848,7 @@ sup:hover{
    /*font-family: 'newsreader', serif;*/
    font-size: 135%;
    line-height: 1.55;
-   font-style: italic;
+
    margin-right: 8%;
    margin-left: 10.5%;
    opacity: 0.9;
@@ -1328,19 +1445,3 @@ sup:hover{
    color: white;
 }
 
-.percentageCharts{
-   width: 84%;
-   margin-left: 8%;
-   display: flex;
-   height: 20px;
-   padding: auto;
-   margin-top: 3%;
-}
-
-.pie{
-   height: 20px;
-   background-color: #ada999;
-   margin-left: 2.5%;
-   margin-right: 2.5%;
-   width: 45%;
-}
