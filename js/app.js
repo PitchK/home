@@ -183,7 +183,17 @@ function removeNav(){
                     document.getElementsByClassName('percentageCharts')[i].style.marginLeft = '17.5%';
                     document.getElementsByClassName('percentageCharts')[i].style.marginRight = '17.5%';
                     document.getElementsByClassName('percentageCharts')[i].style.width = '65%';
+                }
 
+                for (var i = 0; i < document.getElementsByClassName('hComponentsHolder').length; i++){
+                    document.getElementsByClassName('hComponentsHolder')[i].style.marginLeft = '20%';
+                    document.getElementsByClassName('hComponentsHolder')[i].style.marginRight = '20%';
+                    document.getElementsByClassName('hComponentsHolder')[i].style.width = '60%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('question').length; i++){
+                    document.getElementsByClassName('question')[i].style.marginLeft = '17.5%';
+                    document.getElementsByClassName('question')[i].style.marginRight = '17.5%';
                 }
 
                 document.getElementsByClassName('story')[0].style.marginRight = '17.5%';
@@ -248,6 +258,17 @@ function removeNav(){
                     document.getElementsByClassName('percentageCharts')[i].style.marginLeft = '8%';
                     document.getElementsByClassName('percentageCharts')[i].style.marginRight = '8%';
                     document.getElementsByClassName('percentageCharts')[i].style.width = '84%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('hComponentsHolder').length; i++){
+                    document.getElementsByClassName('hComponentsHolder')[i].style.marginLeft = '10%';
+                    document.getElementsByClassName('hComponentsHolder')[i].style.marginRight = '10%';
+                    document.getElementsByClassName('hComponentsHolder')[i].style.width = '80%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('question').length; i++){
+                    document.getElementsByClassName('question')[i].style.marginLeft = '8%';
+                    document.getElementsByClassName('question')[i].style.marginRight = '8%';
                 }
 
                 document.getElementById('graph1').style.marginRight = '8%';
@@ -865,7 +886,7 @@ function removeHeader(){
     }
 }*/
 
-function showPopUp(){
+/*function showPopUp(){
     var scrollPos = window.pageYOffset;
     if(temp.style.top != '-100%'){
         temp.style.display = 'block';
@@ -874,10 +895,10 @@ function showPopUp(){
         /*document.body.style.margin = '0';
         document.body.style.height = '100%';
         document.body.style.overflow = 'hidden';*/
-        temp.style.top = ((screen.height/2) + scrollPos - (screen.height/10)) + "px";
+        /*temp.style.top = ((screen.height/2) + scrollPos - (screen.height/10)) + "px";
         temp.style.display = 'sticky';
         open = true;
-    }
+    /*}
 }
 function remove(){
     temp.style.position = 'absolute';
@@ -891,7 +912,7 @@ function remove(){
 function detectScroll(){
     showPopUp();
     window.addEventListener('scroll', showPopUp);
-}
+}*/
 
 function showCitations(){
     if(open === false){
@@ -953,7 +974,7 @@ function createPieCharts(){
 
 var info = [{question: 'At what age did you start taking drugs?', stats: [23, 41, 17, 19], correspondingStat: ['Under 16', 'Ages 16-18', 'Ages 19-21', 'Above 21' ], color: ['red', 'orange', 'darkblue', 'purple']}, {question: 'What was the first illegal drug that you took?', stats: [82, 6, 2, 2, 2, 2, 1, 1, 2], correspondingStat: ['Marijuana', 'Amphetamines', 'Ecstasy', 'Cocaine', 'LSD', 'Magic mushrooms', 'Ketamine', 'Crack', 'Other'], color: ['darkgreen', 'red', 'pink', 'purple', 'blue', 'black', 'cornflowerblue', 'darkseagreen', 'orange']}, {question: 'Why did you take drugs in the first place?', stats: [69, 14, 10, 3, 2, 1], correspondingStat: ['Curiosity', 'Wanted to fit in', 'Peer pressure', 'Unhappiness', 'Wanted to copy heroes', 'Easy to get access to'], color: ['purple', 'blue', 'pink', 'lightgreen', 'red', 'orange']}];
 function createHoverableSideGraphs(){
-    console.log('lily');
+   
     for (var i = 0; i < info.length; i++){
        
         var p = document.createElement('p');
@@ -976,13 +997,16 @@ function createHoverableSideGraphs(){
         var t = document.createElement('p');
         t.innerHTML = info[i].correspondingStat[0] + ": " + info[i].stats[0] + '%';
         t.className = 'hCaption';
-        document.getElementById('statistics').appendChild(t);
+        document.getElementById('main').appendChild(t);
         document.getElementsByClassName('hCaption')[i].style.border = '2px solid purple';
+
+        var l = document.createElement('div');
+        l.className = 'legendHolder';
+        document.getElementById('statistics').appendChild(l);
     }
 }
 
 function hShowHorizontal(event){
-    
     var loc = -1;
     var innerLoc = -1;
     for (var l = 0; l < info.length; l++){
@@ -999,8 +1023,18 @@ function hShowHorizontal(event){
     }
     
     /*hoverContainer0.style.top = this.offsetTop + 75 + 'px';*/
+    if(devOrientation === 'landscape'){
+        if(navOpen === true){
+            document.getElementsByClassName('hCaption')[loc].style.marginLeft = (event.clientX - (screen.width*0.225)) + 'px';
+        }else{
+            document.getElementsByClassName('hCaption')[loc].style.marginLeft = (event.clientX) + 'px';
+        }
+    }else{
+        document.getElementsByClassName('hCaption')[loc].style.marginLeft = (event.clientX) + 'px';
+    }
     
-    document.getElementsByClassName('hCaption')[loc].style.marginLeft = (event.clientX - (screen.width*0.225)) + 'px';
+    var h = document.getElementsByClassName('hCaption')[loc].style.height;
+    document.getElementsByClassName('hCaption')[loc].style.top = (event.clientY + window.pageYOffset - h.substring(0, h.length - 2)) + 'px';
     document.getElementsByClassName('hCaption')[loc].innerHTML = info[loc].correspondingStat[innerLoc] + ": " + info[loc].stats[innerLoc] + '%';
     document.getElementsByClassName('hCaption')[loc].style.border = '2px solid ' + info[loc].color[innerLoc];
     document.getElementsByClassName('hCaption')[loc].style.display = 'block';
@@ -1081,8 +1115,8 @@ for (var i = 0; i < navBarNames.length; i++){
 
 drawFirstGraph(60, 10, 0, 1);
 /*createHover(1);*/
-button.addEventListener('click', remove);
-document.getElementById('close').addEventListener('click', remove);
+/*button.addEventListener('click', remove);
+document.getElementById('close').addEventListener('click', remove);*/
 
 /*document.getElementById('title').addEventListener('click', showHover);*///just for testing
 
@@ -1120,7 +1154,7 @@ document.getElementsByClassName('plus')[0].addEventListener('click', showExtraSt
 document.getElementsByClassName('plus')[1].addEventListener('click', showExtraStuff2);
 
 
-setTimeout(detectScroll, 2500);
+/*setTimeout(detectScroll, 2500);*/
 
 if(devOrientation === 'portrait'){
     var disclaimer = document.createElement('div');

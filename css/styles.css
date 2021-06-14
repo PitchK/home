@@ -37,7 +37,7 @@ html{
    margin-left: 8%;
    /*font-family: 'newsreader', serif;*/
   font-size: 135%;
-  line-height: 1.55;
+  line-height: 1.63;
   margin-right: 8%;
   opacity: 1.2;
 }
@@ -291,7 +291,7 @@ color: white;
    height: 40px;
    background-color: grey;
    display: flex;
-   border-radius: 25px;
+
 }
 
 .hComponents{
@@ -308,6 +308,7 @@ color: white;
    height: 46px;
    transition: 0.25s;
    cursor: pointer;
+   
 }
 
 .question{
@@ -321,11 +322,11 @@ color: white;
 .hCaption{
    font-size: 120%;
    margin-left: 10%;
-   padding:1%;
-   padding-left: 1%;
-   padding-right: 1%;
+   padding:0.5%;
+   padding-left: 0.5%;
+   padding-right: 0.5%;
    width: auto;
-   max-width: 15%;
+   max-width: 35%;
    text-align: center;
    background-color: whitesmoke;
    border-radius: 10px;
@@ -334,6 +335,33 @@ color: white;
 }
 
 @media only screen and (orientation: portrait){/*Making this mobile compatible!*/
+   .hComponentsHolder{
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      height: 30px;
+      background-color: grey;
+      display: flex;
+ 
+   }
+
+   .hComponents{
+      height: 30px;
+      border: 1px solid white;
+      margin-top: 0;
+      padding-top: 0;
+      transition: 0.25s;
+   }
+   
+   .hComponents:hover{
+      padding-top: -1.5px;
+      margin-top:-1.5px;
+      height: 33px;
+      transition: 0.25s;
+      cursor: pointer;
+      
+   }
+
    .percentageCharts{
       margin-left: 0%;
       margin-right: 5%;
@@ -847,7 +875,7 @@ color: white;
    list-style-type: circle;
    /*font-family: 'newsreader', serif;*/
    font-size: 135%;
-   line-height: 1.55;
+   line-height: 1.63;
 
    margin-right: 8%;
    margin-left: 10.5%;
