@@ -973,6 +973,8 @@ function createPieCharts(){
 }
 
 var info = [{question: 'At what age did you start taking drugs?', stats: [23, 41, 17, 19], correspondingStat: ['Under 16', 'Ages 16-18', 'Ages 19-21', 'Above 21' ], color: ['red', 'orange', 'darkblue', 'purple']}, {question: 'What was the first illegal drug that you took?', stats: [82, 6, 2, 2, 2, 2, 1, 1, 2], correspondingStat: ['Marijuana', 'Amphetamines', 'Ecstasy', 'Cocaine', 'LSD', 'Magic mushrooms', 'Ketamine', 'Crack', 'Other'], color: ['darkgreen', 'red', 'pink', 'purple', 'blue', 'black', 'cornflowerblue', 'darkseagreen', 'orange']}, {question: 'Why did you take drugs in the first place?', stats: [69, 14, 10, 3, 2, 1], correspondingStat: ['Curiosity', 'Wanted to fit in', 'Peer pressure', 'Unhappiness', 'Wanted to copy heroes', 'Easy to get access to'], color: ['purple', 'blue', 'pink', 'lightgreen', 'red', 'orange']}];
+
+var contents = ['Seeing from this graph, more than half (64%) of current drug users started when they were adolescents. This shows that adolescents are vulnerable to this, and could affect them for a very long time (People in this study were adults.)', 'As mentioned above, marijuana is one of the most widely used drug amongst adolescents - and it certainly shows. Marijuana may also be used as a gateway drug, meaning that people may think something like "Oh, marijuana doesn\'t induce a pleasurable effect anymore - let\'s start using harder drugs like cocaine!"', 'As shown here, curiosity plays a big factor into adolescent substance use - at least in this study. The negative effect of peers was also cited by a quarter of current drug users as a reason why they fell into substance use. (10% from peer pressure and 14% from wanting to fit in.)']
 function createHoverableSideGraphs(){
    
     for (var i = 0; i < info.length; i++){
@@ -1003,6 +1005,34 @@ function createHoverableSideGraphs(){
         var l = document.createElement('div');
         l.className = 'legendHolder';
         document.getElementById('statistics').appendChild(l);
+
+
+        for (var j = 0; j < info[i].stats.length; j++){
+            var k = document.createElement('div');
+            k.className = 'indivLegendHolder';
+            document.getElementsByClassName('legendHolder')[i].appendChild(k);
+
+            var m = document.createElement('div');
+            m.className = 'indivLegendHolderColor';
+            
+            document.getElementsByClassName('legendHolder')[i].getElementsByClassName('indivLegendHolder')[j].appendChild(m);
+            m.style.backgroundColor = info[i].color[j];
+
+            var n = document.createElement('p');
+            n.className = 'indivLegendHolderContent';
+            if (devOrientation === 'landscape'){
+                n.innerHTML = info[i].correspondingStat[j];
+            }else{
+                n.innerHTML = info[i].correspondingStat[j] + ': ' + info[i].stats[j] + '%';
+            }
+            
+            document.getElementsByClassName('legendHolder')[i].getElementsByClassName('indivLegendHolder')[j].appendChild(n);
+        }
+
+        var c = document.createElement('p');
+        c.className = 'content';
+        c.innerHTML = contents[i];
+        document.getElementsByClassName('legendHolder')[i].appendChild(c);
     }
 }
 
