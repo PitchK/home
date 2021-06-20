@@ -6,7 +6,7 @@ var navOpen = true;
 
 //general webpage setup
 
-var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. burger king foot lettuce. the last thing you want in your burger king burger is someone\'s foot fungus. but as it turns out, that might be what you gAEt. a forchanner uploaded a photo to the site showcasing his feet in a plastic bin of lettuce. the post went live at 11:48pm and whatever crap about mayfield heights, ohio is said. Btwthis link is gone. replaced it with number 21. Mysteries solved. Now we can go eat our lettuce in peace.', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/', '21. https://www.healthline.com/health/what-does-it-feel-like-to-be-high', '22. https://casapalmera.com/blog/top-5-reasons-teens-use-drugs/', '23. https://www.statista.com/topics/3907/adolescent-drug-use-in-the-us/', '24. https://www.statista.com/statistics/208462/availability-of-marijuana-as-perceived-by-us-12th-graders-since-1975/', '25. https://drugabusestatistics.org/teen-drug-use/', '26. https://www.therecoveryvillage.com/teen-addiction/drug/high-school-drug-use/'];
+var listOfReferences = ['1. https://www.psychiatry.org/patients-families/addiction', '2. https://mayoclinic.org/diseases-conditions/drug-addiction/symptoms-causes/syc-20365112', '3. https://www.drugabuse.gov/publications/drugfacts/marijuana', '4. https://www.omnicalculator.com/health/iq-percentile', '5. https://www.nm.org/healthbeat/healthy-tips/emotional-health/vaping-4-risks-for-kids', '6. https://www.globaldrugsurvey.com/wp-content/themes/globaldrugsurvey/results/GDS2019-Exec-Summary.pdf', '7. https://pubmed.ncbi.nlm.nih.gov/26496821', '8. doi:10.1097/00000542-199510000-00028', '9. https://www.health.harvard.edu/blog/vitamin-b12-deficiency-can-be-sneaky-harmful-201301105780', '10. https://www.drugabuse.gov/publications/drugfacts/mdma-ecstasymolly', '11. https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm', '12. https://www.conehealth.com/services/behavioral-health/7-things-drinking-alcohol-does-to-your-body/', '13. https://www.healthline.com/health/smoking/effects-on-body', '14. https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm', '15. burger king foot lettuce. the last thing you want in your burger king burger is someone\'s foot fungus. but as it turns out, that might be what you gAEt. a forchanner uploaded a photo to the site showcasing his feet in a plastic bin of lettuce. the post went live at 11:48pm and whatever crap about mayfield heights, ohio is said. Btwthis link is gone. replaced it with number 21. Mysteries solved. Now we can go eat our lettuce in peace.', '16. https://www.drugabuse.gov/drug-topics/criminal-justice/science-drug-use-resource-justice-sector', '17. https://www.drugfreeworld.org/drugfacts/drugs/why-do-people-take-drugs.html', '18. https://www.verywellmind.com/what-does-cocaine-high-feel-like-21988', '19. https://www.nejm.org/doi/full/10.1056/nejmra1511480', '20. https://www.newportacademy.com/resources/substance-abuse/reasons-teens-use-drugs/', '21. https://www.healthline.com/health/what-does-it-feel-like-to-be-high', '22. https://casapalmera.com/blog/top-5-reasons-teens-use-drugs/', '23. https://www.statista.com/topics/3907/adolescent-drug-use-in-the-us/', '24. https://www.statista.com/statistics/208462/availability-of-marijuana-as-perceived-by-us-12th-graders-since-1975/', '25. https://drugabusestatistics.org/teen-drug-use/', '26. https://www.therecoveryvillage.com/teen-addiction/drug/high-school-drug-use/', '27. https://www.healthlinkbc.ca/substance-use', '28. https://www.drugabuse.gov/about-nida/noras-blog/2020/09/addressing-unique-challenges-covid-19-people-in-recovery', '29. https://doi.org/10.1016/j.ypmed.2021.106422', '30. https://doi.org/10.3390/ijerph17114065', '31. https://www.cdc.gov/media/releases/2020/p1218-overdose-deaths-covid-19.html.', '32. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7682947/'];
 
 var listOfCitations = ['Author: Micaiah Cape', 'Title: Substance use in adolescents', 'Webpage link: https://pitchk.github.io/homepage', 'Date updated: May 24, 2021'];
 var x = new Date();
@@ -95,7 +95,7 @@ function changeFontSize(){
 }
 
 //create side navigation bar
-var navBarNames = ['A brief introduction', 'What is substance use and how does it work?', 'How does one fall into substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special analogy to substance use disorders?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
+var navBarNames = ['A brief introduction', 'What is substance use and how does it work?', 'How does one initially start  substance use?', 'Why is substance use harmful?', 'Statistics among adolescents', 'COVID-19 and substance use', 'Gaming and internet addiction - a special analogy to substance use disorders?', 'Help is available!']//CHANGE THIS AS HTML UPDATES!
 function createNavigationBar(){
     decideLorR(x);
     console.log(devOrientation);
@@ -177,6 +177,10 @@ function removeNav(){
 
                 for (var i = 0; i < document.getElementsByClassName('i').length; i++){
                     document.getElementsByClassName('i')[i].style.marginLeft = '17.5%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('indivLegendHolder').length; i++){
+                    document.getElementsByClassName('indivLegendHolder')[i].style.marginLeft = '20%';
                 }
 
                 for (var i = 0; i < document.getElementsByClassName('percentageCharts').length; i++){
@@ -269,6 +273,10 @@ function removeNav(){
                 for (var i = 0; i < document.getElementsByClassName('question').length; i++){
                     document.getElementsByClassName('question')[i].style.marginLeft = '8%';
                     document.getElementsByClassName('question')[i].style.marginRight = '8%';
+                }
+
+                for (var i = 0; i < document.getElementsByClassName('indivLegendHolder').length; i++){
+                    document.getElementsByClassName('indivLegendHolder')[i].style.marginLeft = '10%';
                 }
 
                 document.getElementById('graph1').style.marginRight = '8%';
